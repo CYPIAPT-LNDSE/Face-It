@@ -1,0 +1,19 @@
+@import 'partials/variables';
+
+body {
+  color: $grey-darken-2;
+}
+
+.full-screen-background {
+  height: 100vh;
+  width: 100vw;
+  background-color: $grey-darken-2;
+}
+
+.full-screen {
+  margin: 4vh auto auto auto;
+  border: 1vh $grey-darken-1 solid;
+  background-color: $grey;
+  width: 414px;
+  height: 736px;
+}

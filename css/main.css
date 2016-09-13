@@ -1,0 +1,16 @@
+body {
+  color: #616161; }
+
+.full-screen-background {
+  height: 100vh;
+  width: 100vw;
+  background-color: #616161; }
+
+.full-screen {
+  margin: 4vh auto auto auto;
+  border: 1vh #9E9E9E solid;
+  background-color: #F5F5F5;
+  width: 414px;
+  height: 736px; }
+
+/*# sourceMappingURL=main.css.map */
