@@ -7,10 +7,14 @@ body {
   background-color: #616161; }
 
 .full-screen {
-  margin: 4vh auto auto auto;
+  margin-top: 5vh;
+  height: 90vh;
   border: 1vh #9E9E9E solid;
-  background-color: #F5F5F5;
-  width: 414px;
-  height: 736px; }
+  background-color: #F5F5F5; }
+  @media screen and (max-width: 768px) {
+    .full-screen {
+      border: none;
+      height: 100vh;
+      margin: 0; } }
 
 /*# sourceMappingURL=main.css.map */

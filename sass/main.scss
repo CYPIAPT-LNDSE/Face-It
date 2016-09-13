@@ -11,9 +11,13 @@ body {
 }
 
 .full-screen {
-  margin: 4vh auto auto auto;
+  margin-top: 5vh;
+  height: 90vh;
   border: 1vh $grey-darken-1 solid;
   background-color: $grey;
-  width: 414px;
-  height: 736px;
+  @media screen and (max-width: 768px) {
+    border: none;
+    height: 100vh;
+    margin: 0;
+  }
 }
