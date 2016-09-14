@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link type="text/css" rel="stylesheet" href="./assets/js/vendor/jquery-ui.css"  media="screen,projection"/>
+
+    <script type="text/javascript" src="./assets/js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="./assets/js/vendor/jquery-ui.min.js"></script>
+    <script src="./assets/js/vendor/pouchdb-6.0.4.min.js"></script>
+    <script src="./js/helpers.js"></script>
+    <script src="./js/images.js"></script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,11 +24,12 @@
   </head>
   <body>
     <div class="row full-screen-background">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 full-screen">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 full-screen" id='view1'>
+        <h1> test</h1>
+        <button id='slideout'>slideout</button>
       </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="assets/js/vendor/bootstrap/bootstrap.min.js"></script>
   </body>
 </html>
