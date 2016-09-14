@@ -1,5 +1,4 @@
 @import 'partials/variables';
-@import 'partials/fonts';
 
 // Global
 
@@ -35,10 +34,43 @@ body {
   background-color: $teal-darken-1;
   border: $teal solid 0.5em;
   border-radius: 0.2em;
+  font-weight: bold;
+  color: darken($grey-darken-2, 10%);
   &:hover, &:focus {
     background-color: darken($teal-darken-1, 5%);
     border: darken($teal, 5%) solid 0.5em;
   }
+}
+
+// Landing Page
+
+.landing-page {
+  button {
+    margin-top: 8vh;
+  }
+}
+
+.landing-page__header {
+  margin-top: 5vh;
+  margin-bottom: 8vh;
+  h1 {
+    text-align: center;
+    margin-top: 0.1em;
+  }
+}
+
+.landing-page__logo {
+  width: 35%;
+  margin: auto auto;
+  @media screen and (min-width: 540px) and (max-width: 768px) {
+    width: 20%;
+  }
+}
+
+.name-form {
+  font-size: 1.8em;
+  line-height: 1.8em;
+  margin-top: 0.2em;
 }
 
 // Game Page
@@ -53,7 +85,6 @@ body {
 .game-page__image-container {
   margin-bottom: 3em;
   img {
-    // border: $teal-darken-1 solid 2.5em;
     border: $teal solid 2.5em;
     border-radius: 0.2em;
     margin: auto auto;

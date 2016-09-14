@@ -26,10 +26,34 @@ body {
   word-wrap: break-word;
   background-color: #B2DFDB;
   border: #E0F2F1 solid 0.5em;
-  border-radius: 0.2em; }
+  border-radius: 0.2em;
+  font-weight: bold;
+  color: #484848; }
   .btn:hover, .btn:focus {
     background-color: #a0d8d3;
     border: #ceeae9 solid 0.5em; }
+
+.landing-page button {
+  margin-top: 8vh; }
+
+.landing-page__header {
+  margin-top: 5vh;
+  margin-bottom: 8vh; }
+  .landing-page__header h1 {
+    text-align: center;
+    margin-top: 0.1em; }
+
+.landing-page__logo {
+  width: 35%;
+  margin: auto auto; }
+  @media screen and (min-width: 540px) and (max-width: 768px) {
+    .landing-page__logo {
+      width: 20%; } }
+
+.name-form {
+  font-size: 1.8em;
+  line-height: 1.8em;
+  margin-top: 0.2em; }
 
 .game-page {
   display: flex;
