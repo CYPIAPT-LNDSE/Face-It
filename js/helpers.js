@@ -15,3 +15,30 @@ function showFromLeft(elementToShow){
     })
   }
 }
+
+function generateGameSet(){
+  //populate a gameset []
+}
+
+
+function instanceImageObj(){
+// generate new object from images in db, new property to record uses guess
+}
+
+function generateGameDOMElements(gameset){
+//generate all pages of the game
+//return 
+}
+
+
+function measureOutOfView(){
+//return position where to place the hidden dom elements
+}
+
+
+function renderElements(hiddenXRef){
+//render elemets out of view
+}
+
+
+
