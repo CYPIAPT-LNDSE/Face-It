@@ -1,10 +1,23 @@
+@import 'partials/variables';
+
+body {
+  color: $grey-darken-2;
+}
+
 .full-screen-background {
   height: 100vh;
   width: 100vw;
+  background-color: $grey-darken-2;
 }
 
 .full-screen {
   margin-top: 5vh;
   height: 90vh;
-  border: #9e9e9e 1vh solid;
+  border: 1vh $grey-darken-1 solid;
+  background-color: $grey;
+  @media screen and (max-width: 768px) {
+    border: none;
+    height: 100vh;
+    margin: 0;
+  }
 }
