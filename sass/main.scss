@@ -1,7 +1,13 @@
 @import 'partials/variables';
+@import 'partials/fonts';
+
+// Global
 
 body {
   color: $grey-darken-2;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
 }
 
 .full-screen-background {
@@ -20,4 +26,42 @@ body {
     height: 100vh;
     margin: 0;
   }
+}
+
+.btn {
+  white-space: normal !important;
+  word-break: normal;
+  word-wrap: break-word;
+  background-color: $teal-darken-1;
+  border: $teal solid 0.5em;
+  border-radius: 0.2em;
+  &:hover, &:focus {
+    background-color: darken($teal-darken-1, 5%);
+    border: darken($teal, 5%) solid 0.5em;
+  }
+}
+
+// Game Page
+
+.game-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.game-page__image-container {
+  margin-bottom: 3em;
+  img {
+    // border: $teal-darken-1 solid 2.5em;
+    border: $teal solid 2.5em;
+    border-radius: 0.2em;
+    margin: auto auto;
+  }
+}
+
+.game-page__button-emoji {
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 2%;
 }
