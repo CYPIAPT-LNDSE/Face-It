@@ -1,5 +1,27 @@
 let pages = {
-  'landing':``,
+  'landing':`<div class="landing-page" style="display:none"}>
+
+            <div class="col-xs-10 col-xs-offset-1">
+
+              <div class="landing-page__header">
+                <img src="assets/icons/logo.svg" alt="" class="img-responsive landing-page__logo">
+                <h1>An App</h1>
+              </div>
+
+              <form>
+                <div class="form-group">
+                  <label class="name-form" for="first-name">First Name</label>
+                  <input type="text" class="form-control" id="first-name">
+                  <label class="name-form" for="second-name">Surname</label>
+                  <input type="text" class="form-control" id="second-name">
+                </div>
+              </form>
+
+              <button type="button" class="btn btn-default btn-lg btn-block">Start</button>
+
+            </div>
+
+          </div>`,
   'gamePage':`<div class="game-page" id='fresh' style='display:none;'>
   <div class="game-page-content">
   <div class="col-xs-12 game-page__image-container">
