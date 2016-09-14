@@ -1,5 +1,5 @@
-let images = {
-"h19075_1280":[
+function getJson(){
+  console.log(JSON.parse({"h19075_1280":[
   {
     "faceRectangle": {
       "left": 68,
@@ -160,4 +160,9 @@ let images = {
           }
     }
 ]
+  
+  
+  
+  
+  }))
 }
