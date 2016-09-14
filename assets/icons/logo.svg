@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="206px" height="328px" viewBox="0 0 206 328" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Logo 3 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M129.633655,163.195486 L181.651795,200.988877 L146.959389,307.761123 L34.6924057,307.761123 L-4.26325641e-14,200.988877 L52.9263863,162.535607 C25.0727806,148.319895 6,119.357538 6,85.9404933 C6,38.4768695 44.4768695,0 91.9404933,0 C139.404117,0 177.880987,38.4768695 177.880987,85.9404933 C177.880987,119.88321 158.203431,149.229987 129.633655,163.195492 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-10" y="-10" width="201.651795" height="327.761123">
+            <rect x="-10" y="-10" width="201.651795" height="327.761123" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+        <rect id="path-3" x="26" y="92.2723765" width="130.005747" height="89.3669136"></rect>
+        <ellipse id="path-5" cx="91.0028736" cy="74.8179012" rx="65.0028736" ry="69.8179012"></ellipse>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="130.005747" height="139.635802" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <rect id="path-7" x="-3" y="48" width="188.20968" height="24.9227431"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo-3-Copy" transform="translate(12.000000, 10.000000)">
+            <g id="Combined-Shape">
+                <use fill="#B2DFDB" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <use stroke="#E0F2F1" mask="url(#mask-2)" stroke-width="20" xlink:href="#path-1"></use>
+            </g>
+            <mask id="mask-4" fill="white">
+                <use xlink:href="#path-3"></use>
+            </mask>
+            <g id="Mask"></g>
+            <g id="Oval" mask="url(#mask-4)" stroke-width="20" stroke="#F5F5F5" fill="#F5F5F5">
+                <use mask="url(#mask-6)" xlink:href="#path-5"></use>
+            </g>
+            <mask id="mask-8" fill="white">
+                <use xlink:href="#path-7"></use>
+            </mask>
+            <g id="Mask"></g>
+            <ellipse id="Oval-2" fill="#F5F5F5" mask="url(#mask-8)" cx="45.9860812" cy="70.3445283" rx="14.6098839" ry="14.6098839"></ellipse>
+            <ellipse id="Oval-2-Copy" fill="#F5F5F5" mask="url(#mask-8)" cx="134.504789" cy="70.3445283" rx="14.6098839" ry="14.6098839"></ellipse>
+        </g>
+    </g>
+</svg>
