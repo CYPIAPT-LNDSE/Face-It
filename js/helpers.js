@@ -17,7 +17,6 @@ function showFromLeft(elementToShow){
 }
 
 function generateGameSet(images){
-  //populate a gameset []
   return randomiser(images).map(function(el, i, array){
     return {
       [el]:images[el][0],
@@ -28,11 +27,6 @@ function generateGameSet(images){
 
 function randomiser(images){
   return Object.keys(images).sort(function(){return .5 - Math.random()}).slice(0, 5)  
-}
-
-function instanceImageObj(obj){
-  // generate new object from images in db, new property to record uses guess
-  return obj.userGuess = 'noresponse'
 }
 
 function generateGameDOMElements(gameset){
