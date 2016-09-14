@@ -30,6 +30,9 @@ function generateGameDOMElements(gameset){
 //return 
 }
 
+function generateSingleGamePage(){
+//generate single div of game
+}
 
 function measureOutOfView(){
 //return position where to place the hidden dom elements
