@@ -1,8 +1,9 @@
-function generateGameSet(images){
+function generateGameSet(images, username = 'john doe'){
   return randomiser(images).map(function(el, i, array){
     return {
       [el]:images[el][0],
-      userGuess:'noresponse'
+      userGuess:'noresponse',
+      username:username
     }
   })
 }
@@ -15,12 +16,24 @@ function renderHiddenDivs(){
   [1,2,3,4,5].forEach(function(el){
     $('#main').append(pages['gamePage'])
     $('#fresh').attr('id', 'gamePage' + el)
+  })
+}
+
+function applyGameSetToHiddenDivs(gameSet){
+  //apply correct images and emoticons to each hidden div
+  ['gamePage1','gamePage2','gamePage3','gamePage4', 'gamePage5'].forEach(function(el, i, array){
+    $('#'+ el).find('#image').attr('src', 'assets/imgs/' + Object.keys( gameSet[i])[0]+ '.jpg' )
+    console.log($('#'+ el).find('img').attr('src'))
   }) 
- 
+  //apply correct emoticons
 }
 
-function generateSingleGamePage(){
-  //generate single div of game
+function runInit(){
+    let gameSet = generateGameSet(images)
+    renderHiddenDivs()
+    applyGameSetToHiddenDivs(gameSet)
 }
 
+function detectCorrectAnswer(){
 
+}

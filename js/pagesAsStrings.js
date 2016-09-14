@@ -1,5 +1,5 @@
 let pages = {
-  'landing':`<div class="landing-page" style="display:none"}>
+  'landing':`<div class="landing-page" style="display:none" id='landing'}>
 
             <div class="col-xs-10 col-xs-offset-1">
 
@@ -32,7 +32,7 @@ let pages = {
   <button type="button" class="btn btn-default btn-lg btn-block">Happy</button>
   </div>
   <div class="col-xs-6 game-button">
-  <img src="assets/icons/sad-emoji.svg" class="game-page__button-emoji" alt="Sad">
+  <img src="assets/icons/sad-emoji.svg" class="game-page__button-emoji" alt="Sad" id='image'>
   <button type="button" class="btn btn-default btn-lg btn-block">Sad</button>
   </div>
   </div>
