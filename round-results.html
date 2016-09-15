@@ -19,64 +19,67 @@
   <body>
     <div class="row full-screen-background">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 full-screen">
+        <div class="round-results-page">
 
-        <div class="results-header"><center><h1>Results this round:</h1></center></div>
-
-        <div class="col-xs-6 result-img-container">
-          <img src="assets/imgs/a921004_1920.jpg" class="img-responsive" alt="Face">
-        </div>
-        <div class="col-xs-6 results" align="center">
-          <h5>You said: {{result}}.
-            <br><br>
-          API was {{#}}% sure it was {{emotion}}.
-        </h5>
-        </div>
-
-        <div class="col-xs-6 result-img-container">
-          <img src="assets/imgs/h187696_1920.jpg" class="img-responsive" alt="Face">
-        </div>
-        <div class="col-xs-6 results" align="center">
-          <h5>You said: {{result}}.
-            <br><br>
-          API was {{#}}% sure it was {{emotion}}.
-        </h5>
-        </div>
-
-        <div class="col-xs-6 result-img-container">
-          <img src="assets/imgs/su211505_1280.jpg" class="img-responsive" alt="Face">
-        </div>
-        <div class="col-xs-6 results" align="center">
-          <h5>You said: {{result}}.
-            <br><br>
-          API was {{#}}% sure it was {{emotion}}.
-        </h5>
-        </div>
-
-        <div class="col-xs-6 result-img-container">
-          <img src="assets/imgs/su810005_1280.jpg" class="img-responsive" alt="Face">
-        </div>
-        <div class="col-xs-6 results" align="center">
-          <h5>You said: {{result}}.
-            <br><br>
-          API was {{#}}% sure it was {{emotion}}.
-        </h5>
-        </div>
-          <div class="col-xs-6 result-img-container">
-            <img src="assets/imgs/h19075_1280.jpg" class="img-responsive" alt="Face">
+          <div class="round-results-page__header">
+            <h1>Results this round:</h1>
           </div>
-          <div class="col-xs-6 results" align="center">
-            <h5>You said: {{result}}.
-              <br><br>
-            API was {{#}}% sure it was {{emotion}}.
-          </h5>
-          </div>
-        <div class="col-xs-11 results-comparison" align="center"><h4>You agreed with the API {{#}}% of the time</h4></div>
+          <hr>
+          <div class="col-xs-10 col-xs-offset-1 round-results-page__result-container">
 
-        <div class="col-xs-6 button-play-again">
-          <button type="button" class="btn btn-default btn-lg btn-block">Play Again</button>
-        </div>
-        <div class="col-xs-6 button-lifetime-results">
-          <button type="button" class="btn btn-default btn-lg btn-block">Lifetime Results</button>
+            <div class="round-results-page__result">
+              <img src="assets/imgs/a921004_1920.jpg" class="img-responsive round-results-page__result-img" alt="Face">
+              <div class="round-results-page__result-text">
+                <p>You said the face was {{result}}</p>
+                <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
+              </div>
+            </div>
+
+            <div class="round-results-page__result">
+              <img src="assets/imgs/h187696_1920.jpg" class="img-responsive round-results-page__result-img" alt="Face">
+              <div class="round-results-page__result-text">
+                <p>You said the face was {{result}}</p>
+                <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
+              </div>
+            </div>
+
+            <div class="round-results-page__result">
+              <img src="assets/imgs/su211505_1280.jpg" class="img-responsive round-results-page__result-img" alt="Face">
+              <div class="round-results-page__result-text">
+                <p>You said the face was {{result}}</p>
+                <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
+              </div>
+            </div>
+
+            <div class="round-results-page__result">
+              <img src="assets/imgs/su810005_1280.jpg" class="img-responsive round-results-page__result-img" alt="Face">
+              <div class="round-results-page__result-text">
+                <p>You said the face was {{result}}</p>
+                <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
+              </div>
+            </div>
+
+            <div class="round-results-page__result">
+              <img src="assets/imgs/h19075_1280.jpg" class="img-responsive round-results-page__result-img" alt="Face">
+              <div class="round-results-page__result-text">
+                <p>You said the face was {{result}}</p>
+                <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-xs-12 round-results-page__results-comparison">
+            <h2>You agreed with Emotion API {{#}}% of the time</h2>
+          </div>
+
+          <div class="col-xs-6">
+            <button type="button" class="btn btn-default btn-lg btn-block round-results-page__button">Play Again</button>
+          </div>
+          <div class="col-xs-6">
+            <button type="button" class="btn btn-default btn-lg btn-block round-results-page__button">Lifetime Results</button>
+          </div>
+
         </div>
       </div>
     </div>
