@@ -58,14 +58,21 @@ hr {
 .landing-page__header {
   margin-top: 5vh;
   margin-bottom: 8vh;
-  h1 {
-    text-align: center;
-    margin-top: 0.1em;
+  hr {
+    margin: 0;
   }
 }
 
+.landing-page__title {
+  color: #66938F;
+  font-weight: 700;
+  font-size: 5em;
+  text-align: center;
+  margin-top: 0.1em;
+}
+
 .landing-page__logo {
-  width: 35%;
+  width: 30%;
   margin: auto auto;
   @media screen and (min-width: 540px) and (max-width: 768px) {
     width: 20%;
