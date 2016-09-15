@@ -29,11 +29,14 @@ function applyGameSetToHiddenDivs(gameSet){
 }
 
 function runInit(){
-    let gameSet = generateGameSet(images)
-    renderHiddenDivs()
-    applyGameSetToHiddenDivs(gameSet)
+  let gameSet = generateGameSet(images)
+  renderHiddenDivs()
+  applyGameSetToHiddenDivs(gameSet)
 }
 
-function detectCorrectAnswer(){
+function detectCorrectAnswer(img){
+  let dict = {
+    'angry':'angry-emoji.svg', 'sad':'sad-emoji.svg', 'surprise':'surprise-emoji.svg', 'neutral':'neutral-emoji.svg', 'happy':'happy-emoji.svg'}
+    
+  }
 
-}
