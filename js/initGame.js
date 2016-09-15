@@ -2,7 +2,6 @@ function initGame(){
   let gameSet = generateGameSet(images)
   renderHiddenDivs()
   applyGameSetToHiddenDivs(gameSet)
-  correctPath();
   eventListenerGamePage()
 }
 
