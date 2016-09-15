@@ -74,8 +74,26 @@ hr {
 .landing-page__logo {
   width: 30%;
   margin: auto auto;
-  @media screen and (min-width: 540px) and (max-width: 768px) {
-    width: 20%;
+  // @media screen and (min-width: 649px) and (max-width: 899px) {
+  //   width: 20%;
+  // }
+  @media screen and (min-width: 611px) and (max-width: 715px) {
+    width: 35%;
+  }
+  @media screen and (min-width: 366px) and (max-width: 610px) {
+    width: 40%;
+  }
+
+  @media screen and (min-width: 716px) and (max-width: 764px) {
+    width: 30%;
+  }
+
+  @media screen and (min-width: 1192px) and (max-width: 1827px) {
+    width: 40%;
+  }
+
+  @media screen and (min-width: 1828px) and (max-width: 2068px) {
+    width: 35%;
   }
 }
 
