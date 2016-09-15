@@ -2,6 +2,7 @@ function initGame(){
   let gameSet = generateGameSet(images)
   renderHiddenDivs()
   applyGameSetToHiddenDivs(gameSet)
+  correctPath();
   eventListenerGamePage()
 }
 
@@ -17,7 +18,7 @@ function generateGameSet(images, username = 'john doe'){
 }
 
 function randomiser(images){
-  return Object.keys(images).sort(function(){return .5 - Math.random()}).slice(0, 5)  
+  return Object.keys(images).sort(function(){return .5 - Math.random()}).slice(0, 5)
 }
 
 function renderHiddenDivs(){
@@ -32,7 +33,7 @@ function applyGameSetToHiddenDivs(gameSet){
   ['gamePage1','gamePage2','gamePage3','gamePage4', 'gamePage5'].forEach(function(el, i, array){
     $('#'+ el).find('#biggie').attr('src', 'assets/imgs/' + Object.keys( gameSet[i])[0]+ '.jpg' )
     console.log($('#'+ el).find('img').attr('src'))
-  }) 
+  })
   //apply correct emoticons
 }
 
@@ -48,7 +49,7 @@ function eventListenerGamePage(){
         console.log('#gamePage'+(el+1))
         $('#gamePage'+el).hide()
         $('#gamePage'+(Number(el)+1)).show("slide", { direction: "left" }, 500)
-      }) 
+      })
     } else{
       $('#gamePage'+ el).find('button').click(function(){
         $('#gamePage'+el).hide()
