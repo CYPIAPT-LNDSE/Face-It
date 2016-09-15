@@ -58,5 +58,3 @@ function eventListenerGamePage(){
     }
   })
 }
-
-initGame();
