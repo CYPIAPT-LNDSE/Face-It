@@ -48,7 +48,7 @@ let pages = {
   </div>
   </div>
   </div>`,
-  'roundResult':`<div class="round-results-page" style="display:none">
+  'roundResult':`<div class="round-results-page" style="display:none" id='roundResult'>
   <div class="round-results-page__header">
   <h1>Results this round:</h1>
   </div>
