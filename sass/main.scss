@@ -130,12 +130,22 @@ hr {
 
 // Round Results Page
 
+.round-results-page__header {
+  text-align: center;
+}
+
 .round-results-page__result {
   background-color: $teal;
   border: $teal-darken-1 solid 0.8em;
   border-radius: 0.2em;
   margin-top: 10%;
   margin-bottom: 10%;
+  &:first-of-type {
+    margin-top: 5%;
+  }
+  &:last-of-type {
+    margin-bottom: 10%;
+  }
 }
 
 .round-results-page__result-img {
@@ -153,4 +163,18 @@ hr {
 
 .round-results-page__results-comparison {
   text-align: center;
+  margin-bottom: 5%;
+  background-color: $teal;
+  border: $teal-darken-1 solid 0.8em;
+  border-radius: 0.2em;
+  h2 {
+    margin-bottom: 20px !important;
+  }
+}
+
+.round-results-page__button {
+  @media screen and (min-width: 768px) {
+    height: 5em;
+  }
+  margin-bottom: 10%;
 }
