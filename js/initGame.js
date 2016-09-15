@@ -30,7 +30,7 @@ function renderHiddenDivs(){
 function applyGameSetToHiddenDivs(gameSet){
   //apply correct images and emoticons to each hidden div
   ['gamePage1','gamePage2','gamePage3','gamePage4', 'gamePage5'].forEach(function(el, i, array){
-    $('#'+ el).find('#image').attr('src', 'assets/imgs/' + Object.keys( gameSet[i])[0]+ '.jpg' )
+    $('#'+ el).find('#biggie').attr('src', 'assets/imgs/' + Object.keys( gameSet[i])[0]+ '.jpg' )
     console.log($('#'+ el).find('img').attr('src'))
   }) 
   //apply correct emoticons
