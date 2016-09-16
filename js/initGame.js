@@ -50,13 +50,24 @@ function eventListenerGamePage(gameSet){
 }
 
 function updateResultPage(results){
- results.forEach(function(el,i){
+  results.forEach(function(el,i){
     $('#res'+ (i+1)).find('p:nth-child(1)').text('You guessed this face shows ' + el.userGuess)
     $('#res'+ (i+1)).find('p:nth-child(2)').text('Microsoft is '+ ~~(el.apiGuess[1]*100) + '% sure it was ' + el.apiGuess[0])
- })
-  $('risultatone').find('h2').text('You agreed with our emotion algorithm '+ totalMatchigResultsPercentage(results)['overall'])
+  })
+  $('#risultatone').find('h2').text('You agreed with our emotion algorithm ' + risultatone(results)+'%')
 
 }
+
+function risultatone(results){
+  let accumulator = 0
+  results.forEach(function(el){
+    console.log(el.userGuess, el.correctAnswer.emotion[0])
+    if(el.userGuess=== el.correctAnswer.emotion[0]) accumulator++
+  })
+  console.log(String((accumulator/5)*100))
+  return String((accumulator/5)*100)
+}
+
 function initPageResult(gameSet){
   [1,2,3,4,5].forEach(function(el, i){
     $('#res'+ el).find('img').attr('src', 'assets/imgs/' + Object.keys( gameSet[i])[0]+ '.jpg' )
