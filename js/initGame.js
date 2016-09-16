@@ -6,6 +6,8 @@ function initGame(){
   applyEmojiL(gameSet)
   applyEmojiR(gameSet)
   eventListenerGamePage(gameSet)
+  $('#main').append(pages['roundResult'])
+  initPageResult(gameSet)
   console.log(gameSet)
 }
 
@@ -22,6 +24,13 @@ function generateGameSet(images, username = 'john doe'){
         emojiPath: 'assets/icons/' + emojiPath(apiWinner(images[el][0]['scores'])[0])
       }
     }
+  })
+}
+
+function initPageResult(gameSet){
+
+  [1,2,3,4,5].forEach(function(el, i){
+    $('#res'+ el).find('img').attr('src', 'assets/imgs/' + Object.keys( gameSet[i])[0]+ '.jpg' )
   })
 }
 
@@ -90,13 +99,14 @@ function eventListenerGamePage(gameSet){
       $('#gamePage'+ el).find('button').click(function(){
         $('#gamePage'+el).hide()
         $('#gamePage'+(Number(el)+1)).show("slide", { direction: "left" }, 500)
-        console.log($(this)[0].innerHTML)
-        console.log(gameSet[i].userGuess)
         gameSet[i].userGuess = $(this)[0].innerHTML
         results.push(gameSet[i])
       })
     } else{
       $('#gamePage'+ el).find('button').click(function(){
+        gameSet[i].userGuess = $(this)[0].innerHTML
+        results.push(gameSet[i])
+        console.log(results)
         $('#gamePage'+el).hide()
         $('#roundResult').show("slide", { direction: "left" }, 500)
       })
