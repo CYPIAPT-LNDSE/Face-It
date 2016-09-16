@@ -90,13 +90,14 @@ function eventListenerGamePage(gameSet){
       $('#gamePage'+ el).find('button').click(function(){
         $('#gamePage'+el).hide()
         $('#gamePage'+(Number(el)+1)).show("slide", { direction: "left" }, 500)
-        console.log($(this)[0].innerHTML)
-        console.log(gameSet[i].userGuess)
         gameSet[i].userGuess = $(this)[0].innerHTML
         results.push(gameSet[i])
       })
     } else{
       $('#gamePage'+ el).find('button').click(function(){
+        gameSet[i].userGuess = $(this)[0].innerHTML
+        results.push(gameSet[i])
+        console.log(results)
         $('#gamePage'+el).hide()
         $('#roundResult').show("slide", { direction: "left" }, 500)
       })
