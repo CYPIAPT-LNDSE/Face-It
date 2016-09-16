@@ -5,12 +5,19 @@ function initGame(){
   gameSet = generateWrongAnswerData(gameSet)
   renderHiddenDivs()
   applyGameSetToHiddenDivs(gameSet)
-  applyEmojiL(gameSet)
-  applyEmojiR(gameSet)
+  applyEmoji(gameSet)
   initPageResult(gameSet)
   eventListenerGamePage(gameSet)
+  console.log(gameSet)
 }
+function randomiser2(){
+  let dict = ['correctAnswer', 'wrongAnswer']
+  if(Math.random() > 0.5) {return dict}
+  else{ 
+    return [dict[1], dict[0]] 
+  }
 
+}
 //helpers
 function generateGameSet(images, username = 'john doe'){
   return randomiser(images).map(function(el, i, array){
@@ -43,7 +50,6 @@ function eventListenerGamePage(gameSet){
         $('#gamePage'+el).hide()
         $('#roundResult').show("slide", { direction: "left" }, 500)
         updateResultPage(results)
-        console.log(results)
       })
     }
   })
@@ -77,7 +83,7 @@ function initPageResult(gameSet){
 function generateWrongAnswerData(gameSet){
   return gameSet.map(function(el, index){
     el.wrongAnswer = {
-      emotion:getOtherEmotion(el.correctAnswer['emotion'][0]),
+      emotion:[getOtherEmotion(el.correctAnswer['emotion'][0])],
       emojiPath:'assets/icons/' + emojiPath(getOtherEmotion(el.correctAnswer['emotion'][0]))
     }
     return el
@@ -113,27 +119,26 @@ function applyGameSetToHiddenDivs(gameSet){
   })
 }
 
-function applyEmojiL(gameSet){
+function applyEmoji(gameSet){
   ['gamePage1','gamePage2','gamePage3','gamePage4', 'gamePage5'].forEach(function(el,i){
-    console.log(gameSet[i].correctAnswer.emojiPath)
-    $('#'+ el).find('#choiceL').attr('src',String(gameSet[i].correctAnswer.emojiPath))
-    $('#'+ el).find('#buttonL').html(gameSet[i].correctAnswer.emotion[0])
+    let random = randomiser2()
+    meh(random)
+    function meh(answerType){
+      console.log(answerType)
+      $('#'+ el).find('#choiceL').attr('src',String(gameSet[i][answerType[0]].emojiPath))
+      $('#'+ el).find('#buttonL').html(gameSet[i][answerType[0]].emotion[0])
+
+      $('#'+ el).find('#choiceR').attr('src', String(gameSet[i][answerType[1]].emojiPath))
+      $('#'+ el).find('#buttonR').html(gameSet[i][answerType[1]].emotion[0])
+    }
   })
 }
-function applyEmojiR(gameSet){
-  ['gamePage1','gamePage2','gamePage3','gamePage4', 'gamePage5'].forEach(function(el,i){
-    console.log(gameSet[i].correctAnswer.emojiPath)
-    $('#'+ el).find('#choiceR').attr('src',String(gameSet[i].wrongAnswer.emojiPath))
-    $('#'+ el).find('#buttonR').html(gameSet[i].wrongAnswer.emotion)
-  })
-}
+
 function emojiPath(emotion){
   let dict = {
     'anger':'angry-emoji.svg', 'sadness':'sad-emoji.svg', 'surprise':'surprise-emoji.svg', 'neutral':'neutral-emoji.svg', 'happiness':'happy-emoji.svg'}
   return dict[emotion]
 }
-
-
 
 function apiWinner(scores) {
   let tempNumber = 0;
