@@ -34,3 +34,4 @@ In a four week sprint, we would go on to:
 We would advise that the prototype is made available to as large a variety of test users as is feasible, as our aim is for the app to be appealing and appropriate for a wide user group – young people aged 10-15, across the autistic spectrum. In particular, we'll be looking for user's feedback on:
 * The app's colour scheme and animation
 * The balance between text and images in the app (could we make more use of icons and emojis?)
+* Photos used
