@@ -1,5 +1,6 @@
 function initGame(){
   $('#main').append(pages['roundResult'])
+  $('#main').append(pages['lifeTimeResults'])
 
   let gameSet = generateGameSet(images)
   gameSet = generateWrongAnswerData(gameSet)
@@ -9,13 +10,34 @@ function initGame(){
   initPageResult(gameSet)
   eventListenerGamePage(gameSet)
   playAgain()
-  console.log(gameSet)
+  lifeTime()
+  roundResults()
+}
+function roundResults(){
+$('#roundResults').click(function(){
+    $('#lifeTimePage').hide()
+    $('#roundResult').show("slide", { direction: "right" }, 500)
+    results = []
+  })
+}
+function lifeTime(){
+  $('#lifeTime').click(function(){
+    $('#roundResult').hide()
+    $('#lifeTimePage').show("slide", { direction: "right" }, 500)
+    results = []
+  })
 }
 function playAgain(){
-  $('playAgain').click(function(){
+  $('#playAgain1').click(function(){
     $('#roundResult').hide()
-    $('#landing').show("slide", { direction: "left" }, 500)
+    $('#landing').show("slide", { direction: "right" }, 500)
+    results = []
   })
+  $('#playAgain2').click(function(){
+      $('#roundResult').hide()
+      $('#landing').show("slide", { direction: "right" }, 500)
+      results = []
+    })
 }
 function randomiser2(){
   let dict = ['correctAnswer', 'wrongAnswer']

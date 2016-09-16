@@ -94,13 +94,13 @@ let pages = {
   <h2>You agreed with Emotion API {{#}}% of the time</h2>
   </div>
   <div class="col-xs-6">
-  <button type="button" class="btn btn-default btn-lg btn-block results-page__button"id='playAgain'>Play Again</button>
+  <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='playAgain'>Play Again</button>
   </div>
   <div class="col-xs-6">
-  <button type="button" class="btn btn-default btn-lg btn-block results-page__button">Lifetime Results</button>
+  <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='lifeTime'>Lifetime Results</button>
   </div>
   </div> `,
-'lifetimeResults':`<div class="lifetime-results-page">
+'lifeTimeResults':`<div class="lifetime-results-page" id='lifeTimePage' style='display:none;'>
   <div class="lifetime-results-page__disclaimer">
   <p>This is a prototype app, so not all the features are working yet.</p>
   <hr>
@@ -168,10 +168,10 @@ let pages = {
   </div>
   <hr>
   <div class="col-xs-6">
-  <button type="button" class="btn btn-default btn-lg btn-block results-page__button" >Play Again</button>
+  <button type="button" class="btn btn-default btn-lg btn-block results-page__button"id='playAgain2' >Play Again</button>
   </div>
   <div class="col-xs-6">
-  <button type="button" class="btn btn-default btn-lg btn-block results-page__button">Round Results</button>
+  <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='roundResults'>Round Results</button>
   </div>
   </div>`
 }
