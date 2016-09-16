@@ -3,7 +3,8 @@ let pages = {
   <div class="col-xs-10 col-xs-offset-1">
   <div class="landing-page__header">
   <img src="assets/icons/logo.svg" alt="" class="img-responsive landing-page__logo">
-  <h1>An App</h1>
+  <hr>
+  <h1 class="landing-page__title">Face It</h1>
   </div>
   <form>
   <div class="form-group">
@@ -18,7 +19,7 @@ let pages = {
           <div class="col-xs-12">
             <div class="intro-page__explanation">
               <h1 id='userName'>Hi, {{USER}}!</h1>
-              <p>FaceIt is a game about recognising emotions.</p>
+              <p><strong style="color: #66938F">Face It</strong> is a game about recognising emotions.</p>
               <hr>
               <p class="intro-page__explanation-p-margin">It's based on a computer programme called Emotion API.</p>
               <p>Emotion API can detect emotions in photos.</p>
