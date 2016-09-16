@@ -94,10 +94,84 @@ let pages = {
   <h2>You agreed with Emotion API {{#}}% of the time</h2>
   </div>
   <div class="col-xs-6">
-  <button type="button" class="btn btn-default btn-lg btn-block round-results-page__button">Play Again</button>
+  <button type="button" class="btn btn-default btn-lg btn-block results-page__button">Play Again</button>
   </div>
   <div class="col-xs-6">
-  <button type="button" class="btn btn-default btn-lg btn-block round-results-page__button">Lifetime Results</button>
+  <button type="button" class="btn btn-default btn-lg btn-block results-page__button">Lifetime Results</button>
   </div>
-  </div> `
+  </div> `,
+'lifetimeResults':`<div class="lifetime-results-page">
+  <div class="lifetime-results-page__disclaimer">
+  <p>This is a prototype app, so not all the features are working yet.</p>
+  <hr>
+  <p>Here is where you'll track your progress in the game.</p>
+  <p>This is what it might look like.</p>
+  <hr>
+  <p>Thank you for testing <strong style="color: #66938F">Face It</strong>!</p>
+  </div>
+  <div class="lifetime-results-page__key">
+  <div class="col-xs-6 text-center">
+    <img src="assets/icons/user-icon.svg" class="img-responsive" alt="User Icon">
+    <p>You</p>
+  </div>
+  <div class="col-xs-6 text-center">
+    <img src="assets/icons/api-icon.svg" class="img-responsive" alt="API Icon">
+    <p>Emotion API</p>
+  </div>
+  </div>
+  <div class="lifetime-results-page__emotion-results">
+  <h2>Happiness</h2>
+  <p>How often did you answer happiness, compared to Emotion API?</p>
+  <img src="assets/icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
+  <p>Your weekly progress</p>
+  <img src="assets/icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
+  </div>
+  <hr>
+  <div class="lifetime-results-page__emotion-results">
+  <h2>Sadness</h2>
+  <p>How often did you answer sadness, compared to Emotion API?</p>
+  <img src="assets/icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
+  <p>Your weekly progress</p>
+  <img src="assets/icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
+  </div>
+  <hr>
+  <div class="lifetime-results-page__emotion-results">
+  <h2>Neutral</h2>
+  <p>How often did you answer neutral, compared to Emotion API?</p>
+  <img src="assets/icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
+  <p>Your weekly progress</p>
+  <img src="assets/icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
+  </div>
+  <hr>
+  <div class="lifetime-results-page__emotion-results">
+  <h2>Surprise</h2>
+  <p>How often did you answer surprise, compared to Emotion API?</p>
+  <img src="assets/icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
+  <p>Your weekly progress</p>
+  <img src="assets/icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
+  </div>
+  <hr>
+  <div class="lifetime-results-page__emotion-results">
+  <h2>Anger</h2>
+  <p>How often did you answer anger, compared to Emotion API?</p>
+  <img src="assets/icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
+  <p>Your weekly progress</p>
+  <img src="assets/icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
+  </div>
+  <hr>
+  <div class="lifetime-results-page__feedback">
+  <h2>You could work on:</h2>
+    <ul>
+      <li>Anger</li>
+      <li>Neutral</li>
+    </ul>
+  </div>
+  <hr>
+  <div class="col-xs-6">
+  <button type="button" class="btn btn-default btn-lg btn-block results-page__button">Play Again</button>
+  </div>
+  <div class="col-xs-6">
+  <button type="button" class="btn btn-default btn-lg btn-block results-page__button">Round Results</button>
+  </div>
+  </div>`
 }
