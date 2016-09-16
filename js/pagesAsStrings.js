@@ -16,23 +16,32 @@ let pages = {
   </div>
   </div> `,
   'intro':`<div class="intro-page" style='display:none;' id='intro'>
-          <div class="col-xs-12">
-            <div class="intro-page__explanation">
-              <h1 id='userName'>Hi, {{USER}}!</h1>
-              <p><strong style="color: #66938F">Face It</strong> is a game about recognising emotions.</p>
-              <hr>
-              <p class="intro-page__explanation-p-margin">It's based on a computer programme called Emotion API.</p>
-              <p>Emotion API can detect emotions in photos.</p>
-              <hr>
-              <p class="intro-page__explanation-p-margin">We're going to show you a photo of a face and two emotions to choose from.</p>
-              <p>Pick which emotion you're most sure the face is expressing.</p>
-              <hr>
-              <p class="intro-page__explanation-p-margin">After five faces, we'll compare your choices to Emotion API's!</p>
-            </div>
-            <button type="button" class="btn btn-default btn-lg btn-block" id='introStart'>Start</button>
-          </div>
-
-        </div>
+    <div class="col-xs-12">
+    <div class="intro-page__explanation">
+    <h1 id='userName'>Hi, {{USER}}!</h1>
+    <p><strong style="color: #66938F">Face It</strong> is a game about recognising emotions.</p>
+    <hr>
+    <p class="intro-page__explanation-p-margin">It's based on a computer programme called Emotion API.</p>
+    <p>Emotion API can detect emotions in photos.</p>
+    <hr>
+    <p class="intro-page__explanation-p-margin">We're going to show you a photo of a face and two emotions to choose from.</p>
+    <p>Pick which emotion you're most sure the face is expressing.</p>
+    <hr>
+    <p class="intro-page__explanation-p-margin">After five faces, we'll compare your choices to Emotion API's!</p>
+    </div>
+    <div class="intro-page__level-bar--label">
+    <p>You are at Level 1</p>
+    </div>
+    <div class="col-xs-12 intro-page__level-bar">
+    <p class="intro-page__level-bar-component intro-page__level-bar-component--active">1</p>
+    <p class="intro-page__level-bar-component intro-page__level-bar-component">2</p>
+    <p class="intro-page__level-bar-component intro-page__level-bar-component">3</p>
+    <p class="intro-page__level-bar-component intro-page__level-bar-component">4</p>
+    <p class="intro-page__level-bar-component intro-page__level-bar-component">5</p>
+    </div>
+    <button type="button" class="btn btn-default btn-lg btn-block" id='introStart'>Start</button>
+    </div>
+  </div>
 `,
   'gamePage':`<div class="game-page" id='fresh' style='display:none;'>
   <div class="game-page-content">
