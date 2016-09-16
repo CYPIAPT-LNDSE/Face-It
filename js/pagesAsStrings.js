@@ -90,7 +90,7 @@ let pages = {
   </div>
   </div>
   </div>
-  <div class="col-xs-12 round-results-page__results-comparison">
+  <div class="col-xs-12 round-results-page__results-comparison" id='risultatone'>
   <h2>You agreed with Emotion API {{#}}% of the time</h2>
   </div>
   <div class="col-xs-6">

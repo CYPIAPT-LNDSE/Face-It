@@ -1,14 +1,14 @@
 function initGame(){
+  $('#main').append(pages['roundResult'])
+
   let gameSet = generateGameSet(images)
   gameSet = generateWrongAnswerData(gameSet)
   renderHiddenDivs()
   applyGameSetToHiddenDivs(gameSet)
   applyEmojiL(gameSet)
   applyEmojiR(gameSet)
-  eventListenerGamePage(gameSet)
-  $('#main').append(pages['roundResult'])
   initPageResult(gameSet)
-  console.log(gameSet)
+  eventListenerGamePage(gameSet)
 }
 
 //helpers
@@ -27,8 +27,37 @@ function generateGameSet(images, username = 'john doe'){
   })
 }
 
-function initPageResult(gameSet){
+function eventListenerGamePage(gameSet){
+  [1,2,3,4,5].forEach(function(el,i){
+    if(el<5){
+      $('#gamePage'+ el).find('button').click(function(){
+        $('#gamePage'+el).hide()
+        $('#gamePage'+(Number(el)+1)).show("slide", { direction: "left" }, 500)
+        gameSet[i].userGuess = $(this)[0].innerHTML
+        results.push(gameSet[i])
+      })
+    } else{
+      $('#gamePage'+ el).find('button').click(function(){
+        gameSet[i].userGuess = $(this)[0].innerHTML
+        results.push(gameSet[i])
+        $('#gamePage'+el).hide()
+        $('#roundResult').show("slide", { direction: "left" }, 500)
+        updateResultPage(results)
+        console.log(results)
+      })
+    }
+  })
+}
 
+function updateResultPage(results){
+ results.forEach(function(el,i){
+    $('#res'+ (i+1)).find('p:nth-child(1)').text('You guessed this face shows ' + el.userGuess)
+    $('#res'+ (i+1)).find('p:nth-child(2)').text('Microsoft is '+ ~~(el.apiGuess[1]*100) + '% sure it was ' + el.apiGuess[0])
+ })
+  $('risultatone').find('h2').text('You agreed with our emotion algorithm '+ totalMatchigResultsPercentage(results)['overall'])
+
+}
+function initPageResult(gameSet){
   [1,2,3,4,5].forEach(function(el, i){
     $('#res'+ el).find('img').attr('src', 'assets/imgs/' + Object.keys( gameSet[i])[0]+ '.jpg' )
   })
@@ -93,26 +122,7 @@ function emojiPath(emotion){
   return dict[emotion]
 }
 
-function eventListenerGamePage(gameSet){
-  [1,2,3,4,5].forEach(function(el,i){
-    if(el<5){
-      $('#gamePage'+ el).find('button').click(function(){
-        $('#gamePage'+el).hide()
-        $('#gamePage'+(Number(el)+1)).show("slide", { direction: "left" }, 500)
-        gameSet[i].userGuess = $(this)[0].innerHTML
-        results.push(gameSet[i])
-      })
-    } else{
-      $('#gamePage'+ el).find('button').click(function(){
-        gameSet[i].userGuess = $(this)[0].innerHTML
-        results.push(gameSet[i])
-        console.log(results)
-        $('#gamePage'+el).hide()
-        $('#roundResult').show("slide", { direction: "left" }, 500)
-      })
-    }
-  })
-}
+
 
 function apiWinner(scores) {
   let tempNumber = 0;
