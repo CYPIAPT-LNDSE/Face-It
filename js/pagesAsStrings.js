@@ -18,7 +18,7 @@ let pages = {
           <div class="col-xs-12">
             <div class="intro-page__explanation">
               <h1 id='userName'>Hi, {{USER}}!</h1>
-              <p>{{APP NAME}} is a game about recognising emotions.</p>
+              <p>FaceIt is a game about recognising emotions.</p>
               <hr>
               <p class="intro-page__explanation-p-margin">It's based on a computer programme called Emotion API.</p>
               <p>Emotion API can detect emotions in photos.</p>
@@ -94,7 +94,7 @@ let pages = {
   <h2>You agreed with Emotion API {{#}}% of the time</h2>
   </div>
   <div class="col-xs-6">
-  <button type="button" class="btn btn-default btn-lg btn-block results-page__button">Play Again</button>
+  <button type="button" class="btn btn-default btn-lg btn-block results-page__button"id='playAgain'>Play Again</button>
   </div>
   <div class="col-xs-6">
   <button type="button" class="btn btn-default btn-lg btn-block results-page__button">Lifetime Results</button>
@@ -168,7 +168,7 @@ let pages = {
   </div>
   <hr>
   <div class="col-xs-6">
-  <button type="button" class="btn btn-default btn-lg btn-block results-page__button">Play Again</button>
+  <button type="button" class="btn btn-default btn-lg btn-block results-page__button" >Play Again</button>
   </div>
   <div class="col-xs-6">
   <button type="button" class="btn btn-default btn-lg btn-block results-page__button">Round Results</button>

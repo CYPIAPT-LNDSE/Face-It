@@ -8,7 +8,14 @@ function initGame(){
   applyEmoji(gameSet)
   initPageResult(gameSet)
   eventListenerGamePage(gameSet)
+  playAgain()
   console.log(gameSet)
+}
+function playAgain(){
+  $('playAgain').click(function(){
+    $('#roundResult').hide()
+    $('#landing').show("slide", { direction: "left" }, 500)
+  })
 }
 function randomiser2(){
   let dict = ['correctAnswer', 'wrongAnswer']
