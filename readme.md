@@ -4,16 +4,33 @@
 ####Developed by *@daymos, @heatherlauren, @emmadeacon* and *@jakubsvihla*
 
 ##About
-This project uses the Microsoft Facial Emotion API in order to create a game based on recognising the emotions present in photos. It works with the API in order to minimise human influence on the results. It is inspired by Facial Emotion games that are currently used in schools.
+
+This project is a game designed for young people with ASD to practice recognising emotions. A user is shown a face and asked to identify the emotion it's displaying. Their choice is then compared to that made by the Microsoft Facial Emotion API. The game is inspired by emotion recognition games that are currently used with children with ASD in schools. However, we feel the app would be an improvement on several fronts:
+* The image set can potentially be far larger, meaning users aren't simply memorising the correct answer for individual faces on repeated play.
+* Data tracking would allow users to track their personal results, as well as the overall effectiveness of the game to be measured.
+* By comparing the user's results to an API rather than that of an authority figure like a teacher, we hope to instill more respect for the user's choices.
 
 
 ##Four Day Sprint
-During the four day sprint, under the guidance of @daymos, we were able to create a prototype of Face It. The prototype featured a login screen, a welcome screen, a loading page, and a 5 pictured game play, whereby the user could select the emotion they deemed best reflected the image on display. Following this game play, a screen with the results from the round, and a lifetime results page was created, albeit featuring dummy data. This particular page was a mock-up design, and is the aim for completion during the two week sprint. 
+During the four day sprint we were able to create a semi-functioning prototype of Face It. The prototype successfully simulated a typical user journey we envisioned for the full app, taking the user from entering user data, through gameplay, and to their results.
 
 ##Two Week Sprint
-Following the four day sprint, the prototype of the Face It application was developed. In the two week sprint, the aim would be to increase functionality (such as with the level bar), to create multiple levels, and - using D3 - create actual data about the lifetime of the game play in comparison with the API. This data would be used for two reasons - by the clinition for data analysis, but also for the user to acknowledge their development. 
+In a two week sprint, our priorities would be:
 
-##Four Week Development
+* Implementing a user account system, allowing users' results to be stored between game rounds.
+* Using D3 to display those results as dynamic graphs.
+* Creating characterisation for the logo character and integrating it throughout the app.
+* Releasing the game as a mobile app.
+
+##Four Week Sprint
+In a four week sprint, we would go on to:
+
+* Significantly widen the image set.
+* Create a true leveling system, with the game increasing in difficulty as the user improves.
+* Include other users' choices alongside the API's in the results comparison graphs.
 
 ##Test Plan
-We would advise that multiple users - of different ages - use the prototype in order to check its' functionality, and ease of use. Further, monitoring colour response, as well as response to the emotion and emoticon (e.g. happiness with the smiling emoji), would help with designing the application. 
+
+We would advise that the prototype is made available to as large a variety of test users as is feasible, as our aim is for the app to be appealing and appropriate for a wide user group – young people aged 10-15, across the autistic spectrum. In particular, we'll be looking for user's feedback on:
+* The app's colour scheme and animation
+* The balance between text and images in the app (could we make more use of icons and emojis?)
