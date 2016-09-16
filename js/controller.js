@@ -2,7 +2,6 @@ function initApp(){
 
   $('#main').append(pages['landing'])
   $('#main').append(pages['intro'])
-  $('#main').append(pages['roundResult'])
 
 
   $('#landing').show("slide", { direction: "left" }, 500)

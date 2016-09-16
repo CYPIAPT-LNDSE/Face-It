@@ -6,6 +6,8 @@ function initGame(){
   applyEmojiL(gameSet)
   applyEmojiR(gameSet)
   eventListenerGamePage(gameSet)
+  $('#main').append(pages['roundResult'])
+  initPageResult(gameSet)
   console.log(gameSet)
 }
 
@@ -22,6 +24,13 @@ function generateGameSet(images, username = 'john doe'){
         emojiPath: 'assets/icons/' + emojiPath(apiWinner(images[el][0]['scores'])[0])
       }
     }
+  })
+}
+
+function initPageResult(gameSet){
+
+  [1,2,3,4,5].forEach(function(el, i){
+    $('#res'+ el).find('img').attr('src', 'assets/imgs/' + Object.keys( gameSet[i])[0]+ '.jpg' )
   })
 }
 

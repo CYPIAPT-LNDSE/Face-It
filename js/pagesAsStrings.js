@@ -54,35 +54,35 @@ let pages = {
   </div>
   <hr>
   <div class="col-xs-10 col-xs-offset-1 round-results-page__result-container">
-  <div class="round-results-page__result">
-  <img src="assets/imgs/a921004_1920.jpg" class="img-responsive round-results-page__result-img" alt="Face">
+  <div class="round-results-page__result" id='res1'>
+  <img src="assets/imgs/a921004_1920.jpg" class="img-responsive round-results-page__result-img" alt="Face" >
   <div class="round-results-page__result-text">
   <p>You said the face was {{result}}</p>
   <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
   </div>
   </div>
-  <div class="round-results-page__result">
+  <div class="round-results-page__result" id='res2'>
   <img src="assets/imgs/h187696_1920.jpg" class="img-responsive round-results-page__result-img" alt="Face">
   <div class="round-results-page__result-text">
   <p>You said the face was {{result}}</p>
   <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
   </div>
   </div>
-  <div class="round-results-page__result">
+  <div class="round-results-page__result" id='res3' >
   <img src="assets/imgs/su211505_1280.jpg" class="img-responsive round-results-page__result-img" alt="Face">
   <div class="round-results-page__result-text">
   <p>You said the face was {{result}}</p>
   <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
   </div>
   </div>
-  <div class="round-results-page__result">
+  <div class="round-results-page__result" id='res4' >
   <img src="assets/imgs/su810005_1280.jpg" class="img-responsive round-results-page__result-img" alt="Face">
   <div class="round-results-page__result-text">
   <p>You said the face was {{result}}</p>
   <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
   </div>
   </div>
-  <div class="round-results-page__result">
+  <div class="round-results-page__result" id='res5'>
   <img src="assets/imgs/h19075_1280.jpg" class="img-responsive round-results-page__result-img" alt="Face">
   <div class="round-results-page__result-text">
   <p>You said the face was {{result}}</p>
