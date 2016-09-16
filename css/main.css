@@ -33,7 +33,7 @@ hr {
   border-radius: 0.2em;
   font-weight: bold;
   color: #484848; }
-  .btn:hover, .btn:focus {
+  .btn:hover, .btn:focus, .btn:active {
     background-color: #a0d8d3;
     border: #ceeae9 solid 0.5em; }
 
@@ -132,6 +132,8 @@ hr {
   flex-direction: column;
   justify-content: center;
   height: 100%; }
+  .game-page button {
+    font-weight: 400; }
 
 .game-page__image-container {
   margin-bottom: 3em; }
@@ -168,7 +170,7 @@ hr {
   background-color: #E0F2F1;
   margin-bottom: 10%;
   font-size: 1.4em;
-  font-weight: 700;
+  font-weight: 400;
   text-align: center; }
 
 .round-results-page__results-comparison {

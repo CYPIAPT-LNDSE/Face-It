@@ -42,8 +42,8 @@ function playAgain(){
 function randomiser2(){
   let dict = ['correctAnswer', 'wrongAnswer']
   if(Math.random() > 0.5) {return dict}
-  else{ 
-    return [dict[1], dict[0]] 
+  else{
+    return [dict[1], dict[0]]
   }
 
 }
@@ -86,10 +86,10 @@ function eventListenerGamePage(gameSet){
 
 function updateResultPage(results){
   results.forEach(function(el,i){
-    $('#res'+ (i+1)).find('p:nth-child(1)').text('You guessed this face shows ' + el.userGuess)
-    $('#res'+ (i+1)).find('p:nth-child(2)').text('Microsoft is '+ ~~(el.apiGuess[1]*100) + '% sure it was ' + el.apiGuess[0])
+    $('#res'+ (i+1)).find('p:nth-child(1)').text('You said this face shows ' + el.userGuess)
+    $('#res'+ (i+1)).find('p:nth-child(2)').text('Emotion API was '+ ~~(el.apiGuess[1]*100) + '% sure it was ' + el.apiGuess[0])
   })
-  $('#risultatone').find('h2').text('You agreed with our emotion algorithm ' + risultatone(results)+'%')
+  $('#risultatone').find('h2').text('You agreed with Emotion API ' + risultatone(results)+'% of the time')
 
 }
 
@@ -125,7 +125,7 @@ function getOtherEmotion(emotion, pos){
   return emotions[2]
 
   function randomNumber(){
-    return ~~(Math.random()*5) 
+    return ~~(Math.random()*5)
   }
 }
 

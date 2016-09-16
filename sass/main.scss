@@ -41,7 +41,7 @@ hr {
   border-radius: 0.2em;
   font-weight: bold;
   color: darken($grey-darken-2, 10%);
-  &:hover, &:focus {
+  &:hover, &:focus, &:active {
     background-color: darken($teal-darken-1, 5%);
     border: darken($teal, 5%) solid 0.5em;
   }
@@ -173,6 +173,9 @@ hr {
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  button {
+    font-weight: 400;
+  }
 }
 
 .game-page__image-container {
@@ -219,7 +222,7 @@ hr {
   background-color: $teal;
   margin-bottom: 10%;
   font-size: 1.4em;
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
 }
 
