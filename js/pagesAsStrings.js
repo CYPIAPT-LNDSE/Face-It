@@ -39,12 +39,12 @@ let pages = {
   <img src="assets/imgs/a921004_1920.jpg" class="img-responsive" alt="Face" id='biggie'>
   </div>
   <div class="col-xs-6 game-page__button">
-  <img src="assets/icons/happy-emoji.svg" class="game-page__button-emoji" alt="Happy">
-  <button type="button" class="btn btn-default btn-lg btn-block">Happy</button>
+  <img src="assets/icons/happy-emoji.svg" class="game-page__button-emoji" alt="Happy" id='choiceL'>
+  <button type="button" class="btn btn-default btn-lg btn-block" id='buttonL'>Happy</button>
   </div>
   <div class="col-xs-6 game-button">
-  <img src="assets/icons/sad-emoji.svg" class="game-page__button-emoji" alt="Sad" id='image'>
-  <button type="button" class="btn btn-default btn-lg btn-block">Sad</button>
+  <img src="assets/icons/sad-emoji.svg" class="game-page__button-emoji" alt="Sad" id='choiceR'>
+  <button type="button" class="btn btn-default btn-lg btn-block" id="buttonR">Sad</button>
   </div>
   </div>
   </div>`,
