@@ -21,10 +21,10 @@
 }
 
 .landing-page__logo {
-  width: 25%;
   margin: auto auto;
-  @media (max-width: 768px) {
-    width: 15%;
+  width: 15%;
+  @media (min-width: 768px) {
+    width: 25%;
   }
   @media (max-width: 540px) {
     width: 20%;

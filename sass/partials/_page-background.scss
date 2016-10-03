@@ -5,14 +5,14 @@
 }
 
 .full-screen {
-  margin-top: 5vh;
   overflow: scroll;
-  height: 90vh;
-  border: 1vh $grey-darken-1 solid;
   background-color: $grey;
-  @media screen and (max-width: 768px) {
-    border: none;
-    height: 100vh;
-    margin: 0;
+  border: none;
+  height: 100vh;
+  margin: 0;
+  @media screen and (min-width: 768px) {
+    height: 90vh;
+    border: 1vh $grey-darken-1 solid;
+    margin-top: 5vh;
   }
 }
