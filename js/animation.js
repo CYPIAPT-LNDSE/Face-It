@@ -15,5 +15,3 @@ function showFromLeft(elementToShow){
     })
   }
 }
-
-

@@ -4,41 +4,23 @@ function initGame(){
 
   let gameSet = generateGameSet(images)
   gameSet = generateWrongAnswerData(gameSet)
-  renderHiddenDivs()
-  applyGameSetToHiddenDivs(gameSet)
-  applyEmoji(gameSet)
-  initPageResult(gameSet)
+
+  renderHiddenDivs() //replace with handlebar
+  applyGameSetToHiddenDivs(gameSet) //replace with handlebar
+  applyEmoji(gameSet)//replace with handlebar
+  initPageResult(gameSet) //handlebar
+
   eventListenerGamePage(gameSet)
+  eventListenerResultPages()   
+}
+
+function eventListenerResultPages(){
   playAgain()
   lifeTime()
   roundResults()
 }
-function roundResults(){
-$('#roundResults').click(function(){
-    $('#lifeTimePage').hide()
-    $('#roundResult').show("slide", { direction: "right" }, 500)
-    results = []
-  })
-}
-function lifeTime(){
-  $('#lifeTime').click(function(){
-    $('#roundResult').hide()
-    $('#lifeTimePage').show("slide", { direction: "right" }, 500)
-    results = []
-  })
-}
-function playAgain(){
-  $('#playAgain1').click(function(){
-    $('#roundResult').hide()
-    $('#landing').show("slide", { direction: "right" }, 500)
-    results = []
-  })
-  $('#playAgain2').click(function(){
-      $('#roundResult').hide()
-      $('#landing').show("slide", { direction: "right" }, 500)
-      results = []
-    })
-}
+
+//helpers
 function randomiser2(){
   let dict = ['correctAnswer', 'wrongAnswer']
   if(Math.random() > 0.5) {return dict}
@@ -47,7 +29,6 @@ function randomiser2(){
   }
 
 }
-//helpers
 function generateGameSet(images, username = 'john doe'){
   return randomiser(images).map(function(el, i, array){
     return {
@@ -99,7 +80,6 @@ function risultatone(results){
     console.log(el.userGuess, el.correctAnswer.emotion[0])
     if(el.userGuess=== el.correctAnswer.emotion[0]) accumulator++
   })
-  console.log(String((accumulator/5)*100))
   return String((accumulator/5)*100)
 }
 
@@ -138,10 +118,10 @@ function renderHiddenDivs(){
     $('#main').append(pages['gamePage'])
     $('#fresh').attr('id', 'gamePage' + el)
   })
-
+  //handlebar here
 }
-function applyGameSetToHiddenDivs(gameSet){
 
+function applyGameSetToHiddenDivs(gameSet){
   //apply correct images and emoticons to each hidden div
   ['gamePage1','gamePage2','gamePage3','gamePage4', 'gamePage5'].forEach(function(el, i, array){
     $('#'+ el).find('#biggie').attr('src', 'assets/imgs/' + Object.keys( gameSet[i])[0]+ '.jpg' )
@@ -181,10 +161,4 @@ function apiWinner(scores) {
   return [emotion, tempNumber];
 }
 
-let dictionary = {
-  happiness:'happy-emoji.svg',
-  sadness:'sad-emoji.svg',
-  neutral:'neutral-emoji.svg',
-  surprise:'surprise-emoji.svg',
-  anger:'angry-emoji.svg'
-}
+
