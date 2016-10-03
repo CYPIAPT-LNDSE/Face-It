@@ -1,4 +1,5 @@
 @import 'partials/variables';
+@import 'partials/landing-page';
 
 // Global
 
@@ -49,59 +50,7 @@ hr {
 
 // Landing Page
 
-.landing-page {
-  button {
-    margin-top: 8vh;
-  }
-}
 
-.landing-page__header {
-  margin-top: 5vh;
-  margin-bottom: 8vh;
-  hr {
-    margin: 0;
-  }
-}
-
-.landing-page__title {
-  color: #66938F;
-  font-weight: 700;
-  font-size: 5em;
-  text-align: center;
-  margin-top: 0.1em;
-}
-
-.landing-page__logo {
-  width: 30%;
-  margin: auto auto;
-  // @media screen and (min-width: 649px) and (max-width: 899px) {
-  //   width: 20%;
-  // }
-  @media screen and (min-width: 611px) and (max-width: 715px) {
-    width: 35%;
-  }
-  @media screen and (min-width: 366px) and (max-width: 610px) {
-    width: 40%;
-  }
-
-  @media screen and (min-width: 716px) and (max-width: 764px) {
-    width: 30%;
-  }
-
-  @media screen and (min-width: 1192px) and (max-width: 1827px) {
-    width: 40%;
-  }
-
-  @media screen and (min-width: 1828px) and (max-width: 2068px) {
-    width: 35%;
-  }
-}
-
-.name-form {
-  font-size: 1.8em;
-  line-height: 1.8em;
-  margin-top: 0.2em;
-}
 
 // Intro Page
 
