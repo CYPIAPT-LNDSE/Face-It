@@ -1,0 +1,85 @@
+.cs-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.cs-loader-inner {
+  transform: translateY(-50%);
+  top: 50%;
+  position: absolute;
+  width: 100%;
+  color: $teal-darken-1;
+  padding: 0 100px;
+  text-align: center;
+}
+
+.cs-loader-inner label {
+  font-size: 5em;
+  opacity: 0;
+  display: inline-block;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: $teal;
+  @media screen and (min-width: 400px) {
+    font-size: 8em;
+  }
+  @media screen and (min-width: 800px) {
+    font-size: 10em;
+  }
+
+}
+
+@keyframes lol {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  33% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  66% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+}
+
+@-webkit-keyframes lol {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-300px);
+  }
+  33% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+  }
+  66% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(300px);
+  }
+}
+
+.cs-loader-inner label:nth-child(3) {
+  -webkit-animation: lol 3.75s 300ms infinite ease-in-out;
+  animation: lol 3.75s 300ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(2) {
+  -webkit-animation: lol 3.75s 400ms infinite ease-in-out;
+  animation: lol 3.75s 400ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(1) {
+  -webkit-animation: lol 3.75s 500ms infinite ease-in-out;
+  animation: lol 3.75s 500ms infinite ease-in-out;
+}

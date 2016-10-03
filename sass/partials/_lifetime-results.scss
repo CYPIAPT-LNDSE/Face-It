@@ -1,0 +1,41 @@
+.lifetime-results-page__key {
+  margin-top: 5%;
+  p {
+    font-size: 1.5em;
+    margin-top: 0.5em;
+  }
+  img {
+    margin: 0 auto;
+  }
+}
+
+.lifetime-results-page__disclaimer {
+  background-color: $teal;
+  border: $teal-darken-1 solid 1em;
+  border-radius: 0.2em;
+  font-size: 1.2em;
+  padding: 1em 2em;
+  margin-top: 5%;
+}
+
+.lifetime-results-page__emotion-results {
+  margin-bottom: 10%;
+  h2 {
+    margin-bottom: 0px;
+  }
+  p {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 1.3em;
+    @media screen and (max-width: 768px) {
+      font-size: 1.4em;
+    }
+  }
+}
+
+.lifetime-results-page__feedback {
+  li {
+    font-size: 1.8em;
+    line-height: 1.5;
+  }
+}
