@@ -29,6 +29,7 @@ function randomiser2(){
   }
 
 }
+
 function generateGameSet(images, username = 'john doe'){
   return randomiser(images).map(function(el, i, array){
     return {
@@ -44,26 +45,7 @@ function generateGameSet(images, username = 'john doe'){
   })
 }
 
-function eventListenerGamePage(gameSet){
-  [1,2,3,4,5].forEach(function(el,i){
-    if(el<5){
-      $('#gamePage'+ el).find('button').click(function(){
-        $('#gamePage'+el).hide()
-        $('#gamePage'+(Number(el)+1)).show("slide", { direction: "left" }, 500)
-        gameSet[i].userGuess = $(this)[0].innerHTML
-        results.push(gameSet[i])
-      })
-    } else{
-      $('#gamePage'+ el).find('button').click(function(){
-        gameSet[i].userGuess = $(this)[0].innerHTML
-        results.push(gameSet[i])
-        $('#gamePage'+el).hide()
-        $('#roundResult').show("slide", { direction: "left" }, 500)
-        updateResultPage(results)
-      })
-    }
-  })
-}
+
 
 function updateResultPage(results){
   results.forEach(function(el,i){
@@ -71,14 +53,15 @@ function updateResultPage(results){
     $('#res'+ (i+1)).find('p:nth-child(2)').text('Emotion API was '+ ~~(el.apiGuess[1]*100) + '% sure it was ' + el.apiGuess[0])
   })
   $('#risultatone').find('h2').text('You agreed with Emotion API ' + risultatone(results)+'% of the time')
-
 }
+
+
 
 function risultatone(results){
   let accumulator = 0
   results.forEach(function(el){
     console.log(el.userGuess, el.correctAnswer.emotion[0])
-    if(el.userGuess=== el.correctAnswer.emotion[0]) accumulator++
+    if(el.userGuess === el.correctAnswer.emotion[0]) accumulator++
   })
   return String((accumulator/5)*100)
 }
@@ -118,7 +101,6 @@ function renderHiddenDivs(){
     $('#main').append(pages['gamePage'])
     $('#fresh').attr('id', 'gamePage' + el)
   })
-  //handlebar here
 }
 
 function applyGameSetToHiddenDivs(gameSet){
@@ -133,8 +115,7 @@ function applyEmoji(gameSet){
     let random = randomiser2()
     meh(random)
     function meh(answerType){
-      console.log(answerType)
-      $('#'+ el).find('#choiceL').attr('src',String(gameSet[i][answerType[0]].emojiPath))
+      $('#'+ el).find('#choiceL').attr('src', String(gameSet[i][answerType[0]].emojiPath))
       $('#'+ el).find('#buttonL').html(gameSet[i][answerType[0]].emotion[0])
 
       $('#'+ el).find('#choiceR').attr('src', String(gameSet[i][answerType[1]].emojiPath))
