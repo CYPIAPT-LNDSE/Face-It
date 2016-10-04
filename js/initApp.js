@@ -13,7 +13,6 @@ function loader(){
       initGame()
       $('#intro').hide()
       $('#gamePage1').show("slide", { direction: "left" }, 500)
-
     })
   })
 }
