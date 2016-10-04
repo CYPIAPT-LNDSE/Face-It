@@ -1,16 +1,13 @@
 function initGame(){
   $('#main').append(pages['roundResult'])
-  $('#main').append(pages['lifeTimeResults'])
 
-  let gameSet = generateGameSet(images)
-  gameSet = generateWrongAnswerData(gameSet)
-
-  renderGamePages(gameSet) //replace with handlebar
-  renderResPages(gameSet) //handlebar
+  let load = R.compose(renderGamePages, generateWrongAnswerData, generateGameSet)
+  let gameSet = load(images)
 
   eventListenerGamePage(gameSet)
-  eventListenerResultPages()   
+
 }
+
 function eventListenerGamePage(gameSet){
   [1,2,3,4,5].forEach(function(el,i){
     if(el<5){
@@ -27,27 +24,12 @@ function eventListenerGamePage(gameSet){
         $('#gamePage'+el).hide()
 
         $('#roundResult').show("slide", { direction: "left" }, 500)
-        updateResultPage(results)
+        initRoundResult(results)
       })
     }
   })
 }
 
-function updateResultPage(results){
-  results.forEach(function(el,i){
-    $('#res'+ (i+1)).find('p:nth-child(1)').text('You said this face shows ' + el.userGuess)
-    $('#res'+ (i+1)).find('p:nth-child(2)').text('Emotion API was '+ ~~(el.apiGuess[1]*100) + '% sure it was ' + el.apiGuess[0])
-  })
-  $('#risultatone').find('h2').text('You agreed with Emotion API ' + risultatone(results)+'% of the time')
-}
-
-function risultatone(results){
-  let accumulator = 0
-  results.forEach(function(el){
-    if(el.userGuess === el.correctAnswer.emotion[0]) accumulator++
-  })
-  return String((accumulator/5)*100)
-}
 //
 //Main functions
 //

@@ -68,8 +68,8 @@ let pages = {
   <div class="round-results-page__result" id='res1'>
   <img src="assets/imgs/a921004_1920.jpg" class="img-responsive round-results-page__result-img" alt="Face" >
   <div class="round-results-page__result-text">
-  <p>You said the face was {{result}}</p>
-  <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
+  <p>You said the face was {{userResult}}</p>
+  <p>Emotion API was {{apiConfidanceValue}} sure it was {{apiEmotion}}</p>
   </div>
   </div>
   <div class="round-results-page__result" id='res2'>

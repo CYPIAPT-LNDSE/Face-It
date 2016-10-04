@@ -5,6 +5,7 @@ function roundResults(){
     results = []
   })
 }
+
 function lifeTime(){
   $('#lifeTime').click(function(){
     $('#roundResult').hide()
@@ -12,6 +13,7 @@ function lifeTime(){
     results = []
   })
 }
+
 function playAgain(){
   $('#playAgain1').click(function(){
     $('#roundResult').hide()
