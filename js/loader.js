@@ -1,15 +1,11 @@
-function initApp(){
-
+function loader(){
   $('#main').append(pages['landing'])
   $('#main').append(pages['intro'])
-
 
   $('#landing').show("slide", { direction: "left" }, 500)
   $('#start').click(function(){
     let userName = $('#first-name').val();
-    console.log(userName);
     $('#userName').text('Hi ' + userName);
-    console.log($('#userName').html());
     $('#landing').hide()
     $('#intro').show("slide", { direction: "left" }, 500)
   })
@@ -21,4 +17,4 @@ function initApp(){
   })
 }
 
-$(document).ready(initApp)
+$(document).ready(loader)
