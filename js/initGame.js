@@ -5,8 +5,8 @@ function initGame(){
   let gameSet = generateGameSet(images)
   gameSet = generateWrongAnswerData(gameSet)
 
-  renderHiddenDivs(gameSet) //replace with handlebar
-  initPageResult(gameSet) //handlebar
+  renderGamePages(gameSet) //replace with handlebar
+  renderResPages(gameSet) //handlebar
 
   eventListenerGamePage(gameSet)
   eventListenerResultPages()   
@@ -88,7 +88,7 @@ function randomiser(images){
   return Object.keys(images).sort(function(){return .5 - Math.random()}).slice(0, 5)
 }
 
-function renderHiddenDivs(gameSet){
+function renderGamePages(gameSet){
   [1,2,3,4,5].forEach(function(el, i){
     let answerType = randomiser2()
     $('#main').append(Handlebars.compile(pages['gamePage'])({
