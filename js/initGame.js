@@ -5,9 +5,7 @@ function initGame(){
   let gameSet = generateGameSet(images)
   gameSet = generateWrongAnswerData(gameSet)
 
-  renderHiddenDivs() //replace with handlebar
-  applyGameSetToHiddenDivs(gameSet) //replace with handlebar
-  applyEmoji(gameSet)//replace with handlebar
+  renderHiddenDivs(gameSet) //replace with handlebar
   initPageResult(gameSet) //handlebar
 
   eventListenerGamePage(gameSet)
@@ -42,8 +40,6 @@ function generateGameSet(images, username = 'john doe'){
   })
 }
 
-
-
 function updateResultPage(results){
   results.forEach(function(el,i){
     $('#res'+ (i+1)).find('p:nth-child(1)').text('You said this face shows ' + el.userGuess)
@@ -51,7 +47,6 @@ function updateResultPage(results){
   })
   $('#risultatone').find('h2').text('You agreed with Emotion API ' + risultatone(results)+'% of the time')
 }
-
 
 
 function risultatone(results){
@@ -93,33 +88,20 @@ function randomiser(images){
   return Object.keys(images).sort(function(){return .5 - Math.random()}).slice(0, 5)
 }
 
-function renderHiddenDivs(){
-  [1,2,3,4,5].forEach(function(el){
-    $('#main').append(pages['gamePage'])
-    $('#fresh').attr('id', 'gamePage' + el)
+function renderHiddenDivs(gameSet){
+  [1,2,3,4,5].forEach(function(el, i){
+    let answerType = randomiser2()
+    $('#main').append(Handlebars.compile(pages['gamePage'])({
+      id:'gamePage'+ el,
+      biggie:'assets/imgs/' + Object.keys( gameSet[i])[0]+ '.jpg',
+      choiceL: String(gameSet[i][answerType[0]].emojiPath),
+      buttonL: gameSet[i][answerType[0]].emotion[0],
+      choiceR: String(gameSet[i][answerType[1]].emojiPath),
+      buttonR: gameSet[i][answerType[1]].emotion[0],
+    }))
   })
 }
 
-function applyGameSetToHiddenDivs(gameSet){
-  //apply correct images and emoticons to each hidden div
-  ['gamePage1','gamePage2','gamePage3','gamePage4', 'gamePage5'].forEach(function(el, i, array){
-    $('#'+ el).find('#biggie').attr('src', 'assets/imgs/' + Object.keys( gameSet[i])[0]+ '.jpg' )
-  })
-}
-
-function applyEmoji(gameSet){
-  ['gamePage1','gamePage2','gamePage3','gamePage4', 'gamePage5'].forEach(function(el,i){
-    let random = randomiser2()
-    meh(random)
-    function meh(answerType){
-      $('#'+ el).find('#choiceL').attr('src', String(gameSet[i][answerType[0]].emojiPath))
-      $('#'+ el).find('#buttonL').html(gameSet[i][answerType[0]].emotion[0])
-
-      $('#'+ el).find('#choiceR').attr('src', String(gameSet[i][answerType[1]].emojiPath))
-      $('#'+ el).find('#buttonR').html(gameSet[i][answerType[1]].emotion[0])
-    }
-  })
-}
 
 function emojiPath(emotion){
   let dict = {
