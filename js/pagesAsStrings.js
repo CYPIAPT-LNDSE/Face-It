@@ -3,8 +3,9 @@ let pages = {
   <div class="col-xs-10 col-xs-offset-1">
   <div class="landing-page__header">
   <img src="assets/icons/logo.svg" alt="" class="img-responsive landing-page__logo">
-  <hr>
+  <hr />
   <h1 class="landing-page__title">Face It</h1>
+  <hr />
   </div>
   <form>
   <div class="form-group">
@@ -39,8 +40,9 @@ let pages = {
     <p class="intro-page__level-bar-component intro-page__level-bar-component">4</p>
     <p class="intro-page__level-bar-component intro-page__level-bar-component">5</p>
     </div>
-    <button type="button" class="btn btn-default btn-lg btn-block" id='introStart'>Start</button>
+    <button type="button" class="btn btn-default btn-lg btn-block" id="continue_button">Continue</button>
     </div>
+<<<<<<< HEAD
   </div>
 `,
   'gamePage':`<div class="game-page" id='{{id}}' style='display:none;'>
