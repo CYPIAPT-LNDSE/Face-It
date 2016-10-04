@@ -27,7 +27,6 @@ function randomiser2(){
   else{
     return [dict[1], dict[0]]
   }
-
 }
 
 function generateGameSet(images, username = 'john doe'){
@@ -141,5 +140,3 @@ function apiWinner(scores) {
   }
   return [emotion, tempNumber];
 }
-
-
