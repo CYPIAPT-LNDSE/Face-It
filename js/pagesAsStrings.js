@@ -40,9 +40,8 @@ let pages = {
     <p class="intro-page__level-bar-component intro-page__level-bar-component">4</p>
     <p class="intro-page__level-bar-component intro-page__level-bar-component">5</p>
     </div>
-    <button type="button" class="btn btn-default btn-lg btn-block" id="continue_button">Continue</button>
+    <button type="button" class="btn btn-default btn-lg btn-block" id="startGame">Continue</button>
     </div>
-<<<<<<< HEAD
   </div>
 `,
   'gamePage':`<div class="game-page" id='{{id}}' style='display:none;'>

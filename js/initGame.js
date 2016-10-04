@@ -58,7 +58,7 @@ function risultatone(results){
   return String((accumulator/5)*100)
 }
 
-function initPageResult(gameSet){
+function renderResPages(gameSet){
   [1,2,3,4,5].forEach(function(el, i){
     $('#res'+ el).find('img').attr('src', 'assets/imgs/' + Object.keys( gameSet[i])[0]+ '.jpg' )
   })
