@@ -19,8 +19,6 @@ function eventListenerResultPages(){
   lifeTime()
   roundResults()
 }
-
-//helpers
 function randomiser2(){
   let dict = ['correctAnswer', 'wrongAnswer']
   if(Math.random() > 0.5) {return dict}
