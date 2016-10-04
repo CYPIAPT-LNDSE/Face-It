@@ -1,15 +1,13 @@
 function loader(){
   $('#main').append(pages['landing'])
-  $('#main').append(pages['intro'])
-  $('#main').append(pages['navigator'])
 
   $('#landing').show("slide", { direction: "left" }, 500)
   $('#start').click(function(){
-    let userName = $('#first-name').val();
-    $('#userName').text('Hi ' + userName);
+    $('#main').append(Handlebars.compile(pages['intro'])({
+      username:$('#first-name').val()
+    }))
     $('#landing').hide()
     $('#intro').show("slide", { direction: "left" }, 500)
-  })
 
   $('#continue_button').click(function(){
     initGame()

@@ -19,7 +19,7 @@ let pages = {
   'intro':`<div class="intro-page" style='display:none;' id='intro'>
     <div class="col-xs-12">
     <div class="intro-page__explanation">
-    <h1 id='userName'>Hi, {{USER}}!</h1>
+    <h1 id='userName'>Hi, {{username}}!</h1>
     <p><strong style="color: #66938F">Face It</strong> is a game about recognising emotions.</p>
     <hr>
     <p class="intro-page__explanation-p-margin">It's based on a computer programme called Emotion API.</p>
@@ -42,25 +42,21 @@ let pages = {
     </div>
     <button type="button" class="btn btn-default btn-lg btn-block" id="continue_button">Continue</button>
     </div>
-  </div>`,
-  'navigator':`<div class="navigator-page" style='display:none' id='navigator'>
-      <div class="col-xs-12">
-        <button type="button" class="btn btn-default btn-lg btn-block" id="start_game_button">Start</button>
-        <button type="button" class="btn btn-default btn-lg btn-block" id="lifetime_results_button">Life Time Results</button>
-        <button type="button" class="btn btn-default btn-lg btn-block" id="settings_button">Settings</button>
-    </div>`,
-  'gamePage':`<div class="game-page" id='fresh' style='display:none;'>
+<<<<<<< HEAD
+  </div>
+`,
+  'gamePage':`<div class="game-page" id='{{id}}' style='display:none;'>
   <div class="game-page-content">
   <div class="col-xs-12 game-page__image-container">
-  <img src="assets/imgs/a921004_1920.jpg" class="img-responsive" alt="Face" id='biggie'>
+  <img src="{{biggie}}" class="img-responsive" alt="Face" id='biggie'>
   </div>
   <div class="col-xs-6 game-page__button">
-  <img src="assets/icons/happy-emoji.svg" class="game-page__button-emoji" alt="Happy" id='choiceL'>
-  <button type="button" class="btn btn-default btn-lg btn-block" id='buttonL'>Happy</button>
+  <img src="{{choiceL}}" class="game-page__button-emoji" alt="Happy" id='choiceL'>
+  <button type="button" class="btn btn-default btn-lg btn-block" id='buttonL'>{{buttonL}}</button>
   </div>
   <div class="col-xs-6 game-button">
-  <img src="assets/icons/sad-emoji.svg" class="game-page__button-emoji" alt="Sad" id='choiceR'>
-  <button type="button" class="btn btn-default btn-lg btn-block" id="buttonR">Sad</button>
+  <img src="{{choiceR}}" class="game-page__button-emoji" alt="Sad" id='choiceR'>
+  <button type="button" class="btn btn-default btn-lg btn-block" id="buttonR">{{buttonR}}</button>
   </div>
   </div>
   </div>`,
