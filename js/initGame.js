@@ -34,7 +34,7 @@ function playAgain(){
     results = []
   })
   $('#playAgain2').click(function(){
-      $('#roundResult').hide()
+      $('#lifeTimePage').hide()
       $('#landing').show("slide", { direction: "right" }, 500)
       results = []
     })
