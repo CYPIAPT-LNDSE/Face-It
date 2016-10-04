@@ -34,7 +34,7 @@ function playAgain(){
     results = []
   })
   $('#playAgain2').click(function(){
-      $('#roundResult').hide()
+      $('#lifeTimePage').hide()
       $('#landing').show("slide", { direction: "right" }, 500)
       results = []
     })
@@ -42,8 +42,8 @@ function playAgain(){
 function randomiser2(){
   let dict = ['correctAnswer', 'wrongAnswer']
   if(Math.random() > 0.5) {return dict}
-  else{ 
-    return [dict[1], dict[0]] 
+  else{
+    return [dict[1], dict[0]]
   }
 
 }
@@ -125,7 +125,7 @@ function getOtherEmotion(emotion, pos){
   return emotions[2]
 
   function randomNumber(){
-    return ~~(Math.random()*5) 
+    return ~~(Math.random()*5)
   }
 }
 

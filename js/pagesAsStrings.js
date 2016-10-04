@@ -94,7 +94,7 @@ let pages = {
   <h2>You agreed with Emotion API {{#}}% of the time</h2>
   </div>
   <div class="col-xs-6">
-  <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='playAgain'>Play Again</button>
+  <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='playAgain1'>Play Again</button>
   </div>
   <div class="col-xs-6">
   <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='lifeTime'>Lifetime Results</button>
