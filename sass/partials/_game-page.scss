@@ -1,0 +1,24 @@
+.game-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  button {
+    font-weight: 400;
+  }
+}
+
+.game-page__image-container {
+  margin-bottom: 3em;
+  img {
+    border: $teal solid 2.5em;
+    border-radius: 0.2em;
+    margin: auto auto;
+  }
+}
+
+.game-page__button-emoji {
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 2%;
+}

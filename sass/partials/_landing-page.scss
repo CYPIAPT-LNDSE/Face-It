@@ -1,0 +1,41 @@
+.landing-page {
+  button {
+    margin-top: 8vh;
+  }
+}
+
+.landing-page__header {
+  margin-top: 5vh;
+  margin-bottom: 8vh;
+  hr {
+    margin: 0;
+  }
+}
+
+.landing-page__title {
+  color: #66938F;
+  font-weight: 700;
+  font-size: 5em;
+  text-align: center;
+  margin-top: 0.1em;
+}
+
+.landing-page__logo {
+  margin: auto auto;
+  width: 15%;
+  @media (min-width: 768px) {
+    width: 25%;
+  }
+  @media (max-width: 540px) {
+    width: 20%;
+  }
+  @media (max-width: 460px) {
+    width: 25%;
+  }
+}
+
+.name-form {
+  font-size: 1.8em;
+  line-height: 1.8em;
+  margin-top: 0.2em;
+}

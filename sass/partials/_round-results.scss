@@ -1,0 +1,48 @@
+.round-results-page__header {
+  text-align: center;
+}
+
+.round-results-page__result {
+  background-color: $teal;
+  border: $teal-darken-1 solid 0.8em;
+  border-radius: 0.2em;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  &:first-of-type {
+    margin-top: 5%;
+  }
+  &:last-of-type {
+    margin-bottom: 10%;
+  }
+}
+
+.round-results-page__result-img {
+    border: $teal solid 1em;
+    border-radius: 0.2em;
+    margin-bottom: 5%;
+}
+.round-results-page__result-text {
+  background-color: $teal;
+  margin-bottom: 10%;
+  font-size: 1.4em;
+  font-weight: 400;
+  text-align: center;
+}
+
+.round-results-page__results-comparison {
+  text-align: center;
+  margin-bottom: 5%;
+  background-color: $teal;
+  border: $teal-darken-1 solid 0.8em;
+  border-radius: 0.2em;
+  h2 {
+    margin-bottom: 20px !important;
+  }
+}
+
+.results-page__button {
+  margin-bottom: 10%;
+  @media screen and (min-width: 768px) {
+    height: 5em;
+  }
+}
