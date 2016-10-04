@@ -7,8 +7,7 @@
   overflow: scroll;
   background-color: #F5F5F5;
   border: none;
-  height: 100vh;
-  margin: 0; }
+  height: 100vh; }
   @media screen and (min-width: 768px) {
     .full-screen {
       height: 90vh;
