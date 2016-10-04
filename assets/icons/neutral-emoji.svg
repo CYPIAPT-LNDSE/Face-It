@@ -13,8 +13,6 @@
             <rect x="128" y="-8" width="44" height="44" fill="white"></rect>
             <use xlink:href="#path-3" fill="black"></use>
         </mask>
-        <rect id="path-5" x="0" y="0" width="79" height="47"></rect>
-        <rect id="path-7" x="125" y="0" width="79" height="47"></rect>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Head-Neutral" transform="translate(0.000000, 8.000000)">
@@ -27,18 +25,8 @@
                 <use stroke="#B2DFDB" mask="url(#mask-4)" stroke-width="16" xlink:href="#path-3"></use>
             </g>
             <path d="M76,216 L226,216" id="Line-Copy" stroke="#B2DFDB" stroke-width="9" stroke-linecap="square"></path>
-            <g id="Eyes-Copy" transform="translate(48.000000, 125.000000)">
-                <mask id="mask-6" fill="white">
-                    <use xlink:href="#path-5"></use>
-                </mask>
-                <g id="Rectangle-4"></g>
-                <circle id="Oval-2-Copy-2" stroke="#B2DFDB" stroke-width="7" mask="url(#mask-6)" cx="39.5" cy="46.5" r="22.5"></circle>
-                <mask id="mask-8" fill="white">
-                    <use xlink:href="#path-7"></use>
-                </mask>
-                <g id="Rectangle-4"></g>
-                <circle id="Oval-2-Copy-2" stroke="#B2DFDB" stroke-width="7" mask="url(#mask-8)" cx="164.5" cy="47.5" r="22.5"></circle>
-            </g>
+            <path d="M67,168.5 L110.5,168.5" id="Line-Copy-7" stroke="#B2DFDB" stroke-width="7" stroke-linecap="square"></path>
+            <path d="M191,168.5 L234.5,168.5" id="Line-Copy-7" stroke="#B2DFDB" stroke-width="7" stroke-linecap="square"></path>
         </g>
     </g>
 </svg>

@@ -21,27 +21,26 @@
   margin-top: 5vh;
   margin-bottom: 8vh; }
   .landing-page__header hr {
-    margin: 0; }
+    margin: 1px; }
 
 .landing-page__title {
-  color: #66938F;
+  color: #58bab1;
   font-weight: 700;
   font-size: 5em;
   text-align: center;
   margin-top: 0.1em; }
 
 .landing-page__logo {
-  margin: auto auto;
-  width: 15%; }
+  margin: auto auto; }
   @media (min-width: 768px) {
     .landing-page__logo {
-      width: 25%; } }
-  @media (max-width: 540px) {
+      width: 70%; } }
+  @media (max-width: 768px) {
     .landing-page__logo {
-      width: 20%; } }
-  @media (max-width: 460px) {
+      width: 50%; } }
+  @media (max-width: 500px) {
     .landing-page__logo {
-      width: 25%; } }
+      width: 60%; } }
 
 .name-form {
   font-size: 1.8em;

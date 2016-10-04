@@ -13,8 +13,8 @@
             <rect x="128" y="-8" width="44" height="44" fill="white"></rect>
             <use xlink:href="#path-3" fill="black"></use>
         </mask>
-        <rect id="path-5" x="0" y="0" width="79" height="47"></rect>
-        <rect id="path-7" x="125" y="0" width="79" height="47"></rect>
+        <rect id="path-5" x="4" y="7" width="79" height="47"></rect>
+        <rect id="path-7" x="129" y="7" width="79" height="47"></rect>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Head-Sad" transform="translate(0.000000, 8.000000)">
@@ -26,18 +26,18 @@
                 <use fill="#E0F2F1" fill-rule="evenodd" xlink:href="#path-3"></use>
                 <use stroke="#B2DFDB" mask="url(#mask-4)" stroke-width="16" xlink:href="#path-3"></use>
             </g>
-            <path d="M76,226 C76,226 107.882812,195.720703 150,195.720703 C192.117188,195.720703 226,226 226,226" id="Line" stroke="#B2DFDB" stroke-width="9" stroke-linecap="square"></path>
-            <g id="Eyes" transform="translate(49.000000, 125.000000)">
+            <path d="M76,223 C76,223 107.882812,192.720703 150,192.720703 C192.117188,192.720703 226,223 226,223" id="Line" stroke="#B2DFDB" stroke-width="9" stroke-linecap="square"></path>
+            <g id="Eyes" transform="translate(45.000000, 118.000000)">
                 <mask id="mask-6" fill="white">
                     <use xlink:href="#path-5"></use>
                 </mask>
-                <g id="Rectangle-4"></g>
-                <circle id="Oval-2-Copy-2" stroke="#B2DFDB" stroke-width="7" mask="url(#mask-6)" cx="39.5" cy="46.5" r="22.5"></circle>
+                <g id="Rectangle-4" transform="translate(43.500000, 30.500000) rotate(-10.000000) translate(-43.500000, -30.500000) "></g>
+                <circle id="Oval-2-Copy-2" stroke="#B2DFDB" stroke-width="7" mask="url(#mask-6)" transform="translate(43.500000, 53.500000) rotate(-10.000000) translate(-43.500000, -53.500000) " cx="43.5" cy="53.5" r="22.5"></circle>
                 <mask id="mask-8" fill="white">
                     <use xlink:href="#path-7"></use>
                 </mask>
-                <g id="Rectangle-4"></g>
-                <circle id="Oval-2-Copy-2" stroke="#B2DFDB" stroke-width="7" mask="url(#mask-8)" cx="164.5" cy="47.5" r="22.5"></circle>
+                <g id="Rectangle-4" transform="translate(168.500000, 30.500000) rotate(10.000000) translate(-168.500000, -30.500000) "></g>
+                <circle id="Oval-2-Copy-2" stroke="#B2DFDB" stroke-width="7" mask="url(#mask-8)" transform="translate(168.500000, 54.500000) rotate(10.000000) translate(-168.500000, -54.500000) " cx="168.5" cy="54.5" r="22.5"></circle>
             </g>
         </g>
     </g>
