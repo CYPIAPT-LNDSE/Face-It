@@ -18,7 +18,7 @@ let pages = {
   'intro':`<div class="intro-page" style='display:none;' id='intro'>
     <div class="col-xs-12">
     <div class="intro-page__explanation">
-    <h1 id='userName'>Hi, {{USER}}!</h1>
+    <h1 id='userName'>Hi, {{username}}!</h1>
     <p><strong style="color: #66938F">Face It</strong> is a game about recognising emotions.</p>
     <hr>
     <p class="intro-page__explanation-p-margin">It's based on a computer programme called Emotion API.</p>
