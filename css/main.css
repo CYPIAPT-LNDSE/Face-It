@@ -258,6 +258,14 @@
     .results-page__button {
       height: 5em; } }
 
+.navigator-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%; }
+  .navigator-page button {
+    font-weight: 400; }
+
 body {
   color: #616161;
   font-family: 'Open Sans', sans-serif;

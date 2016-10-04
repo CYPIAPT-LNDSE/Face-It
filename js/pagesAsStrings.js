@@ -39,10 +39,15 @@ let pages = {
     <p class="intro-page__level-bar-component intro-page__level-bar-component">4</p>
     <p class="intro-page__level-bar-component intro-page__level-bar-component">5</p>
     </div>
-    <button type="button" class="btn btn-default btn-lg btn-block" id='introStart'>Start</button>
+    <button type="button" class="btn btn-default btn-lg btn-block" id="continue_button">Continue</button>
     </div>
-  </div>
-`,
+  </div>`,
+  'navigator':`<div class="navigator-page" style='display:none' id='navigator'>
+      <div class="col-xs-12">
+        <button type="button" class="btn btn-default btn-lg btn-block" id="start_game_button">Start</button>
+        <button type="button" class="btn btn-default btn-lg btn-block" id="lifetime_results_button">Life Time Results</button>
+        <button type="button" class="btn btn-default btn-lg btn-block" id="settings_button">Settings</button>
+    </div>`,
   'gamePage':`<div class="game-page" id='fresh' style='display:none;'>
   <div class="game-page-content">
   <div class="col-xs-12 game-page__image-container">
