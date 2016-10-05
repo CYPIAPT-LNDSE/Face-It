@@ -1,8 +1,10 @@
-function initRoundResult(results){
+function initRoundResult(results,handleOnPrevious){
   $('#main').append(Handlebars.compile(pages['roundResult'])({
-  }))
-  updateResultPage(results)
+    }))
+  $('#gamePage'+handleOnPrevious).hide()
+  $('roundResult').show()
 
+  updateResultPage(results)
   roundResultEventListener()
 
 }

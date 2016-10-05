@@ -1,8 +1,7 @@
 function initGame(){
-  $('#main').append(pages['roundResult'])
 
-  let load = R.compose(renderGamePages, generateWrongAnswerData, generateGameSet)
-  let gameSet = load(images)
+  let gameSet = R.compose( generateWrongAnswerData, generateGameSet)(images)
+  renderGamePages(gameSet)
   eventListenerGamePage(gameSet)
 
 }
@@ -10,20 +9,18 @@ function initGame(){
 function eventListenerGamePage(gameSet){
   [1,2,3,4,5].forEach(function(el,i){
     if(el<5){
-      $('#gamePage'+ el).find('button').click(function(){
+      $('#gamePage'+ el).find('button').click(function(event){
         $('#gamePage'+el).hide()
         $('#gamePage'+(Number(el)+1)).show("slide", { direction: "left" }, 500)
         gameSet[i].userGuess = $(this)[0].innerHTML
         results.push(gameSet[i])
       })
     } else{
-      $('#gamePage'+ el).find('button').click(function(){
+      $('#gamePage'+ el).find('button').click(function(event){
         gameSet[i].userGuess = $(this)[0].innerHTML
         results.push(gameSet[i])
-        $('#gamePage'+el).hide()
-
-        $('#roundResult').show("slide", { direction: "left" }, 500)
-        initRoundResult(results)
+        console.log('im here')
+        initRoundResult(results,el)
       })
     }
   })

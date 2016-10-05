@@ -72,37 +72,9 @@ let pages = {
   <p>Emotion API was {{apiConfidanceValue}} sure it was {{apiEmotion}}</p>
   </div>
   </div>
-  <div class="round-results-page__result" id='res2'>
-  <img src="assets/imgs/h187696_1920.jpg" class="img-responsive round-results-page__result-img" alt="Face">
-  <div class="round-results-page__result-text">
-  <p>You said the face was {{result}}</p>
-  <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
-  </div>
-  </div>
-  <div class="round-results-page__result" id='res3' >
-  <img src="assets/imgs/su211505_1280.jpg" class="img-responsive round-results-page__result-img" alt="Face">
-  <div class="round-results-page__result-text">
-  <p>You said the face was {{result}}</p>
-  <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
-  </div>
-  </div>
-  <div class="round-results-page__result" id='res4' >
-  <img src="assets/imgs/su810005_1280.jpg" class="img-responsive round-results-page__result-img" alt="Face">
-  <div class="round-results-page__result-text">
-  <p>You said the face was {{result}}</p>
-  <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
-  </div>
-  </div>
-  <div class="round-results-page__result" id='res5'>
-  <img src="assets/imgs/h19075_1280.jpg" class="img-responsive round-results-page__result-img" alt="Face">
-  <div class="round-results-page__result-text">
-  <p>You said the face was {{result}}</p>
-  <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
-  </div>
-  </div>
   </div>
   <div class="col-xs-12 round-results-page__results-comparison" id='risultatone'>
-  <h2>You agreed with Emotion API {{#}}% of the time</h2>
+  <h2>You agreed with Emotion API {{risultatone}} of the time</h2>
   </div>
   <div class="col-xs-6">
   <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='playAgain1'>Play Again</button>
