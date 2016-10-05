@@ -3,7 +3,6 @@ function initGame(){
 
   let load = R.compose(renderGamePages, generateWrongAnswerData, generateGameSet)
   let gameSet = load(images)
-
   eventListenerGamePage(gameSet)
 
 }

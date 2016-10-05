@@ -7,7 +7,6 @@ function initRoundResult(results){
 
 }
 
-
 function updateResultPage(results){
   results.forEach(function(el,i){
     $('#res'+ (i+1)).find('p:nth-child(1)').text('You said this face shows ' + el.userGuess)
