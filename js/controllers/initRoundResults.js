@@ -1,20 +1,21 @@
-function initRoundResult(results,handleOnPrevious){
-  $('#main').append(Handlebars.compile(pages['roundResult'])({
-    }))
+function initRoundResult(results, handleOnPrevious){
+  $('#main').append(Handlebars.compile(pages['roundResultContainer'])({
+    roundAnswers: results.reduce((acc, current, i)=>{
+      return acc + Handlebars.compile(pages['roundAnswer'])({
+        //here populate single answer stuff 
+        userResult: current.userGuess,
+        apiConfidanceValue: ~~(current.apiGuess[1]*100),
+        apiEmotion: current.apiGuess[0],
+        imagePath:'assets/imgs/' + Object.keys(results[i])[0]+ '.jpg'
+      })
+    },''),
+    risultatone:risultatone(results)
+  }))
+
   $('#gamePage'+handleOnPrevious).hide()
-  $('roundResult').show()
+  $('#roundResult').show("slide", { direction: "left" }, 500)
 
-  updateResultPage(results)
   roundResultEventListener()
-
-}
-
-function updateResultPage(results){
-  results.forEach(function(el,i){
-    $('#res'+ (i+1)).find('p:nth-child(1)').text('You said this face shows ' + el.userGuess)
-    $('#res'+ (i+1)).find('p:nth-child(2)').text('Emotion API was '+ ~~(el.apiGuess[1]*100) + '% sure it was ' + el.apiGuess[0])
-  })
-  $('#risultatone').find('h2').text('You agreed with Emotion API ' + risultatone(results)+'% of the time')
 }
 
 function risultatone(results){

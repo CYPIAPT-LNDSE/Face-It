@@ -19,7 +19,6 @@ function eventListenerGamePage(gameSet){
       $('#gamePage'+ el).find('button').click(function(event){
         gameSet[i].userGuess = $(this)[0].innerHTML
         results.push(gameSet[i])
-        console.log('im here')
         initRoundResult(results,el)
       })
     }
