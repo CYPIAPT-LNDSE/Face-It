@@ -5,6 +5,7 @@ function roundResults(){
     results = []
   })
 }
+
 function lifeTime(){
   $('#lifeTime').click(function(){
     $('#roundResult').hide()
@@ -12,6 +13,7 @@ function lifeTime(){
     results = []
   })
 }
+
 function playAgain(){
   $('#playAgain1').click(function(){
     $('#roundResult').hide()
@@ -25,23 +27,4 @@ function playAgain(){
   })
 }
 
-function eventListenerGamePage(gameSet){
-  [1,2,3,4,5].forEach(function(el,i){
-    if(el<5){
-      $('#gamePage'+ el).find('button').click(function(){
-        $('#gamePage'+el).hide()
-        $('#gamePage'+(Number(el)+1)).show("slide", { direction: "left" }, 500)
-        gameSet[i].userGuess = $(this)[0].innerHTML
-        results.push(gameSet[i])
-      })
-    } else{
-      $('#gamePage'+ el).find('button').click(function(){
-        gameSet[i].userGuess = $(this)[0].innerHTML
-        results.push(gameSet[i])
-        $('#gamePage'+el).hide()
-        $('#roundResult').show("slide", { direction: "left" }, 500)
-        updateResultPage(results)
-      })
-    }
-  })
-}
+

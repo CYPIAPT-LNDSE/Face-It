@@ -17,34 +17,33 @@ let pages = {
   </div>
   </div> `,
   'intro':`<div class="intro-page" style='display:none;' id='intro'>
-    <div class="col-xs-12">
-    <div class="intro-page__explanation">
-    <h1 id='userName'>Hi, {{username}}!</h1>
-    <p><strong style="color: #66938F">Face It</strong> is a game about recognising emotions.</p>
-    <hr>
-    <p class="intro-page__explanation-p-margin">It's based on a computer programme called Emotion API.</p>
-    <p>Emotion API can detect emotions in photos.</p>
-    <hr>
-    <p class="intro-page__explanation-p-margin">We're going to show you a photo of a face and two emotions to choose from.</p>
-    <p>Pick which emotion you're most sure the face is expressing.</p>
-    <hr>
-    <p class="intro-page__explanation-p-margin">After five faces, we'll compare your choices to Emotion API's!</p>
-    </div>
-    <div class="intro-page__level-bar--label">
-    <p>You are at Level 1</p>
-    </div>
-    <div class="col-xs-12 intro-page__level-bar">
-    <p class="intro-page__level-bar-component intro-page__level-bar-component--active">1</p>
-    <p class="intro-page__level-bar-component intro-page__level-bar-component">2</p>
-    <p class="intro-page__level-bar-component intro-page__level-bar-component">3</p>
-    <p class="intro-page__level-bar-component intro-page__level-bar-component">4</p>
-    <p class="intro-page__level-bar-component intro-page__level-bar-component">5</p>
-    </div>
-    <button type="button" class="btn btn-default btn-lg btn-block" id="continue_button">Continue</button>
-    </div>
-<<<<<<< HEAD
+  <div class="col-xs-12">
+  <div class="intro-page__explanation">
+  <h1 id='userName'>Hi, {{username}}!</h1>
+  <p><strong style="color: #66938F">Face It</strong> is a game about recognising emotions.</p>
+  <hr>
+  <p class="intro-page__explanation-p-margin">It's based on a computer programme called Emotion API.</p>
+  <p>Emotion API can detect emotions in photos.</p>
+  <hr>
+  <p class="intro-page__explanation-p-margin">We're going to show you a photo of a face and two emotions to choose from.</p>
+  <p>Pick which emotion you're most sure the face is expressing.</p>
+  <hr>
+  <p class="intro-page__explanation-p-margin">After five faces, we'll compare your choices to Emotion API's!</p>
   </div>
-`,
+  <div class="intro-page__level-bar--label">
+  <p>You are at Level 1</p>
+  </div>
+  <div class="col-xs-12 intro-page__level-bar">
+  <p class="intro-page__level-bar-component intro-page__level-bar-component--active">1</p>
+  <p class="intro-page__level-bar-component intro-page__level-bar-component">2</p>
+  <p class="intro-page__level-bar-component intro-page__level-bar-component">3</p>
+  <p class="intro-page__level-bar-component intro-page__level-bar-component">4</p>
+  <p class="intro-page__level-bar-component intro-page__level-bar-component">5</p>
+  </div>
+  <button type="button" class="btn btn-default btn-lg btn-block" id="startGame">Continue</button>
+  </div>
+  </div>
+  `,
   'gamePage':`<div class="game-page" id='{{id}}' style='display:none;'>
   <div class="game-page-content">
   <div class="col-xs-12 game-page__image-container">
@@ -60,50 +59,14 @@ let pages = {
   </div>
   </div>
   </div>`,
-  'roundResult':`<div class="round-results-page" style="display:none" id='roundResult'>
+  'roundResultContainer':`<div class="round-results-page" style="display:none" id='roundResult'>
   <div class="round-results-page__header">
   <h1>Results this round:</h1>
   </div>
   <hr>
-  <div class="col-xs-10 col-xs-offset-1 round-results-page__result-container">
-  <div class="round-results-page__result" id='res1'>
-  <img src="assets/imgs/a921004_1920.jpg" class="img-responsive round-results-page__result-img" alt="Face" >
-  <div class="round-results-page__result-text">
-  <p>You said the face was {{result}}</p>
-  <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
-  </div>
-  </div>
-  <div class="round-results-page__result" id='res2'>
-  <img src="assets/imgs/h187696_1920.jpg" class="img-responsive round-results-page__result-img" alt="Face">
-  <div class="round-results-page__result-text">
-  <p>You said the face was {{result}}</p>
-  <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
-  </div>
-  </div>
-  <div class="round-results-page__result" id='res3' >
-  <img src="assets/imgs/su211505_1280.jpg" class="img-responsive round-results-page__result-img" alt="Face">
-  <div class="round-results-page__result-text">
-  <p>You said the face was {{result}}</p>
-  <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
-  </div>
-  </div>
-  <div class="round-results-page__result" id='res4' >
-  <img src="assets/imgs/su810005_1280.jpg" class="img-responsive round-results-page__result-img" alt="Face">
-  <div class="round-results-page__result-text">
-  <p>You said the face was {{result}}</p>
-  <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
-  </div>
-  </div>
-  <div class="round-results-page__result" id='res5'>
-  <img src="assets/imgs/h19075_1280.jpg" class="img-responsive round-results-page__result-img" alt="Face">
-  <div class="round-results-page__result-text">
-  <p>You said the face was {{result}}</p>
-  <p>Emotion API was {{#}}% sure it was {{emotion}}</p>
-  </div>
-  </div>
-  </div>
+  {{{roundAnswers}}}
   <div class="col-xs-12 round-results-page__results-comparison" id='risultatone'>
-  <h2>You agreed with Emotion API {{#}}% of the time</h2>
+  <h2>You agreed with Emotion API {{risultatone}} of the time</h2>
   </div>
   <div class="col-xs-6">
   <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='playAgain1'>Play Again</button>
@@ -111,8 +74,19 @@ let pages = {
   <div class="col-xs-6">
   <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='lifeTime'>Lifetime Results</button>
   </div>
-  </div> `,
-'lifeTimeResults':`<div class="lifetime-results-page" id='lifeTimePage' style='display:none;'>
+  </div>`,
+  'roundAnswer':`
+  <div class="col-xs-10 col-xs-offset-1 round-results-page__result-container">
+  <div class="round-results-page__result" id='res1'>
+  <img src="{{imagePath}}" class="img-responsive round-results-page__result-img" alt="Face" >
+  <div class="round-results-page__result-text">
+  <p>You said the face was {{userResult}}</p>
+  <p>Emotion API was {{apiConfidanceValue}}% sure it was {{apiEmotion}}</p>
+  </div>
+  </div>
+  </div>
+  `,
+  'lifeTimeResults':`<div class="lifetime-results-page" id='lifeTimePage' style='display:none;'>
   <div class="lifetime-results-page__disclaimer">
   <p>This is a prototype app, so not all the features are working yet.</p>
   <hr>
@@ -123,12 +97,12 @@ let pages = {
   </div>
   <div class="lifetime-results-page__key">
   <div class="col-xs-6 text-center">
-    <img src="assets/icons/user-icon.svg" class="img-responsive" alt="User Icon">
-    <p>You</p>
+  <img src="assets/icons/user-icon.svg" class="img-responsive" alt="User Icon">
+  <p>You</p>
   </div>
   <div class="col-xs-6 text-center">
-    <img src="assets/icons/api-icon.svg" class="img-responsive" alt="API Icon">
-    <p>Emotion API</p>
+  <img src="assets/icons/api-icon.svg" class="img-responsive" alt="API Icon">
+  <p>Emotion API</p>
   </div>
   </div>
   <div class="lifetime-results-page__emotion-results">
@@ -173,10 +147,10 @@ let pages = {
   <hr>
   <div class="lifetime-results-page__feedback">
   <h2>You could work on:</h2>
-    <ul>
-      <li>Anger</li>
-      <li>Neutral</li>
-    </ul>
+  <ul>
+  <li>Anger</li>
+  <li>Neutral</li>
+  </ul>
   </div>
   <hr>
   <div class="col-xs-6">
