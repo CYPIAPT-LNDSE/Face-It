@@ -3,6 +3,20 @@
 
 ####Developed by *@daymos, @heatherlauren, @emmadeacon* and *@jakubsvihla*
 
+## How to run the app
+
+from your terminal run the following:
+```
+git clone  https://github.com/CYPIAPT-LNDSE/afSimonStewart.git faceit
+
+cd faceit
+
+open index.html
+
+```
+if `open index.html` doesnt work just double click on index.html
+
+
 ##About
 
 This project is a game designed for young people with ASD to practice recognising emotions. A user is shown a face and asked to identify the emotion it's displaying. Their choice is then compared to that made by the Microsoft Facial Emotion API. The game is inspired by emotion recognition games that are currently used with children with ASD in schools. However, we feel the app would be an improvement on several fronts:
@@ -35,3 +49,7 @@ We would advise that the prototype is made available to as large a variety of te
 * The app's colour scheme and animation
 * The balance between text and images in the app (could we make more use of icons and emojis?)
 * Photos used
+
+##App stack
+
+This is an Hybrid no-backend cordova app.  Our stack includes: handlebars, bootstrap, pouchDB, couchDB, JQuery.  
