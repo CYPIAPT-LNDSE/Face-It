@@ -1,0 +1,3 @@
+[submodule "uploader"]
+	path = uploader
+	url = https://github.com/RichAWarren/annaFreudImageUploader
