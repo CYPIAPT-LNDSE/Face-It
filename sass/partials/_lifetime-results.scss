@@ -20,6 +20,7 @@
 
 #lifetime-results-page__lifetime-graph {
   width: 100%;
+  padding: 2%;
   height: 200px;
   border: 1px solid black;
   margin-top: 10px;
@@ -28,6 +29,12 @@
     stroke: $grey-darken-2;
     stroke-width: 3px;
   }
+}
+
+.lifetime-graph__dots {
+  fill: $teal;
+  stroke: $teal-darken-1;
+  stroke-width: 3;
 }
 
 .lifetime-results-page__emotion-results {
