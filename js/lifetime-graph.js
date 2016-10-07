@@ -1,13 +1,15 @@
-var margin = {top: 10, right: 10, bottom: 10, left: 10},
-    width = 400 - margin.left - margin.right,
-    height = 200 - margin.top - margin.bottom
-var roundResults;
-
 d3.json("../dummyData/roundResults.json", function (error, results) {
 
   if (error) return console.warn(error);
 
-  roundResults = results.roundResults;
+  var roundResults = results.roundResults;
+  var dataLength = roundResults.length;
+
+  console.log(dataLength);
+
+  var margin = {top: 10, right: 10, bottom: 10, left: 10},
+      width = dataLength * 100 - margin.left - margin.right,
+      height = 200 - margin.top - margin.bottom
 
   var dates = roundResults.map(function(a) {return a.date});
 
@@ -52,8 +54,8 @@ d3.json("../dummyData/roundResults.json", function (error, results) {
   var svg = d3
     .select("#lifetime-results-page__lifetime-graph")
     .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
+      .attr("width", "100%")
+      .attr("height", height)
       .call(zoom)
     .append("g")
       .attr("transform", `translate(${margin.left},${margin.top},${margin.right},${margin.bottom})`)
