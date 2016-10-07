@@ -1,4 +1,7 @@
 function loader(){
+
+const db = new PouchDB('localDB')
+
   $('#main').append(pages['landing'])
 
   $('#landing').show("slide", { direction: "left" }, 500)
