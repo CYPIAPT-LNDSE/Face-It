@@ -1,3 +1,6 @@
 [submodule "uploader"]
 	path = uploader
 	url = https://github.com/RichAWarren/annaFreudImageUploader
+[submodule "imagesToBeRated"]
+	path = imagesToBeRated
+	url = https://github.com/SimonJStewart/emotionimage.git
