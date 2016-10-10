@@ -16,6 +16,17 @@ open index.html
 ```
 if `open index.html` doesnt work just double click on index.html
 
+## compiling the cordova app
+
+
+```
+grunt
+
+cd cordova
+
+cordova run android
+
+```
 
 ##About
 
