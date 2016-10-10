@@ -5,19 +5,23 @@ d3.json("../dummyData/roundResults.json", function (error, results) {
   var roundResults = results.roundResults;
   var dataLength = roundResults.length;
 
-  console.log(dataLength);
-
-  var margin = {top: 10, right: 10, bottom: 10, left: 10},
-      width = dataLength * 100 - margin.left - margin.right,
-      height = 200 - margin.top - margin.bottom
-
+  var margin = {top: 10, right: 10, bottom: 10, left: 10};
+  var height = 200 - margin.top - margin.bottom;
+  var width = 600 - margin.left - margin.right;
+  if (dataLength > 6) {
+    width = dataLength * 100 - margin.left - margin.right;
+  }
   var dates = roundResults.map(function(a) {return a.date});
+
+  // Convert date to human-readable format
 
   // roundResults.forEach(function (d) {
   //   var formatTime = d3.timeFormat("%d/%m");
   //   d.date = formatTime(d.date);
   //   console.log(d.date)
   // });
+
+  // Create scales
 
   var xScale = d3.scaleTime()
     .domain(d3.extent(dates))
@@ -26,6 +30,8 @@ d3.json("../dummyData/roundResults.json", function (error, results) {
   var yScale = d3.scaleLinear()
     .domain([0, 100])
     .range([height, 0]);
+
+  // Create path
 
   var line = d3.line()
     .x(function (d) {
@@ -49,7 +55,7 @@ d3.json("../dummyData/roundResults.json", function (error, results) {
       `translate(${d3.event.transform.x}, 0)`
     )}
 
-  // Create chart instance
+  // Append SVG chart to div and apply zoom event
 
   var svg = d3
     .select("#lifetime-results-page__lifetime-graph")
@@ -60,13 +66,13 @@ d3.json("../dummyData/roundResults.json", function (error, results) {
     .append("g")
       .attr("transform", `translate(${margin.left},${margin.top},${margin.right},${margin.bottom})`)
 
-  // Add line chart
+  // Append path to chart
 
   svg.append("path")
     .datum(roundResults)
     .attr("d", line);
 
-  // Create data points on line chart
+  // Create data points and apply to graph
 
   svg.selectAll("dot")
       .data(roundResults)
