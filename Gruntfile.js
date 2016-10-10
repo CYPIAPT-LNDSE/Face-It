@@ -7,17 +7,14 @@ module.exports = function(grunt){
 
   grunt.initConfig({
 
-    watch:{
-      files:['./test/**'],
-      tasks:['default', 'sync']
-    },
-
+   
     sync:{
       copy_resources_to_www: {
         files: [
           { cwd: './', src: 'index.html', dest: './cordova/www' },
           { cwd: './', src: 'js/**/*', dest: './cordova/www' },
           { cwd: './', src: 'css/**/*', dest: './cordova/www' },
+          { cwd: './', src: 'assets/**/*', dest: './cordova/www' },
         ]
       }
     },
