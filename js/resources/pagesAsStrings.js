@@ -105,46 +105,14 @@ let pages = {
   <p>Emotion API</p>
   </div>
   </div>
+  {{#each emotions}}
   <div class="lifetime-results-page__emotion-results">
-  <h2>Happiness</h2>
+  <h2>{{ this.type }}</h2>
   <p>How often did you answer happiness, compared to Emotion API?</p>
-  <img src="assets/icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
-  <p>Your weekly progress</p>
-  <img src="assets/icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
+  <div id={{ this.type }} class="emotion"></div>
   </div>
   <hr>
-  <div class="lifetime-results-page__emotion-results">
-  <h2>Sadness</h2>
-  <p>How often did you answer sadness, compared to Emotion API?</p>
-  <img src="assets/icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
-  <p>Your weekly progress</p>
-  <img src="assets/icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
-  </div>
-  <hr>
-  <div class="lifetime-results-page__emotion-results">
-  <h2>Neutral</h2>
-  <p>How often did you answer neutral, compared to Emotion API?</p>
-  <img src="assets/icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
-  <p>Your weekly progress</p>
-  <img src="assets/icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
-  </div>
-  <hr>
-  <div class="lifetime-results-page__emotion-results">
-  <h2>Surprise</h2>
-  <p>How often did you answer surprise, compared to Emotion API?</p>
-  <img src="assets/icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
-  <p>Your weekly progress</p>
-  <img src="assets/icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
-  </div>
-  <hr>
-  <div class="lifetime-results-page__emotion-results">
-  <h2>Anger</h2>
-  <p>How often did you answer anger, compared to Emotion API?</p>
-  <img src="assets/icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
-  <p>Your weekly progress</p>
-  <img src="assets/icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
-  </div>
-  <hr>
+  {{/each}}
   <div class="lifetime-results-page__feedback">
   <h2>You could work on:</h2>
   <ul>

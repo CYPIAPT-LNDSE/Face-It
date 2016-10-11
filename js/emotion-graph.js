@@ -15,7 +15,7 @@ function emotionResultGraph(result, element) {
   const domainMax = result.reduce((acc, el) => {
     return Math.max(acc, el.score);
   }, 0);
-
+  console.log(height, width)
   const lineData = [{y: 50, x: 0}, {y: 50, x: domainMax / 2}, {y: 50, x: domainMax}]
 
   const xScale = d3.scaleLinear()

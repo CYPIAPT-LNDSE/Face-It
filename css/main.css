@@ -1,7 +1,7 @@
 .full-screen-background {
   height: 100vh;
   width: 100vw;
-  background-color: #616161; }
+  background-color: /616161; }
 
 .full-screen {
   overflow: scroll;
@@ -212,7 +212,10 @@
     stroke: #616161;
     stroke-width: 3px; }
 
-#happiness path {
+.emotion {
+}
+
+.emotion path {
     fill: none;
     stroke: #616161;
     stroke-width: 3px; }

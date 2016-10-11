@@ -15,7 +15,32 @@ function initRoundResult(results, handleOnPrevious){
   $('#gamePage'+handleOnPrevious).hide()
   $('#roundResult').show("slide", { direction: "left" }, 500)
 
-  roundResultEventListener()
+  const emotionResults = [
+    {
+      type: 'happiness',
+      data: [
+        {"id": "user", "score": 10},
+        {"id": "api", "score": 12}
+      ]
+    },
+    {
+      type: 'sadness',
+      data: [
+        {"id": "user", "score": 11},
+        {"id": "api", "score": 17}
+      ]
+    },
+    {
+      type: 'surprise',
+      data: [
+        {"id": "user", "score": 14},
+        {"id": "api", "score": 12}
+      ]
+    },
+
+  ]
+
+  roundResultEventListener(emotionResults)
 }
 
 function risultatone(results){
@@ -25,13 +50,19 @@ function risultatone(results){
   })
   return String((accumulator/5)*100)
 }
-function roundResultEventListener(){
+function roundResultEventListener(emotionResults){
 
   function lifeTime(){
     $('#lifeTime').click(function(){
-      $('#main').append(pages['lifeTimePage'])
+      $('#main').append(Handlebars.compile(pages['lifeTimePage'])({
+        emotions: emotionResults
+      }))
+
       $('#roundResult').hide()
       $('#lifeTimePage').show("slide", { direction: "right" }, 500)
+      emotionResults.map((el) => {
+        emotionResultGraph(el.data, '#' + el.type) 
+      })
       results = []
     })
   }
