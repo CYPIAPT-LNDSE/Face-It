@@ -206,7 +206,13 @@
   height: 200px;
   border: 1px solid black;
   margin-top: 10px; }
-  #lifetime-results-page__lifetime-graph path {
+
+#lifetime-results-page__lifetime-graph path {
+    fill: none;
+    stroke: #616161;
+    stroke-width: 3px; }
+
+#happiness path {
     fill: none;
     stroke: #616161;
     stroke-width: 3px; }

@@ -67,7 +67,6 @@ d3.json("../dummyData/roundResults.json", function (error, results) {
       .attr("transform", `translate(${margin.left},${margin.top},${margin.right},${margin.bottom})`)
 
   // Append path to chart
-
   svg.append("path")
     .datum(roundResults)
     .attr("d", line);
