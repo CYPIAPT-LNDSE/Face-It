@@ -16,6 +16,21 @@ open index.html
 ```
 if `open index.html` doesnt work just double click on index.html
 
+## compiling the cordova app
+
+In the terminal in the root folder:
+```
+grunt
+
+cd cordova
+
+//with an emulator
+cordova emulate android -target=android-19
+
+//with a device attached (need debug mode on)
+cordova run android -device
+
+```
 
 ##About
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link type="text/css" rel="stylesheet" href="./assets/js/vendor/jquery-ui.css"  media="screen,projection"/>
+
+    <script type="text/javascript" src="./assets/js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="./assets/js/vendor/jquery-ui.min.js"></script>
+    <script src="./assets/js/vendor/pouchdb-6.0.4.min.js"></script>
+    <script src="./js/helpers.js"></script>
+    <script src="./js/images.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Face It</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="row full-screen-background">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 full-screen" id='view1'>
+        <div class="intro-page">
+          <div class="col-xs-12">
+            <div class="intro-page__explanation">
+              <h1>Hi, {{USER}}!</h1>
+              <p><strong style="color: #66938F">Face It</strong> is a game about recognising emotions.</p>
+              <hr>
+              <p class="intro-page__explanation-p-margin">It's based on a computer programme called Emotion API.</p>
+              <p>Emotion API can detect emotions in photos.</p>
+              <hr>
+              <p class="intro-page__explanation-p-margin">We're going to show you a photo of a face and two emotions to choose from.</p>
+              <p>Pick which emotion you're most sure the face is expressing.</p>
+              <hr>
+              <p class="intro-page__explanation-p-margin">After five faces, we'll compare your choices to Emotion API's!</p>
+            </div>
+
+            <div class="intro-page__level-bar--label">
+              <p>You are at Level 1</p>
+            </div>
+
+            <div class="col-xs-12 intro-page__level-bar">
+              <p class="intro-page__level-bar-component intro-page__level-bar-component--active">1</p>
+              <p class="intro-page__level-bar-component intro-page__level-bar-component">2</p>
+              <p class="intro-page__level-bar-component intro-page__level-bar-component">3</p>
+              <p class="intro-page__level-bar-component intro-page__level-bar-component">4</p>
+              <p class="intro-page__level-bar-component intro-page__level-bar-component">5</p>
+            </div>
+
+            <button type="button" class="btn btn-default btn-lg btn-block">Start</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>
