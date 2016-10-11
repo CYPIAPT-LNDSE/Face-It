@@ -86,7 +86,7 @@ let pages = {
   </div>
   </div>
   `,
-  'lifeTimeResults':`<div class="lifetime-results-page" id='lifeTimePage' style='display:none;'>
+  'lifeTimePage':`<div class="lifetime-results-page" id='lifeTimePage' style='display:none;'>
   <div class="lifetime-results-page__disclaimer">
   <p>This is a prototype app, so not all the features are working yet.</p>
   <hr>

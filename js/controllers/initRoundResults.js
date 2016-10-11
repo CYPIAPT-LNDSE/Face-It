@@ -29,6 +29,7 @@ function roundResultEventListener(){
 
   function lifeTime(){
     $('#lifeTime').click(function(){
+      $('#main').append(pages['lifeTimePage'])
       $('#roundResult').hide()
       $('#lifeTimePage').show("slide", { direction: "right" }, 500)
       results = []
@@ -40,10 +41,8 @@ function roundResultEventListener(){
       $('#landing').show("slide", { direction: "right" }, 500)
       results = []
     })
-    $('#playAgain2').click(function(){
-      $('#lifeTimePage').hide()
-      $('#landing').show("slide", { direction: "right" }, 500)
-      results = []
-    })
   }
+
+  lifeTime();
+  playAgain();
 }
