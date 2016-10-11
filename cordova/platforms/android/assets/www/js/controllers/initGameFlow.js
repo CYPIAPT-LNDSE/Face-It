@@ -101,12 +101,10 @@ function emojiPath(emotion) {
 }
 
 function apiWinner(scores) {
-  
-  console.log('this is score' + scores)
   var tempNumber = 0;
   var emotion = void 0;
   for (var prop in scores) {
-    if (scores[prop] > tempNumber && String(scores[prop]).includes('-') === false) {
+    if (scores[prop] > tempNumber && String(scores[prop]).indexOf('-') !== false) {
       tempNumber = scores[prop];
       emotion = prop;
     }
