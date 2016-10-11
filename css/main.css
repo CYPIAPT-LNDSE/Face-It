@@ -200,6 +200,22 @@
   padding: 1em 2em;
   margin-top: 5%; }
 
+#lifetime-results-page__lifetime-graph {
+  width: 100%;
+  padding: 2%;
+  height: 200px;
+  border: 1px solid black;
+  margin-top: 10px; }
+  #lifetime-results-page__lifetime-graph path {
+    fill: none;
+    stroke: #616161;
+    stroke-width: 3px; }
+
+.lifetime-graph__dots {
+  fill: #E0F2F1;
+  stroke: #B2DFDB;
+  stroke-width: 3; }
+
 .lifetime-results-page__emotion-results {
   margin-bottom: 10%; }
   .lifetime-results-page__emotion-results h2 {
