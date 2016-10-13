@@ -1,0 +1,16 @@
+.level-page {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  button {
+    margin-bottom: 1em;
+  }
+}
+
+.level-page__conveyer-belts {
+  margin-bottom: 20%;
+}
+
+.gear {
+  transform-origin: 50% 50%;
+}
