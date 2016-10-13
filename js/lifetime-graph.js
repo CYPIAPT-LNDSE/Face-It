@@ -1,16 +1,13 @@
-d3.json("../dummyData/roundResults.json", function (error, results) {
+d3.json("../../dummyData/roundResults.json", function (error, results) {
 
   if (error) return console.warn(error);
 
   var roundResults = results.roundResults;
   var dataLength = roundResults.length;
 
-  var margin = {top: 10, right: 10, bottom: 10, left: 10};
+  var margin = {top: 15, right: 5, bottom: 35, left: 60};
   var height = 200 - margin.top - margin.bottom;
-  var width = 600 - margin.left - margin.right;
-  if (dataLength > 6) {
-    width = dataLength * 100 - margin.left - margin.right;
-  }
+  var width = dataLength * 100 - margin.left - margin.right;
   var dates = roundResults.map(function(a) {return a.date});
 
   // Convert date to human-readable format
@@ -31,6 +28,12 @@ d3.json("../dummyData/roundResults.json", function (error, results) {
     .domain([0, 100])
     .range([height, 0]);
 
+  // Create axis
+
+var yAxis = d3.axisRight(yScale)
+    .ticks(1)
+    .tickFormat(function(d) { return d + "%"; });
+
   // Create path
 
   var line = d3.line()
@@ -41,45 +44,58 @@ d3.json("../dummyData/roundResults.json", function (error, results) {
       return yScale(d.score);
     })
 
-
   // Create zoom event
 
   var zoom = d3.zoom()
     .scaleExtent([1, 1])
-    .translateExtent([[-20, -20], [width + 20, height + 20]])
+    .translateExtent([[0, -10], [width + 80, height]])
     .on("zoom", zoomed);
 
   function zoomed() {
-    svg.attr(
-      "transform",
-      `translate(${d3.event.transform.x}, 0)`
+    chart.attr(
+      "transform", `translate(${d3.event.transform.x}, 0)`
     )}
 
-  // Append SVG chart to div and apply zoom event
+  // Append SVG to div
 
   var svg = d3
     .select("#lifetime-results-page__lifetime-graph")
     .append("svg")
       .attr("width", "100%")
-      .attr("height", height)
-      .call(zoom)
+      .attr("height", height + margin.top + margin.bottom)
+      // .call(zoom)
     .append("g")
-      .attr("transform", `translate(${margin.left},${margin.top},${margin.right},${margin.bottom})`)
+      .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+  if (width > 300) {
+    svg.call(zoom)
+  }
+
+  // Append chart to SVG
+
+  chart = svg.append("g")
+    .attr("class", "lifetime-graph__chart")
+
+  // Append axis to SVG
+
+  svg.append("g")
+    .attr("transform", "translate(-60, 0)")
+    .attr("class", "lifetime-graph__axis")
+    .call(yAxis);
 
   // Append path to chart
 
-  svg.append("path")
+  chart.append("path")
     .datum(roundResults)
-    .attr("d", line);
+    .attr("d", line)
 
-  // Create data points and apply to graph
+  // Create data points and append to chart
 
-  svg.selectAll("dot")
-      .data(roundResults)
+  chart.selectAll("data-points")
+    .data(roundResults)
     .enter().append("circle")
-      .attr("class", "lifetime-graph__dots")
-      .attr("r", 8)
-      .attr("cx", function(d) { return xScale(d.date); })
-      .attr("cy", function(d) { return yScale(d.score); });
-
+    .attr("class", "lifetime-graph__dots")
+    .attr("r", 8)
+    .attr("cx", function(d) { return xScale(d.date); })
+    .attr("cy", function(d) { return yScale(d.score); })
 });
