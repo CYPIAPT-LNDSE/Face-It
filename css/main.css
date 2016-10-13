@@ -215,14 +215,21 @@
 
 #lifetime-results-page__lifetime-graph {
   width: 100%;
-  padding: 2%;
   height: 200px;
-  border: 1px solid black;
+  border: 1em solid #B2DFDB;
   margin-top: 10px; }
   #lifetime-results-page__lifetime-graph path {
     fill: none;
     stroke: #616161;
     stroke-width: 3px; }
+
+.lifetime-graph__axis {
+  font-size: 1.4em;
+  font-family: 'Open Sans', sans-serif; }
+  .lifetime-graph__axis path, .lifetime-graph__axis line {
+    display: none; }
+  .lifetime-graph__axis text {
+    fill: #616161; }
 
 .lifetime-graph__dots {
   fill: #E0F2F1;
