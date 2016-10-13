@@ -6,16 +6,15 @@ const db = new PouchDB('localDB')
 
   $('#landing').show("slide", { direction: "left" }, 500)
   $('#start').click(function(){
-    $('#main').append(Handlebars.compile(pages['intro'])({
+    const introPage =  Handlebars.compile(pages['intro'])({
       username:$('#first-name').val()
-    }))
-    $('#landing').hide()
-    $('#intro').show("slide", { direction: "left" }, 500)
+    })
+    addPage('intro', introPage);
+    showPage('intro');
 
     $('#startGame').click(function(){
-      initGame()
-      $('#intro').hide()
-      $('#gamePage1').show("slide", { direction: "left" }, 500)
+      initGame();
+      showPage('gamePage1');
     })
   })
 }

@@ -126,7 +126,7 @@ let pages = {
   <button type="button" class="btn btn-default btn-lg btn-block results-page__button"id='playAgain2' >Play Again</button>
   </div>
   <div class="col-xs-6">
-  <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='roundResults'>Round Results</button>
+  <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='roundResults2'>Round Results</button>
   </div>
   </div>`
 }

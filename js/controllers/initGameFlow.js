@@ -10,8 +10,7 @@ function eventListenerGamePage(gameSet){
   [1,2,3,4,5].forEach(function(el,i){
     if(el<5){
       $('#gamePage'+ el).find('button').click(function(event){
-        $('#gamePage'+el).hide()
-        $('#gamePage'+(Number(el)+1)).show("slide", { direction: "left" }, 500)
+        showPage('gamePage' + (Number(el) + 1))
         gameSet[i].userGuess = $(this)[0].innerHTML
         results.push(gameSet[i])
       })
@@ -32,14 +31,15 @@ function eventListenerGamePage(gameSet){
 function renderGamePages(gameSet){
   [1,2,3,4,5].forEach(function(el, i){
     let answerType = randomiser2()
-    $('#main').append(Handlebars.compile(pages['gamePage'])({
+    const gamePage = Handlebars.compile(pages['gamePage'])({
       id:'gamePage'+ el,
       biggie:'assets/imgs/' + Object.keys( gameSet[i])[0]+ '.jpg',
       choiceL: String(gameSet[i][answerType[0]].emojiPath),
       buttonL: gameSet[i][answerType[0]].emotion[0],
       choiceR: String(gameSet[i][answerType[1]].emojiPath),
       buttonR: gameSet[i][answerType[1]].emotion[0],
-    }))
+    })
+    addPage('gamePage' + el, gamePage)
   })
 }
 function renderResPages(gameSet){
