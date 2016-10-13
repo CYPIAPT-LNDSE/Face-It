@@ -18,6 +18,7 @@ function initRoundResult(results, handleOnPrevious){
   const emotionResults = [
     {
       type: 'happiness',
+      properType: 'Happiness',
       data: [
         {"id": "user", "score": 10},
         {"id": "api", "score": 12}
@@ -25,6 +26,7 @@ function initRoundResult(results, handleOnPrevious){
     },
     {
       type: 'sadness',
+      properType: 'Sadness',
       data: [
         {"id": "user", "score": 11},
         {"id": "api", "score": 17}
@@ -32,12 +34,12 @@ function initRoundResult(results, handleOnPrevious){
     },
     {
       type: 'surprise',
+      properType: 'Surprise',
       data: [
         {"id": "user", "score": 14},
         {"id": "api", "score": 12}
       ]
     },
-
   ]
 
   roundResultEventListener(emotionResults)
@@ -51,29 +53,58 @@ function risultatone(results){
   return String((accumulator/5)*100)
 }
 function roundResultEventListener(emotionResults){
+  $('#lifeTime').click(function(){
+    lifeTime(emotionResults);
+  })
 
-  function lifeTime(){
-    $('#lifeTime').click(function(){
-      $('#main').append(Handlebars.compile(pages['lifeTimePage'])({
-        emotions: emotionResults
-      }))
 
-      $('#roundResult').hide()
-      $('#lifeTimePage').show("slide", { direction: "right" }, 500)
-      emotionResults.map((el) => {
-        emotionResultGraph(el.data, '#' + el.type) 
-      })
-      results = []
-    })
-  }
-  function playAgain(){
-    $('#playAgain1').click(function(){
-      $('#roundResult').hide()
-      $('#landing').show("slide", { direction: "right" }, 500)
-      results = []
-    })
-  }
-
-  lifeTime();
-  playAgain();
+  $('#playAgain1').click(function(){
+    playAgain();
+  })
 }
+
+function totalQuestions(results) {
+  return results.reduce((acc, el) => {
+    return acc + el.data[0].score;
+  }, 0)
+} 
+
+function significantDifference([user, api], bound) {
+  return Math.abs(user.score - api.score) / api.score >= bound;
+}
+
+function emotionsToWorkOn(results, bound) {
+  return results.reduce((acc, el) =>  {
+    return significantDifference(el.data, bound) ? acc.concat(el.type) : acc;
+  },[])
+}
+
+function lifeTime(emotionResults){
+
+  const workOn = emotionsToWorkOn(emotionResults, 0.2)
+  $('#main').append(Handlebars.compile(pages['lifeTimePage'])({
+    emotions: emotionResults,
+    workOn: workOn
+  }))
+
+  const total = totalQuestions(emotionResults)
+
+  console.log(workOn)
+
+  $('#roundResult').hide()
+  $('#lifeTimePage').show("slide", { direction: "right" }, 500)
+  
+  // add lifetime graph function here
+
+  emotionResults.map((el) => {
+    emotionResultGraph(total, el.data, '#' + el.type) 
+  })
+  results = []
+}
+
+function playAgain(){
+  $('#roundResult').hide()
+  $('#landing').show("slide", { direction: "right" }, 500)
+  results = []
+}
+

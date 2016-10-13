@@ -6,20 +6,16 @@
 //
 //});
 
-function emotionResultGraph(result, element) {
-  
+function emotionResultGraph(total, result, element) {
+
   const margin = {top: 20, right: 20, bottom: 20, left: 20};
   const height = 200 - margin.top - margin.bottom;
   const width = $(element).width() - margin.left - margin.right;  
 
-  const domainMax = result.reduce((acc, el) => {
-    return Math.max(acc, el.score);
-  }, 0);
-  console.log(height, width)
-  const lineData = [{y: 50, x: 0}, {y: 50, x: domainMax / 2}, {y: 50, x: domainMax}]
+  const lineData = [{y: 50, x: 0}, {y: 50, x: total / 2}, {y: 50, x: total}]
 
   const xScale = d3.scaleLinear()
-    .domain([0, domainMax])
+    .domain([0, total])
     .range([0, width]);
   const yScale = d3.scaleLinear()
     .domain([0, 100])
@@ -53,11 +49,12 @@ function emotionResultGraph(result, element) {
     .data(result)
     .enter()
     .append("circle")
-    .attr("class", "lifetime-graph__dots")
+    .attr("class", function(d) {
+      return d.id === "user" ? "lifetime-graph__dots-user" : "lifetime-graph__dots-api";
+    })
     .attr("r", 8)
     .attr("cx", function(d) { return xScale(d.score); })
     .attr("cy", function(d) { return yScale(50); });
 }
-
 
 

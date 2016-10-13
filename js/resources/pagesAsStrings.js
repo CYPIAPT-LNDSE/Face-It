@@ -107,7 +107,7 @@ let pages = {
   </div>
   {{#each emotions}}
   <div class="lifetime-results-page__emotion-results">
-  <h2>{{ this.type }}</h2>
+  <h2>{{ this.properType }}</h2>
   <p>How often did you answer happiness, compared to Emotion API?</p>
   <div id={{ this.type }} class="emotion"></div>
   </div>
@@ -116,8 +116,9 @@ let pages = {
   <div class="lifetime-results-page__feedback">
   <h2>You could work on:</h2>
   <ul>
-  <li>Anger</li>
-  <li>Neutral</li>
+  {{#each workOn}}
+  <li>{{this}}</li>
+  {{/each}}
   </ul>
   </div>
   <hr>
