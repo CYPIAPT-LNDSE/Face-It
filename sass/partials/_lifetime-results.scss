@@ -20,9 +20,8 @@
 
 #lifetime-results-page__lifetime-graph {
   width: 100%;
-  padding: 2%;
-  height: 200px;
-  border: 1px solid black;
+  height: 250px;
+  border: 1em solid $teal-darken-1;
   margin-top: 10px;
   path {
     fill: none;
@@ -31,10 +30,32 @@
   }
 }
 
+.lifetime-graph__axis {
+  font-size: 1.4em;
+  font-family: 'Open Sans', sans-serif;
+  path, line {
+    display: none;
+  }
+  text {
+    fill: $grey-darken-2;
+  }
+}
+
 .lifetime-graph__dots {
   fill: $teal;
   stroke: $teal-darken-1;
   stroke-width: 3;
+}
+
+.lifetime-graph__tooltip {
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  fill: $grey-darken-2;
+}
+
+.lifetime-graph__tooltip--bg {
+  stroke: $teal-darken-1;
+  stroke-width: 2;
 }
 
 .lifetime-results-page__emotion-results {

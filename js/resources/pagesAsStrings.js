@@ -95,6 +95,16 @@ let pages = {
   <hr>
   <p>Thank you for testing <strong style="color: #66938F">Face It</strong>!</p>
   </div>
+  
+  <div id="lifetime-results-page__lifetime-graph"></div>
+
+  <div class="lifetime-results-page__emotions-explanation">
+  <h3>Emotions</h3>
+  <hr>
+  <p>These graphs show you whether you agreed with the emotion API</p>
+  <p>It shows the number of times you chose the same emotion</p>
+  </div>
+
   <div class="lifetime-results-page__key">
   <div class="col-xs-6 text-center">
   <img src="assets/icons/user-icon.svg" class="img-responsive" alt="User Icon">

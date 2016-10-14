@@ -19,11 +19,38 @@ const emotionResults = [
     type: 'surprise',
     properType: 'Surprise',
     data: [
-      {"id": "user", "score": 14},
+      {"id": "user", "score": 11},
       {"id": "api", "score": 12}
     ]
   },
 ]
+
+const totalRoundResults = [
+  {
+    "date": "1475766444306",
+    "score": 50
+  },
+  {
+    "date": "1475794800000",
+    "score": 57
+  },
+  {
+    "date": "1475881200000",
+    "score": 62
+  },
+  {
+    "date": "1475967600000",
+    "score": 58
+  },
+  {
+    "date": "1476054000000",
+    "score": 60
+  },
+  {
+    "date": "1476140400000",
+    "score": 62
+  }
+];
 
 function initLifeTime(){
 
@@ -78,10 +105,15 @@ function lifeTime(emotionResults){
   showPage('lifeTimePage')
 
   // add lifetime graph function here
+  if (!$('#lifetime-results-page__lifetime-graph').find('svg').length) {  
+    lifeTimeResults(totalRoundResults)
+  }
+
   if (!$('.emotion').find('svg').length) {
     const total = totalQuestions(emotionResults)
     emotionResults.map((el) => {
       emotionResultGraph(total, el.data, '#' + el.type) 
+      emotionResultGraphPercent(total, el.data, '#' + el.type)
     })
   }
   results = []
