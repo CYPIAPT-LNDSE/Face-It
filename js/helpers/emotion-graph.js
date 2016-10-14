@@ -100,19 +100,12 @@ function emotionResultGraphPercent(total, result, element) {
     .attr("r", 12)
     .attr("cx", function(d) { return xScale(d.score); })
     .attr("cy", function(d) { return yScale(50); });
-
   svg.append("text")
     .data(result)
-    .attr("class", "lifetime-graph__tooltip")
-    .attr("x", function(d) { return (xScale(d.score)); })
+    .attr("class", "lifetime-graph__emotion-scale")
+    .attr("x", function(d) { return (xScale(result[0].score) - 10); })
     .attr("y", function(d) { return (yScale(60)) })
     .text(function(d){ return Math.round((result[0].score / result[1].score) * 100) + '%'})
-
-  svg.append("text")
-    .attr("class", "lifetime-graph__tooltip")
-    .attr("x", function(d) { return (xScale(result[1].score)- 10); })
-    .attr("y", function(d) { return (yScale(60)) })
-    .text(function(d){ return '100%' })
 
 }
 

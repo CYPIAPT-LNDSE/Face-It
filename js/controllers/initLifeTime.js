@@ -112,7 +112,6 @@ function lifeTime(emotionResults){
   if (!$('.emotion').find('svg').length) {
     const total = totalQuestions(emotionResults)
     emotionResults.map((el) => {
-      emotionResultGraph(total, el.data, '#' + el.type) 
       emotionResultGraphPercent(total, el.data, '#' + el.type)
     })
   }
