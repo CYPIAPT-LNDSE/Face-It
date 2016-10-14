@@ -1,4 +1,5 @@
-function initRoundResult(results, handleOnPrevious){
+function initRoundResult(results){
+  console.log(results)
   const resultsPage = Handlebars.compile(pages['roundResultContainer'])({
     roundAnswers: results.reduce((acc, current, i)=>{
       return acc + Handlebars.compile(pages['roundAnswer'])({
@@ -11,7 +12,7 @@ function initRoundResult(results, handleOnPrevious){
     },''),
     risultatone:risultatone(results)
   })
-
+  clearPage('main')
   addPage('roundResult', resultsPage)
   showPage('roundResult');
 
@@ -32,13 +33,8 @@ function roundResultEventListener(){
   })
 
   $('#playAgain1').click(function(){
-    playAgain();
+    initIntro();
+    results = [];
   })
-}
-
-function playAgain(){
-  $('#roundResult').hide()
-  $('#landing').show("slide", { direction: "right" }, 500)
-  results = []
 }
 

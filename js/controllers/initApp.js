@@ -6,20 +6,13 @@ function loader(){
 function initLandingPage() {
   addPage('landing', pages['landing']);
   showPage('landing')
-  
-  $('#start').click(function(){
-    const introPage =  Handlebars.compile(pages['intro'])({
-      username:$('#first-name').val()
-    })
-    clearPage('main')
-    addPage('intro', introPage);
-    showPage('intro');
+  startButtonEventListener();
+}
 
-    $('#startGame').click(function(){
-      clearPage('main')
-      initGame();
-      showPage('gamePage1');
-    })
+function startButtonEventListener() {
+  $('#start').click(function(){
+    initIntro();
   })
 }
+
 $(document).ready(loader)

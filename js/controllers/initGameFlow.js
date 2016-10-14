@@ -3,7 +3,7 @@ function initGame(){
   let gameSet = R.compose( generateWrongAnswerData, generateGameSet)(images)
   renderGamePages(gameSet)
   eventListenerGamePage(gameSet)
-
+  showPage('gamePage1')
 }
 
 function eventListenerGamePage(gameSet){
@@ -18,7 +18,7 @@ function eventListenerGamePage(gameSet){
       $('#gamePage'+ el).find('button').click(function(event){
         gameSet[i].userGuess = $(this)[0].innerHTML
         results.push(gameSet[i])
-        initRoundResult(results,el)
+        initRoundResult(results)
       })
     }
   })

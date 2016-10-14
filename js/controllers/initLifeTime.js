@@ -53,29 +53,19 @@ const totalRoundResults = [
 ];
 
 function initLifeTime(){
-
   lifeTime(emotionResults)
   lifeTimeEventListener()
 
 }
 
 function lifeTimeEventListener(){
-  function roundResults(){
-    $('#roundResults2').click(function(){
-      $('#lifeTimePage').remove()
-      $('#roundResult').show("slide", { direction: "right" }, 500)
-      results = []
-    })
-  }
-  function playAgain(){
-    $('#playAgain2').click(function(){
-      $('#lifeTimePage').remove()
-      $('#landing').show("slide", { direction: "right" }, 500)
-      results = []
-    })
-  }
-  playAgain()
-  roundResults()
+  $('#roundResults2').click(function(){
+    initRoundResult(results);
+  })
+  $('#playAgain2').click(function(){
+    initIntro();
+    results = []
+  })
 }
 
 function totalQuestions(results) {
@@ -100,7 +90,7 @@ function lifeTime(emotionResults){
     emotions: emotionResults,
     workOn: workOn
   })
-
+  clearPage('main')
   addPage('lifeTimePage', lifeTimePage)
   showPage('lifeTimePage')
 
@@ -115,6 +105,5 @@ function lifeTime(emotionResults){
       emotionResultGraphPercent(total, el.data, '#' + el.type)
     })
   }
-  results = []
 }
 
