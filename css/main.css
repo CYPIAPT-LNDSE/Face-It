@@ -233,6 +233,7 @@
     stroke-width: 3px; }
 
 .emotion {
+  border: 1em solid #B2DFDB;
 }
 
 .emotion path {
@@ -283,8 +284,6 @@
   .lifetime-results-page__emotion-results h2 {
     margin-bottom: 0px; }
   .lifetime-results-page__emotion-results p {
-    margin-top: 2em;
-    margin-bottom: 1em;
     font-size: 1.4em; }
     @media screen and (max-width: 768px) {
       .lifetime-results-page__emotion-results p {
@@ -353,6 +352,7 @@ hr {
   border-top: #B2DFDB 5px solid; }
 
 .btn {
+  height: 4em;
   white-space: normal !important;
   word-break: normal;
   word-wrap: break-word;
@@ -364,5 +364,10 @@ hr {
   .btn:hover, .btn:focus, .btn:active {
     background-color: #a0d8d3;
     border: #ceeae9 solid 0.5em; }
+  @media screen and (max-width: 360px) {
+    .btn {
+      font-size: 1.5em;
+    }
+  }
 
 /*# sourceMappingURL=main.css.map */

@@ -72,7 +72,7 @@ let pages = {
   <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='playAgain1'>Play Again</button>
   </div>
   <div class="col-xs-6">
-  <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='lifeTime'>Lifetime Results</button>
+  <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='lifeTime'>Statistics</button>
   </div>
   </div>`,
   'roundAnswer':`
@@ -101,19 +101,7 @@ let pages = {
   <div class="lifetime-results-page__emotions-explanation">
   <h3>Emotions</h3>
   <hr>
-  <p>These graphs show you whether you agreed with the emotion API</p>
-  <p>It shows the number of times you chose the same emotion</p>
-  </div>
-
-  <div class="lifetime-results-page__key">
-  <div class="col-xs-6 text-center">
-  <img src="assets/icons/user-icon.svg" class="img-responsive" alt="User Icon">
-  <p>You</p>
-  </div>
-  <div class="col-xs-6 text-center">
-  <img src="assets/icons/api-icon.svg" class="img-responsive" alt="API Icon">
-  <p>Emotion API</p>
-  </div>
+  <p>These graphs show the amount of times you agreed with the emotion API</p>
   </div>
   {{#each emotions}}
   <div class="lifetime-results-page__emotion-results">
@@ -121,7 +109,6 @@ let pages = {
   <p>How often did you answer happiness, compared to Emotion API?</p>
   <div id={{ this.type }} class="emotion"></div>
   </div>
-  <hr>
   {{/each}}
   <div class="lifetime-results-page__feedback">
   <h2>You could work on:</h2>
@@ -136,7 +123,7 @@ let pages = {
   <button type="button" class="btn btn-default btn-lg btn-block results-page__button"id='playAgain2' >Play Again</button>
   </div>
   <div class="col-xs-6">
-  <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='roundResults2'>Round Results</button>
+  <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='roundResults2'>Results</button>
   </div>
   </div>`
 }

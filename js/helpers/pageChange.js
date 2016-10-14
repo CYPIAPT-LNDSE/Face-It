@@ -5,8 +5,8 @@ function addPage(elementId, page) {
   }
 }
 
-function removePage(elementId) {
-  $('#' + elementId).remove();
+function clearPage(elementId) {
+  $('#' + elementId).children().remove();
 }
 
 function showPage(elementId) {
