@@ -9,8 +9,9 @@ let pages = {
   </div>
   <form>
   <div class="form-group">
-  <label class="name-form" for="first-name">What's Your First Name?</label>
-  <input type="text" class="form-control" id="first-name" placeholder="Emma">
+  <label class="name-form" for="first-name">Enter your credentials. If you dont have some, this will create new ones for you </label>
+  <input type="text" class="form-control" id="first-name" placeholder="userid">
+  <input type="password" class="form-control" id="first-name" placeholder="password">
   </div>
   </form>
   <button type="button" class="btn btn-default btn-lg btn-block" id="start">Start</button>
