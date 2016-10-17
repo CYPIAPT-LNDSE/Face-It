@@ -62,7 +62,8 @@ function attemptSync(){
       password: JSON.parse(localStorage.getItem('faceit')).api.password
     }
     })).on('complete', function(info) {
-      console.log('Sync was successful', info); 
+      console.log('Sync was successful', info);
+      initLevel()     
     }).on('error', (err)=>{
       console.log(err)
     });   
