@@ -16,8 +16,6 @@ function logger() {
         console.log(JSON.parse(localStorage.getItems('faceit')).api.key);
         console.log(JSON.parse(localStorage.getItems('faceit')).api.password);
 
-        var db = new PouchDB($('#username').val());
-
         db.sync(new PouchDB("https://daymos.cloudant.com/" + $('#username'), { auth: {
             username: JSON.parse(localStorage.getItem('faceit')).api.key,
             password: JSON.parse(localStorage.getItem('faceit')).api.password
@@ -57,6 +55,18 @@ function attemptSync() {
   if (localStorage.getItem('faceit') === null) logger();else {
     //call to claudant with api key ini local storage to sync pouch
     //if it fails try to find instance of pouch, use it and prompt dat awas not sync
+    var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).name);
+
+    db.sync(new PouchDB("https://daymos.cloudant.com/" + String(JSON.parse(localStorage.getItem('faceit')).name), { auth: {
+        username: JSON.parse(localStorage.getItem('faceit')).api.key,
+        password: JSON.parse(localStorage.getItem('faceit')).api.password
+      }
+    })).on('complete', function (info) {
+      console.log('Sync was successful', info);
+    }).on('error', function (err) {
+      console.log(err);
+    });
+
     console.log('trying to sync');
     console.log(JSON.parse(localStorage.getItem('faceit')).api.key);
     console.log(JSON.parse(localStorage.getItem('faceit')).api.password);

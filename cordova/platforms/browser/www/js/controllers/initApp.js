@@ -1,5 +1,6 @@
 'use strict';
 
+<<<<<<< HEAD
 function logger() {
   //check if local storage contains a token if so sync pouchdb and move to level page
   //if not prompt login
@@ -106,3 +107,26 @@ function loginUser(name, password, callback) {
     //else prompt message to create user and attach  createuser to button 
   });
 }
+=======
+function loader() {
+  var db = new PouchDB('localDB');
+
+  $('#main').append(pages['landing']);
+
+  $('#landing').show("slide", { direction: "left" }, 500);
+  $('#start').click(function () {
+    $('#main').append(Handlebars.compile(pages['intro'])({
+      username: $('#first-name').val()
+    }));
+    $('#landing').hide();
+    $('#intro').show("slide", { direction: "left" }, 500);
+
+    $('#startGame').click(function () {
+      initGame();
+      $('#intro').hide();
+      $('#gamePage1').show("slide", { direction: "left" }, 500);
+    });
+  });
+}
+$(document).ready(loader);
+>>>>>>> master

@@ -1,8 +1,5 @@
-d3.json("../../dummyData/roundResults.json", function (error, results) {
-
-  if (error) return console.warn(error);
-
-  var roundResults = results.roundResults;
+function lifeTimeResults (roundResults) {
+  
   var dataLength = roundResults.length;
 
   var margin = {top: 35, right: 5, bottom: 35, left: 60};
@@ -24,8 +21,8 @@ d3.json("../../dummyData/roundResults.json", function (error, results) {
   // Create axis
 
   var yAxis = d3.axisRight(yScale)
-      .ticks(1)
-      .tickFormat(function(d) { return d + "%"; });
+    .ticks(1)
+    .tickFormat(function(d) { return d + "%"; });
 
   // Create path
 
@@ -54,11 +51,11 @@ d3.json("../../dummyData/roundResults.json", function (error, results) {
   var svg = d3
     .select("#lifetime-results-page__lifetime-graph")
     .append("svg")
-      .attr("width", "100%")
-      .attr("height", height + margin.top + margin.bottom)
-      .call(zoom)
+    .attr("width", "100%")
+    .attr("height", height + margin.top + margin.bottom)
+    .call(zoom)
     .append("g")
-      .attr("transform", `translate(${margin.left}, ${margin.top})`);
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
   // Append chart to SVG
 
@@ -90,7 +87,7 @@ d3.json("../../dummyData/roundResults.json", function (error, results) {
 
   var circle = datapointEnter.append("circle")
     .attr("class", "lifetime-graph__dots")
-    .attr("r", 8)
+    .attr("r", 12)
     .attr("cx", function(d) { return xScale(d.date); })
     .attr("cy", function(d) { return yScale(d.score); })
 
@@ -107,4 +104,5 @@ d3.json("../../dummyData/roundResults.json", function (error, results) {
     .attr("x", function(d) { return (xScale(d.date) - 12); })
     .attr("y", function(d) { return (yScale(d.score) - 18); })
     .text(function(d){ return formatTime(d.date) })
-})
+
+}

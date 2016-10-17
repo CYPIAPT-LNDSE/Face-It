@@ -1,10 +1,7 @@
 "use strict";
 
-d3.json("../../dummyData/roundResults.json", function (error, results) {
+function lifeTimeResults(roundResults) {
 
-  if (error) return console.warn(error);
-
-  var roundResults = results.roundResults;
   var dataLength = roundResults.length;
 
   var margin = { top: 35, right: 5, bottom: 35, left: 60 };
@@ -69,7 +66,7 @@ d3.json("../../dummyData/roundResults.json", function (error, results) {
     return yScale(d.score);
   });
 
-  var circle = datapointEnter.append("circle").attr("class", "lifetime-graph__dots").attr("r", 8).attr("cx", function (d) {
+  var circle = datapointEnter.append("circle").attr("class", "lifetime-graph__dots").attr("r", 12).attr("cx", function (d) {
     return xScale(d.date);
   }).attr("cy", function (d) {
     return yScale(d.score);
@@ -88,4 +85,4 @@ d3.json("../../dummyData/roundResults.json", function (error, results) {
   }).text(function (d) {
     return formatTime(d.date);
   });
-});
+}

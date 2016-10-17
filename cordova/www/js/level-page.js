@@ -1,7 +1,6 @@
 'use strict';
 
 // Remove when user level is being tracked
-
 var userLevel = 10.4;
 
 function levelDisplay(lastDigit) {

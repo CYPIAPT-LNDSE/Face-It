@@ -119,3 +119,4 @@ function loginUser(name, password, callback){
     //else prompt message to create user and attach  createuser to button 
   });
 }
+
