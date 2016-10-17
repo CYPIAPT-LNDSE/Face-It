@@ -12,6 +12,6 @@ function initIntro() {
 
   $('#startGame').click(function(){
     clearPage('main')
-    initGame();
+    initLevel();
   })
 }

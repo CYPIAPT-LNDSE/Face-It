@@ -45,12 +45,12 @@ let pages = {
   </div>
   `,
   'levelPage': 
-  `<div class="level-page">
+  `<div class="level-page" id="level">
   <div class="level-page__conveyer-belts">
-  <img src='./levelPage.svg'>        
+  <img src='./js/resources/levelPage.svg'>        
   </div>
-  <button type="button" class="btn btn-default btn-lg btn-block">Play</button>
-  <button type="button" class="btn btn-default btn-lg btn-block">Lifetime Results</button>
+  <button id="play" type="button" class="btn btn-default btn-lg btn-block">Play</button>
+  <button id="lifeTimeResults" type="button" class="btn btn-default btn-lg btn-block">Lifetime Results</button>
   </div>`,
   'gamePage':`<div class="game-page" id='{{id}}' style='display:none;'>
   <div class="game-page-content">
@@ -77,7 +77,7 @@ let pages = {
   <h2>You agreed with Emotion API {{risultatone}} of the time</h2>
   </div>
   <div class="col-xs-6">
-  <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='playAgain1'>Play Again</button>
+  <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='playAgain1'>Play</button>
   </div>
   <div class="col-xs-6">
   <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='lifeTime'>Statistics</button>
