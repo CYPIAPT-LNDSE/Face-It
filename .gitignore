@@ -6,4 +6,6 @@ css/main.css.map
 .sass-cache
 session.vim
 .DS_Store
+*.swp
 node_modules
+.swp
