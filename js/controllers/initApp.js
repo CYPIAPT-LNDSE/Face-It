@@ -1,22 +1,18 @@
 function loader(){
+  const db = new PouchDB('localDB')
+  initLandingPage();
+}
 
-const db = new PouchDB('localDB')
+function initLandingPage() {
+  addPage('landing', pages['landing']);
+  showPage('landing')
+  startButtonEventListener();
+}
 
-  $('#main').append(pages['landing'])
-
-  $('#landing').show("slide", { direction: "left" }, 500)
+function startButtonEventListener() {
   $('#start').click(function(){
-    $('#main').append(Handlebars.compile(pages['intro'])({
-      username:$('#first-name').val()
-    }))
-    $('#landing').hide()
-    $('#intro').show("slide", { direction: "left" }, 500)
-
-    $('#startGame').click(function(){
-      initGame()
-      $('#intro').hide()
-      $('#gamePage1').show("slide", { direction: "left" }, 500)
-    })
+    initIntro();
   })
 }
+
 $(document).ready(loader)
