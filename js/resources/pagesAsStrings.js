@@ -44,6 +44,14 @@ let pages = {
   </div>
   </div>
   `,
+  'levelPage': 
+  `<div class="level-page">
+  <div class="level-page__conveyer-belts">
+  <img src='./levelPage.svg'>        
+  </div>
+  <button type="button" class="btn btn-default btn-lg btn-block">Play</button>
+  <button type="button" class="btn btn-default btn-lg btn-block">Lifetime Results</button>
+  </div>`,
   'gamePage':`<div class="game-page" id='{{id}}' style='display:none;'>
   <div class="game-page-content">
   <div class="col-xs-12 game-page__image-container">
