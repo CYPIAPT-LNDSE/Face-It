@@ -1,0 +1,22 @@
+{
+  "happiness": {
+    "user": 10,
+    "api": 12
+  },
+  "sadness": {
+    "user": 14,
+    "api": 10
+  },
+  "anger": {
+    "user": 15,
+    "api": 15
+  },
+  "neutral": {
+    "user": 50,
+    "api": 10
+  },
+  "surprise": {
+    "user": 20,
+    "api": 22
+  }
+}

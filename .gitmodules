@@ -4,3 +4,6 @@
 [submodule "imagesToBeRated"]
 	path = imagesToBeRated
 	url = https://github.com/SimonJStewart/emotionimage.git
+[submodule "miniserver"]
+	path = miniserver
+	url = https://github.com/daymos/miniserver.git

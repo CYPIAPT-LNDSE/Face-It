@@ -1,7 +1,8 @@
 'use strict';
 
-function initRoundResult(results, handleOnPrevious) {
-  $('#main').append(Handlebars.compile(pages['roundResultContainer'])({
+function initRoundResult(results) {
+  console.log(results);
+  var resultsPage = Handlebars.compile(pages['roundResultContainer'])({
     roundAnswers: results.reduce(function (acc, current, i) {
       return acc + Handlebars.compile(pages['roundAnswer'])({
         //here populate single answer stuff 
@@ -12,10 +13,10 @@ function initRoundResult(results, handleOnPrevious) {
       });
     }, ''),
     risultatone: risultatone(results)
-  }));
-
-  $('#gamePage' + handleOnPrevious).hide();
-  $('#roundResult').show("slide", { direction: "left" }, 500);
+  });
+  clearPage('main');
+  addPage('roundResult', resultsPage);
+  showPage('roundResult');
 
   roundResultEventListener();
 }
@@ -27,25 +28,14 @@ function risultatone(results) {
   });
   return String(accumulator / 5 * 100);
 }
-function roundResultEventListener() {
 
-  function lifeTime() {
-    $('#lifeTime').click(function () {
-      $('#roundResult').hide();
-      $('#lifeTimePage').show("slide", { direction: "right" }, 500);
-      results = [];
-    });
-  }
-  function playAgain() {
-    $('#playAgain1').click(function () {
-      $('#roundResult').hide();
-      $('#landing').show("slide", { direction: "right" }, 500);
-      results = [];
-    });
-    $('#playAgain2').click(function () {
-      $('#lifeTimePage').hide();
-      $('#landing').show("slide", { direction: "right" }, 500);
-      results = [];
-    });
-  }
+function roundResultEventListener() {
+  $('#lifeTime').click(function () {
+    initLifeTime();
+  });
+
+  $('#playAgain1').click(function () {
+    initIntro();
+    results = [];
+  });
 }

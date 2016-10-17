@@ -1,26 +1,20 @@
 'use strict';
 
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
-  } else {
-    obj[key] = value;
-  }return obj;
-}
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function initGame() {
 
   var gameSet = R.compose(generateWrongAnswerData, generateGameSet)(images);
   renderGamePages(gameSet);
   eventListenerGamePage(gameSet);
+  showPage('gamePage1');
 }
 
 function eventListenerGamePage(gameSet) {
   [1, 2, 3, 4, 5].forEach(function (el, i) {
     if (el < 5) {
       $('#gamePage' + el).find('button').click(function (event) {
-        $('#gamePage' + el).hide();
-        $('#gamePage' + (Number(el) + 1)).show("slide", { direction: "left" }, 500);
+        showPage('gamePage' + (Number(el) + 1));
         gameSet[i].userGuess = $(this)[0].innerHTML;
         results.push(gameSet[i]);
       });
@@ -28,7 +22,7 @@ function eventListenerGamePage(gameSet) {
       $('#gamePage' + el).find('button').click(function (event) {
         gameSet[i].userGuess = $(this)[0].innerHTML;
         results.push(gameSet[i]);
-        initRoundResult(results, el);
+        initRoundResult(results);
       });
     }
   });
@@ -41,14 +35,15 @@ function eventListenerGamePage(gameSet) {
 function renderGamePages(gameSet) {
   [1, 2, 3, 4, 5].forEach(function (el, i) {
     var answerType = randomiser2();
-    $('#main').append(Handlebars.compile(pages['gamePage'])({
+    var gamePage = Handlebars.compile(pages['gamePage'])({
       id: 'gamePage' + el,
       biggie: 'assets/imgs/' + Object.keys(gameSet[i])[0] + '.jpg',
       choiceL: String(gameSet[i][answerType[0]].emojiPath),
       buttonL: gameSet[i][answerType[0]].emotion[0],
       choiceR: String(gameSet[i][answerType[1]].emojiPath),
       buttonR: gameSet[i][answerType[1]].emotion[0]
-    }));
+    });
+    addPage('gamePage' + el, gamePage);
   });
 }
 function renderResPages(gameSet) {
