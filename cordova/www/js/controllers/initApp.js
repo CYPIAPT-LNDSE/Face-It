@@ -1,7 +1,6 @@
 'use strict';
 
 function loader() {
-
   var db = new PouchDB('localDB');
 
   $('#main').append(pages['landing']);
