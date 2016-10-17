@@ -10,11 +10,12 @@ let pages = {
   <form>
   <div class="form-group">
   <label class="name-form" for="first-name">Enter your credentials. If you dont have some, this will create new ones for you </label>
-  <input type="text" class="form-control" id="first-name" placeholder="userid">
-  <input type="password" class="form-control" id="first-name" placeholder="password">
+  <input type="text" class="form-control" id="username" placeholder="userid">
+  <input type="password" class="form-control" id="password" placeholder="password">
+  <div id="loginReply"></div>
   </div>
   </form>
-  <button type="button" class="btn btn-default btn-lg btn-block" id="start">Start</button>
+  <button type="button" class="btn btn-default btn-lg btn-block" id="start">Login</button>
   </div>
   </div> `,
   'intro':`<div class="intro-page" style='display:none;' id='intro'>
