@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Face It</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../css/main.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -29,13 +29,16 @@
             <p>Thank you for testing <strong style="color: #66938F">Face It</strong>!</p>
           </div>
 
+          <div id="lifetime-results-page__lifetime-graph"></div>
+
+          <div id="happiness"></div>
           <div class="lifetime-results-page__key">
             <div class="col-xs-6 text-center">
-              <img src="assets/icons/user-icon.svg" class="img-responsive" alt="User Icon">
+              <img src="../icons/user-icon.svg" class="img-responsive" alt="User Icon">
               <p>You</p>
             </div>
             <div class="col-xs-6 text-center">
-              <img src="assets/icons/api-icon.svg" class="img-responsive" alt="API Icon">
+              <img src="../icons/api-icon.svg" class="img-responsive" alt="API Icon">
               <p>Emotion API</p>
             </div>
           </div>
@@ -43,9 +46,9 @@
           <div class="lifetime-results-page__emotion-results">
             <h2>Happiness</h2>
             <p>How often did you answer happiness, compared to Emotion API?</p>
-            <img src="assets/icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
+            <img src="../icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
             <p>Your weekly progress</p>
-            <img src="assets/icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
+            <img src="../icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
           </div>
 
           <hr>
@@ -53,9 +56,9 @@
           <div class="lifetime-results-page__emotion-results">
             <h2>Sadness</h2>
             <p>How often did you answer sadness, compared to Emotion API?</p>
-            <img src="assets/icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
+            <img src="../icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
             <p>Your weekly progress</p>
-            <img src="assets/icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
+            <img src="../icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
           </div>
 
           <hr>
@@ -63,9 +66,9 @@
           <div class="lifetime-results-page__emotion-results">
             <h2>Neutral</h2>
             <p>How often did you answer neutral, compared to Emotion API?</p>
-            <img src="assets/icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
+            <img src="../icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
             <p>Your weekly progress</p>
-            <img src="assets/icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
+            <img src="../icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
           </div>
 
           <hr>
@@ -73,9 +76,9 @@
           <div class="lifetime-results-page__emotion-results">
             <h2>Surprise</h2>
             <p>How often did you answer surprise, compared to Emotion API?</p>
-            <img src="assets/icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
+            <img src="../icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
             <p>Your weekly progress</p>
-            <img src="assets/icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
+            <img src="../icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
           </div>
 
           <hr>
@@ -83,9 +86,9 @@
           <div class="lifetime-results-page__emotion-results">
             <h2>Anger</h2>
             <p>How often did you answer anger, compared to Emotion API?</p>
-            <img src="assets/icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
+            <img src="../icons/api-comparison.svg" class="img-responsive" alt="API comparison graph">
             <p>Your weekly progress</p>
-            <img src="assets/icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
+            <img src="../icons/personal-comparison.svg" class="img-responsive" alt="Personal comparison graph">
           </div>
 
           <hr>
@@ -111,6 +114,9 @@
         </div>
       </div>
     </div>
-    <script src="assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../../js/lifetime-graph.js"></script>
   </body>
 </html>
