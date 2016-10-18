@@ -1,4 +1,4 @@
-
+const db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
 
 function initLevel() {
   const levelPage = Handlebars.compile(pages['levelPage'])({
@@ -16,9 +16,14 @@ function initLevel() {
   })
 }
 
+let userLevel;
 
-// Remove when user level is being tracked
-let userLevel = 10.4;
+db.get('currentLevel').then(function (doc) {
+  console.log(doc)
+  userLevel = doc.currentLevel
+}).catch(function (err) {
+  console.log(err);
+});
 
 function levelDisplay(lastDigit) {
 
@@ -41,22 +46,22 @@ function levelAnimation(lastDigit) {
   switch (lastDigit) {
     case 2:
       userPosition = 70;
-      animationDuration = 1200;
-      break;
-    case 4:
-      userPosition = 130;
-      animationDuration = 1600;
-      break;
-    case 6:
-      userPosition = 190;
-      animationDuration = 1800;
-      break;
+    animationDuration = 1200;
+    break;
+  case 4:
+    userPosition = 130;
+  animationDuration = 1600;
+  break;
+case 6:
+  userPosition = 190;
+animationDuration = 1800;
+break;
     case 8:
       userPosition = 245;
-      animationDuration = 2000;
-      break;
-    default:
-      userPosition = 10;
+    animationDuration = 2000;
+    break;
+  default:
+    userPosition = 10;
   }
 
   $('#user-icon')

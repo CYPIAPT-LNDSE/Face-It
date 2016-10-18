@@ -1,0 +1,160 @@
+<svg viewBox="0 0 321 307" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">
+<defs>
+<rect id="path-1" x="2" y="0" width="80" height="120"></rect>
+<mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="80" height="120" fill="white">
+<use xlink:href="#path-1"></use>
+</mask>
+<rect id="path-3" x="2" y="20" width="60" height="54"></rect>
+<mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="60" height="54" fill="white">
+<use xlink:href="#path-3"></use>
+</mask>
+<rect id="path-5" x="0" y="0" width="38" height="22.1879195" rx="7.6"></rect>
+<rect id="path-7" x="0" y="0" width="5.57333333" height="5.61073826"></rect>
+<ellipse id="path-9" cx="2.78666667" cy="2.80536913" rx="1.77333333" ry="1.7852349"></ellipse>
+<rect id="path-11" x="0" y="0.0358903263" width="17.9758582" height="11.7756403"></rect>
+<ellipse id="path-13" cx="8.98792914" cy="9.19971898" rx="8.98792914" ry="9.19971898"></ellipse>
+<rect id="path-15" x="0" y="2.84217095e-15" width="17.8181753" height="11.7756403"></rect>
+<ellipse id="path-17" cx="8.14527472" cy="8.34732073" rx="8.0836178" ry="8.34732073"></ellipse>
+<rect id="path-19" x="0" y="0" width="10.0066667" height="5.99328859"></rect>
+<rect id="path-21" x="0" y="0" width="10.0066667" height="5.99328859"></rect>
+<rect id="path-23" x="10" y="5" width="30" height="80"></rect>
+<mask id="mask-24" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-5" y="-5" width="40" height="90">
+<rect x="5" y="0" width="40" height="90" fill="white"></rect>
+<use xlink:href="#path-23" fill="black"></use>
+</mask>
+<rect id="path-25" x="0" y="85" width="50" height="16"></rect>
+<mask id="mask-26" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-5" y="-5" width="60" height="26">
+<rect x="-5" y="80" width="60" height="26" fill="white"></rect>
+<use xlink:href="#path-25" fill="black"></use>
+</mask>
+</defs>
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="conveyer" transform="translate(4.000000, 0.000000)">
+<g transform="translate(0.000000, 187.000000)">
+<g id="conveyer-belts" transform="translate(0.000000, 74.000000)" stroke="#616161" stroke-width="10" stroke-linecap="square">
+<path d="M0.998387101,41 L311,41" id="conveyer-bottom"></path>
+<path d="M0.998387133,1 L311.006144,1" id="conveyer-top"></path>
+</g>
+<g id="box" transform="translate(234.000000, 0.000000)">
+<use id="box-main" stroke="#B2DFDB" mask="url(#mask-2)" stroke-width="10" fill="#E0F2F1" xlink:href="#path-1"></use>
+<use id="box-hole-border" stroke="#B2DFDB" mask="url(#mask-4)" stroke-width="10" fill="#E0F2F1" xlink:href="#path-3"></use>
+<rect id="box-hole" fill="#F5F5F5" x="0" y="25" width="57" height="45"></rect>
+</g>
+{{path}}
+<g transform="translate(248.000000, 81.000000)">
+<rect id="Rectangle-4" stroke="#B2DFDB" stroke-width="5" fill="#F5F5F5" x="0" y="0" width="46" height="27.3999996"></rect>
+<text x="23" y="21" text-anchor="middle" id="level-display-text" font-size="18" font-weight="bold" fill="#616161"></text>
+</g>
+</g>
+<g id="user-icon" transform="translate(10.000000, 60.000000)">
+<rect id="Rectangle-2" fill="#B2DFDB" x="0" y="8.67114094" width="38" height="28.9463087" rx="7.6"></rect>
+<g id="Rectangle-2-Copy-Clipped" transform="translate(0.000000, 15.302013)">
+<mask id="mask-6" fill="white">
+<use xlink:href="#path-5"></use>
+</mask>
+<g id="path-1"></g>
+<g id="Rectangle-2-Copy" mask="url(#mask-6)" stroke="#B2DFDB" stroke-width="3.54666667" fill="#E0F2F1">
+<rect id="path-1" x="0" y="0" width="38" height="22.1879195" rx="7.6"></rect>
+</g>
+</g>
+<rect id="Rectangle-3" fill="#E0F2F1" x="1.77333333" y="15.4295302" width="34.4533333" height="8.79865772" rx="1.9"></rect>
+<polygon id="Triangle" fill="#B2DFDB" points="19 2.80536913 20.6466667 8.67114094 17.3533333 8.67114094"></polygon>
+<g id="Oval" transform="translate(16.213333, 0.000000)">
+<g id="path-3-link" transform="translate(1.013333, 1.020134)" fill="#E0F2F1">
+<ellipse id="path-3" cx="1.77333333" cy="1.7852349" rx="1.77333333" ry="1.7852349"></ellipse>
+</g>
+<g id="Clipped">
+<mask id="mask-8" fill="white">
+<use xlink:href="#path-7"></use>
+</mask>
+<g id="Rectangle-path"></g>
+<g id="path-3-link" mask="url(#mask-8)" stroke="#B2DFDB" stroke-width="2.02666667">
+<g transform="translate(1.013333, 1.020134)" id="path-3">
+<ellipse cx="1.77333333" cy="1.7852349" rx="1.77333333" ry="1.7852349"></ellipse>
+</g>
+</g>
+<mask id="mask-10" fill="white">
+<use xlink:href="#path-9"></use>
+</mask>
+<g id="path-3"></g>
+</g>
+</g>
+<g id="Mouth" transform="translate(10.006667, 25.248322)">
+<g id="Oval-Clipped">
+<g>
+<mask id="mask-12" fill="white">
+<use xlink:href="#path-11"></use>
+</mask>
+<g id="path-5"></g>
+<g id="Oval" mask="url(#mask-12)">
+<g transform="translate(0.000000, -11.348993)" id="Clipped">
+<g transform="translate(0.000000, 0.012752)">
+<g id="Group">
+<g id="path-5-Clipped">
+<mask id="mask-14" fill="white">
+<use xlink:href="#path-13"></use>
+</mask>
+<g id="path-7"></g>
+<ellipse id="path-5" stroke="#B2DFDB" stroke-width="1.9" fill="#B2DFDB" mask="url(#mask-14)" cx="8.98792914" cy="9.19971898" rx="8.98792914" ry="9.19971898"></ellipse>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g id="Oval-Clipped" transform="translate(0.000000, 0.892617)">
+<g>
+<mask id="mask-16" fill="white">
+<use xlink:href="#path-15"></use>
+</mask>
+<g id="path-9"></g>
+<g id="Oval" mask="url(#mask-16)">
+<g transform="translate(0.760000, -11.604027)" id="Clipped">
+<g transform="translate(0.123314, 0.012752)">
+<g id="Group">
+<g id="path-5-Clipped">
+<mask id="mask-18" fill="white">
+<use xlink:href="#path-17"></use>
+</mask>
+<g id="path-11"></g>
+<ellipse id="path-5" fill="#F5F5F5" mask="url(#mask-18)" cx="8.09842049" cy="8.47451871" rx="8.8242392" ry="9.11210261"></ellipse>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g id="Eyes" transform="translate(6.080000, 17.342282)">
+<g id="Oval-2-Copy-2-Clipped">
+<mask id="mask-20" fill="white">
+<use xlink:href="#path-19"></use>
+</mask>
+<g id="path-13"></g>
+<ellipse id="Oval-2-Copy-2" stroke="#B2DFDB" stroke-width="0.886666667" mask="url(#mask-20)" cx="5.00333333" cy="5.9295302" rx="2.85" ry="2.86912752"></ellipse>
+</g>
+<g id="Oval-2-Copy-2-Clipped" transform="translate(15.833333, 0.000000)">
+<mask id="mask-22" fill="white">
+<use xlink:href="#path-21"></use>
+</mask>
+<g id="path-15"></g>
+<ellipse id="Oval-2-Copy-2" stroke="#B2DFDB" stroke-width="0.886666667" mask="url(#mask-22)" cx="5.00333333" cy="6.05704698" rx="2.85" ry="2.86912752"></ellipse>
+</g>
+</g>
+</g>
+<g id="pipe" transform="translate(4.000000, 0.000000)">
+<g id="Rectangle-5">
+<use fill="#E0F2F1" fill-rule="evenodd" xlink:href="#path-23"></use>
+<use stroke="#B2DFDB" mask="url(#mask-24)" stroke-width="10" xlink:href="#path-23"></use>
+</g>
+<g id="Rectangle-6">
+<use fill="#E0F2F1" fill-rule="evenodd" xlink:href="#path-25"></use>
+<use stroke="#B2DFDB" mask="url(#mask-26)" stroke-width="10" xlink:href="#path-25"></use>
+</g>
+<rect id="Rectangle-7" fill="#E0F2F1" x="10" y="0" width="30" height="32"></rect>
+</g>
+</g>
+</g>
+</svg>

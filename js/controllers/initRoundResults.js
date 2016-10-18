@@ -1,4 +1,7 @@
+
 function initRoundResult(results){
+  console.log(db)
+//here update pouch with the results
   console.log(results)
   const resultsPage = Handlebars.compile(pages['roundResultContainer'])({
     roundAnswers: results.reduce((acc, current, i)=>{
