@@ -47,7 +47,7 @@ function attemptSync(){
 
     var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
 
-    db.sync(new PouchDB("https://daymos.cloudant.com/" + String(JSON.parse(localStorage.getItem('faceit')).name), { auth: {
+    db.sync(new PouchDB("https://daymos.cloudant.com/" + JSON.parse(localStorage.getItem('faceit')).username, { auth: {
       username: JSON.parse(localStorage.getItem('faceit')).api.key,
       password: JSON.parse(localStorage.getItem('faceit')).api.password
     }
