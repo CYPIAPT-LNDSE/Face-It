@@ -10,12 +10,11 @@ function logger() {
   $('#start').click(function () {
 
     loginUser($('#username').val(), $('#password').val(), function (reply) {
-      console.log(reply);
 
-      if (reply === 'success') {
-        console.log(JSON.parse(localStorage.getItems('faceit')).api.key);
-        console.log(JSON.parse(localStorage.getItems('faceit')).api.password);
+      if (reply.state === 'success') {
+        localStorage.setItem('faceit', JSON.stringify(reply.data));
 
+        var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
         db.sync(new PouchDB("https://daymos.cloudant.com/" + $('#username'), { auth: {
             username: JSON.parse(localStorage.getItem('faceit')).api.key,
             password: JSON.parse(localStorage.getItem('faceit')).api.password
@@ -55,7 +54,7 @@ function attemptSync() {
   if (localStorage.getItem('faceit') === null) logger();else {
     //call to claudant with api key ini local storage to sync pouch
     //if it fails try to find instance of pouch, use it and prompt dat awas not sync
-    var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).name);
+    var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
 
     db.sync(new PouchDB("https://daymos.cloudant.com/" + String(JSON.parse(localStorage.getItem('faceit')).name), { auth: {
         username: JSON.parse(localStorage.getItem('faceit')).api.key,
@@ -63,6 +62,7 @@ function attemptSync() {
       }
     })).on('complete', function (info) {
       console.log('Sync was successful', info);
+      initLevel();
     }).on('error', function (err) {
       console.log(err);
     });
@@ -79,7 +79,7 @@ function createNewUser(name, password, refreshPage) {
     "method": "POST",
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost:3000/signup",
+    "url": "https://face-it.herokuapp.com/signup",
     "data": {
       "name": String(name),
       "password": String(password)
@@ -101,7 +101,7 @@ function loginUser(name, password, callback) {
     "method": "POST",
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost:3000/login",
+    "url": "https://face-it.herokuapp.com/login",
     "data": {
       "name": String(name),
       "password": String(password)
@@ -109,7 +109,6 @@ function loginUser(name, password, callback) {
   };
 
   $.ajax(settings).done(function (response) {
-
     console.log(response);
     callback(response);
     //if response positive login
