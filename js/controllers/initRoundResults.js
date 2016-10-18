@@ -1,6 +1,7 @@
 
 function initRoundResult(results){
   console.log(db)
+  console.log(userLevel)
 
   //here update pouch with the results
 
@@ -20,7 +21,7 @@ function initRoundResult(results){
     return db.put({
       _id: 'userLevel',
       _rev: doc._rev,
-      userLevel: Number(doc.currentLevel) + 0.2
+      userLevel: Number(doc.userLevel) + 0.2
     });
   }).then(function(response) {
     // handle response
