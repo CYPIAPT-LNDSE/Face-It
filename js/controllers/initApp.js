@@ -12,7 +12,7 @@ function logger(){
       if(reply.state === 'success') {
         localStorage.setItem('faceit', JSON.stringify(reply.data))
 
-        var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).data.username);
+        var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
         db.sync(new PouchDB("https://daymos.cloudant.com/"+ $('#username'), { auth: {
           username: JSON.parse(localStorage.getItem('faceit')).api.key,
           password: JSON.parse(localStorage.getItem('faceit')).api.password
@@ -80,7 +80,7 @@ function createNewUser(name, password, refreshPage){
     "method":"POST",
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost:3000/signup",
+    "url": "https://face-it.herokuapp.com/signup",
     "data": {
       "name": String(name),
       "password": String(password)
@@ -103,7 +103,7 @@ function loginUser(name, password, callback){
     "method":"POST",
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost:3000/login",
+    "url": "https://face-it.herokuapp.com/login",
     "data": {
       "name": String(name),
       "password": String(password)
