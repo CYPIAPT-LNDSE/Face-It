@@ -1,14 +1,4 @@
 // Remove when user level is being tracked
-const db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
-
-let userLevel;
-
-db.get('currentLevel').then(function (doc) {
-  console.log(doc)
-  userLevel = doc.currentLevel
-}).catch(function (err) {
-  console.log(err);
-}); 
 
 function levelDisplay(lastDigit) {
   let levelDisplayText = document.getElementById('level-display-text');
