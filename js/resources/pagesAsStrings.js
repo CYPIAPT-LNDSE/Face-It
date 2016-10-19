@@ -266,7 +266,7 @@ let pages = {
         <div class="lifetime-results-page__emotion-results">
           <h3>{{ this.properType }}</h3>
           <hr class="round-results__hr">
-          <p>How often did you answer happiness, compared to Emotion API?</p>
+          <p>How often did you agree with Emotion API?</p>
           <div id={{ this.type }} class="emotion"></div>
         </div>
       {{/each}}
