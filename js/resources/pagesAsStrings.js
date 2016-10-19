@@ -36,16 +36,6 @@ let pages = {
           <hr>
           <p class="intro-page__explanation-p-margin">After five faces, we'll compare your choices to Emotion API's!</p>
         </div>
-        <div class="intro-page__level-bar--label">
-          <p>You are at Level 1</p>
-        </div>
-        <div class="col-xs-12 intro-page__level-bar">
-          <p class="intro-page__level-bar-component intro-page__level-bar-component--active">1</p>
-          <p class="intro-page__level-bar-component intro-page__level-bar-component">2</p>
-          <p class="intro-page__level-bar-component intro-page__level-bar-component">3</p>
-          <p class="intro-page__level-bar-component intro-page__level-bar-component">4</p>
-          <p class="intro-page__level-bar-component intro-page__level-bar-component">5</p>
-        </div>
         <button type="button" class="btn btn-default btn-lg btn-block" id="startGame">Continue</button>
       </div>
     </div>
@@ -247,12 +237,8 @@ let pages = {
       <div class="col-xs-12 round-results-page__results-comparison" id='risultatone'>
         <h2>You agreed with Emotion API {{risultatone}}% of the time</h2>
       </div>
-      <div class="col-xs-6">
-        <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='playAgain1'>Play</button>
-      </div>
-      <div class="col-xs-6">
-        <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='lifeTime'>Statistics</button>
-      </div>
+        <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='playAgain1'>Play Again</button>
+        <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='lifeTime'>Lifetime Results</button>
     </div>`,
   'roundAnswer':`
   <div class="col-xs-10 col-xs-offset-1 round-results-page__result-container">
@@ -293,11 +279,7 @@ let pages = {
         </ul>
       </div>
       <hr>
-      <div class="col-xs-6">
-        <button type="button" class="btn btn-default btn-lg btn-block results-page__button"id='playAgain2' >Play Again</button>
-      </div>
-      <div class="col-xs-6">
-        <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='roundResults2'>Results</button>
-      </div>
+        <button type="button" class="btn btn-default btn-lg btn-block results-page__button"id='playAgain2'>Play Again</button>
+        <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='roundResults2'>Round Results</button>
     </div>`
 }
