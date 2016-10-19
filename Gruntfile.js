@@ -1,5 +1,5 @@
 module.exports = function(grunt){
-  require("load-grunt-tasks")(grunt); 
+  require("load-grunt-tasks")(grunt);
 
   grunt.loadNpmTasks('grunt-autopolyfiller');
   grunt.loadNpmTasks("grunt-contrib-watch");
@@ -20,6 +20,7 @@ module.exports = function(grunt){
       copy_resources_to_www: {
         files: [
           { cwd: './', src: 'index.html', dest: './cordova/www' },
+          { cwd: './node_modules/babel-polyfill/dist/', src: 'polyfill.js', dest: './cordova/www/js' },
           { cwd: './', src: 'js/**/*', dest: './cordova/www' },
           { cwd: './', src: 'css/**/*', dest: './cordova/www' },
           { cwd: './', src: 'assets/**/*', dest: './cordova/www' },

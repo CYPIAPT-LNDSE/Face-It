@@ -42,13 +42,16 @@ function logger() {
 }
 
 function attemptSync() {
-  if (localStorage.getItem('faceit') === null) logger();else {
+  if (localStorage.getItem('faceit') === null) {
+    logger();
+  } else {
     //call to claudant with api key ini local storage to sync pouch
     //if it fails try to find instance of pouch, use it and prompt data awas not sync
 
     var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
 
-    db.sync(new PouchDB("https://daymos.cloudant.com/" + JSON.parse(localStorage.getItem('faceit')).username, { auth: {
+    db.sync(new PouchDB("https://daymos.cloudant.com/" + JSON.parse(localStorage.getItem('faceit')).username, {
+      auth: {
         username: JSON.parse(localStorage.getItem('faceit')).api.key,
         password: JSON.parse(localStorage.getItem('faceit')).api.password
       }
@@ -56,9 +59,10 @@ function attemptSync() {
       console.log('Sync was successful', info);
       initLevel();
     }).on('error', function (err) {
-      console.log(err);
+      alert(err);
     });
     console.log('trying to sync');
+    initLevel();
   }
 }
 $(document).ready(attemptSync);
@@ -101,6 +105,6 @@ function loginUser(name, password, callback) {
     console.log(response);
     callback(response);
     //if response positive login
-    //else prompt message to create user and attach  createuser to button 
+    //else prompt message to create user and attach  createuser to button
   });
 }

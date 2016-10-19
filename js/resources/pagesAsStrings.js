@@ -216,6 +216,7 @@ let pages = {
   </div>
   <button id="play" type="button" class="btn btn-default btn-lg btn-block">Play</button>
   <button id="lifeTimeResults" type="button" class="btn btn-default btn-lg btn-block">Lifetime Results</button>
+  <button id="logout" type="button" class="btn btn-default btn-lg btn-block">Logout</button>
   </div>`,
   'gamePage':`<div class="game-page" id='{{id}}' style='display:none;'>
   <div class="game-page-content">
