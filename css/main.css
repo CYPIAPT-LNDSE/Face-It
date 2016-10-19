@@ -95,7 +95,9 @@
   justify-content: center;
   height: 100%; }
   .game-page button {
-    font-weight: 400; }
+    font-weight: 400;
+    text-transform: capitalize;
+    padding: 0.5em 0; }
 
 .game-page__image-container {
   margin-bottom: 3em; }
