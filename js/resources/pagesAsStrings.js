@@ -245,7 +245,7 @@ let pages = {
     <div class="round-results-page__result" id='res1'>
       <img src="{{imagePath}}" class="img-responsive round-results-page__result-img" alt="Face" >
       <div class="round-results-page__result-text">
-        <p>You said the face was {{userResult}}</p>
+        <p>You said the face showed {{userResult}}</p>
         <p>Emotion API was {{apiConfidanceValue}}% sure it was {{apiEmotion}}</p>
       </div>
     </div>
