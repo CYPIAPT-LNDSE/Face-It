@@ -2,12 +2,8 @@
 
 // Remove when user level is being tracked
 
-var userLevel = 10.4;
-
 function levelDisplay(lastDigit) {
-
   var levelDisplayText = document.getElementById('level-display-text');
-
   if (lastDigit === 0) {
     levelDisplayText.textContent = userLevel + 1;
   } else {

@@ -14,7 +14,7 @@ function logger() {
       if (reply.state === 'success') {
         localStorage.setItem('faceit', JSON.stringify(reply.data));
 
-        var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
+        db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
 
         db.sync(new PouchDB("https://daymos.cloudant.com/" + $('#username').val(), { auth: {
             username: JSON.parse(localStorage.getItem('faceit')).api.key,
@@ -44,11 +44,11 @@ function logger() {
 function attemptSync() {
   if (localStorage.getItem('faceit') === null) logger();else {
     //call to claudant with api key ini local storage to sync pouch
-    //if it fails try to find instance of pouch, use it and prompt dat awas not sync
+    //if it fails try to find instance of pouch, use it and prompt data awas not sync
 
     var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
 
-    db.sync(new PouchDB("https://daymos.cloudant.com/" + String(JSON.parse(localStorage.getItem('faceit')).name), { auth: {
+    db.sync(new PouchDB("https://daymos.cloudant.com/" + JSON.parse(localStorage.getItem('faceit')).username, { auth: {
         username: JSON.parse(localStorage.getItem('faceit')).api.key,
         password: JSON.parse(localStorage.getItem('faceit')).api.password
       }
