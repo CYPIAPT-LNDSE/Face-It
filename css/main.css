@@ -304,7 +304,8 @@
 
 .lifetime-results-page__feedback li {
   font-size: 1.8em;
-  line-height: 1.5; }
+  line-height: 1.5;
+  text-transform: capitalize; }
 
 .round-results-page__header {
   text-align: center; }
