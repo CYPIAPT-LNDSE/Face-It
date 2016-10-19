@@ -95,7 +95,9 @@
   justify-content: center;
   height: 100%; }
   .game-page button {
-    font-weight: 400; }
+    font-weight: 400;
+    text-transform: capitalize;
+    padding: 0.5em 0; }
 
 .game-page__image-container {
   margin-bottom: 3em; }
@@ -302,10 +304,15 @@
 
 .lifetime-results-page__feedback li {
   font-size: 1.8em;
-  line-height: 1.5; }
+  line-height: 1.5;
+  text-transform: capitalize; }
 
 .round-results-page__header {
   text-align: center; }
+
+.round-results__hr {
+  border-top: #B2DFDB 3px solid;
+  opacity: 0.5; }
 
 .round-results-page__result {
   background-color: #E0F2F1;
@@ -340,10 +347,7 @@
     margin-bottom: 20px !important; }
 
 .results-page__button {
-  margin-bottom: 10%; }
-  @media screen and (min-width: 768px) {
-    .results-page__button {
-      height: 5em; } }
+  margin-bottom: 5%; }
 
 .navigator-page {
   display: flex;
@@ -364,8 +368,6 @@ hr {
 
 .btn {
   white-space: normal !important;
-  word-break: normal;
-  word-wrap: break-word;
   background-color: #B2DFDB;
   border: #E0F2F1 solid 0.5em;
   border-radius: 0.2em;

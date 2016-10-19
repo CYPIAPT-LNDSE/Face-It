@@ -36,16 +36,6 @@ let pages = {
           <hr>
           <p class="intro-page__explanation-p-margin">After five faces, we'll compare your choices to Emotion API's!</p>
         </div>
-        <div class="intro-page__level-bar--label">
-          <p>You are at Level 1</p>
-        </div>
-        <div class="col-xs-12 intro-page__level-bar">
-          <p class="intro-page__level-bar-component intro-page__level-bar-component--active">1</p>
-          <p class="intro-page__level-bar-component intro-page__level-bar-component">2</p>
-          <p class="intro-page__level-bar-component intro-page__level-bar-component">3</p>
-          <p class="intro-page__level-bar-component intro-page__level-bar-component">4</p>
-          <p class="intro-page__level-bar-component intro-page__level-bar-component">5</p>
-        </div>
         <button type="button" class="btn btn-default btn-lg btn-block" id="startGame">Continue</button>
       </div>
     </div>
@@ -247,19 +237,15 @@ let pages = {
       <div class="col-xs-12 round-results-page__results-comparison" id='risultatone'>
         <h2>You agreed with Emotion API {{risultatone}}% of the time</h2>
       </div>
-      <div class="col-xs-6">
-        <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='playAgain1'>Play</button>
-      </div>
-      <div class="col-xs-6">
-        <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='lifeTime'>Statistics</button>
-      </div>
+        <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='playAgain1'>Play Again</button>
+        <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='lifeTime'>Lifetime Results</button>
     </div>`,
   'roundAnswer':`
   <div class="col-xs-10 col-xs-offset-1 round-results-page__result-container">
     <div class="round-results-page__result" id='res1'>
       <img src="{{imagePath}}" class="img-responsive round-results-page__result-img" alt="Face" >
       <div class="round-results-page__result-text">
-        <p>You said the face was {{userResult}}</p>
+        <p>You said the face showed {{userResult}}</p>
         <p>Emotion API was {{apiConfidanceValue}}% sure it was {{apiEmotion}}</p>
       </div>
     </div>
@@ -269,23 +255,23 @@ let pages = {
     <div class="lifetime-results-page" id='lifeTimePage' style='display:none;'>
       <div class="round-results-page__header">
         <h1>Lifetime Results:</h1>
-      </div>
-      <hr>
-      <div id="lifetime-results-page__lifetime-graph"></div>
-      <div class="lifetime-results-page__emotions-explanation">
-        <h3>Emotions</h3>
         <hr>
-        <p>These graphs show the amount of times you agreed with the emotion API</p>
       </div>
+      <h2>Round Scores</h2>
+      <hr class="round-results__hr">
+      <div id="lifetime-results-page__lifetime-graph"></div>
+      <hr>
+      <h2>Emotions</h2>
       {{#each emotions}}
         <div class="lifetime-results-page__emotion-results">
-          <h2>{{ this.properType }}</h2>
+          <h3>{{ this.properType }}</h3>
+          <hr class="round-results__hr">
           <p>How often did you answer happiness, compared to Emotion API?</p>
           <div id={{ this.type }} class="emotion"></div>
         </div>
       {{/each}}
       <div class="lifetime-results-page__feedback">
-        <h2>You could work on:</h2>
+        <h3>You could work on:</h3>
         <ul>
           {{#each workOn}}
             <li>{{this}}</li>
@@ -293,11 +279,7 @@ let pages = {
         </ul>
       </div>
       <hr>
-      <div class="col-xs-6">
-        <button type="button" class="btn btn-default btn-lg btn-block results-page__button"id='playAgain2' >Play Again</button>
-      </div>
-      <div class="col-xs-6">
-        <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='roundResults2'>Results</button>
-      </div>
+        <button type="button" class="btn btn-default btn-lg btn-block results-page__button"id='playAgain2'>Play Again</button>
+        <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='roundResults2'>Round Results</button>
     </div>`
 }

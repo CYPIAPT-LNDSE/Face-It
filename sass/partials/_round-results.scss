@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.round-results__hr {
+  border-top: #B2DFDB 3px solid;
+  opacity: 0.5;
+}
+
 .round-results-page__result {
   background-color: $teal;
   border: $teal-darken-1 solid 0.8em;
@@ -41,8 +46,5 @@
 }
 
 .results-page__button {
-  margin-bottom: 10%;
-  @media screen and (min-width: 768px) {
-    height: 5em;
-  }
+  margin-bottom: 5%;
 }
