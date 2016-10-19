@@ -310,6 +310,10 @@
 .round-results-page__header {
   text-align: center; }
 
+.round-results__hr {
+  border-top: #B2DFDB 3px solid;
+  opacity: 0.5; }
+
 .round-results-page__result {
   background-color: #E0F2F1;
   border: #B2DFDB solid 0.8em;

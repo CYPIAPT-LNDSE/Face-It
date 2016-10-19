@@ -255,23 +255,23 @@ let pages = {
     <div class="lifetime-results-page" id='lifeTimePage' style='display:none;'>
       <div class="round-results-page__header">
         <h1>Lifetime Results:</h1>
-      </div>
-      <hr>
-      <div id="lifetime-results-page__lifetime-graph"></div>
-      <div class="lifetime-results-page__emotions-explanation">
-        <h3>Emotions</h3>
         <hr>
-        <p>These graphs show the amount of times you agreed with the emotion API</p>
       </div>
+      <h2>Round Scores</h2>
+      <hr class="round-results__hr">
+      <div id="lifetime-results-page__lifetime-graph"></div>
+      <hr>
+      <h2>Emotions</h2>
       {{#each emotions}}
         <div class="lifetime-results-page__emotion-results">
-          <h2>{{ this.properType }}</h2>
+          <h3>{{ this.properType }}</h3>
+          <hr class="round-results__hr">
           <p>How often did you answer happiness, compared to Emotion API?</p>
           <div id={{ this.type }} class="emotion"></div>
         </div>
       {{/each}}
       <div class="lifetime-results-page__feedback">
-        <h2>You could work on:</h2>
+        <h3>You could work on:</h3>
         <ul>
           {{#each workOn}}
             <li>{{this}}</li>
