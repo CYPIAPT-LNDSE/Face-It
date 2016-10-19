@@ -19,23 +19,23 @@ function logger(){
           password: JSON.parse(localStorage.getItem('faceit')).api.password
         }
         })).on("complete", function(info) {
-          console.log("Sync was successful", info); 
+          console.log("Sync was successful", info);
           initLevel()
         }).on('error', (err)=>{
           console.log(err)
         });
 
-      } else if (reply === 'wrongpassword') $('#loginReply').html('Password is not correct')
+      } else if (reply === 'wrongpassword') $('#loginReply').html('Looks like your password isn&#39;t right, please try again')
       else {
-        $('#loginReply').html('user does not exits, click here to create it')
-        $('#start').html('create user')
+        $('#loginReply').html('That user doesn&#39;t exist, click again to create an account')
+        $('#start').html('Sign Up')
         $('#start').unbind()
 
         console.log($('#username').val())
         console.log($('#password').val())
-        $('#start').click(createNewUser.bind(null,$('#username').val(), $('#password').val(), ()=>{location.reload()})) 
+        $('#start').click(createNewUser.bind(null,$('#username').val(), $('#password').val(), ()=>{location.reload()}))
       }
-    }) 
+    })
   })
 }
 
@@ -53,11 +53,11 @@ function attemptSync(){
     }
     })).on('complete', function(info) {
       console.log('Sync was successful', info);
-      initLevel()     
+      initLevel()
     }).on('error', (err)=>{
       console.log(err)
-    });   
-    console.log('trying to sync') 
+    });
+    console.log('trying to sync')
   }
 }
 $(document).ready(attemptSync)
@@ -103,7 +103,6 @@ function loginUser(name, password, callback){
     console.log(response);
     callback(response)
     //if response positive login
-    //else prompt message to create user and attach  createuser to button 
+    //else prompt message to create user and attach  createuser to button
   });
 }
-

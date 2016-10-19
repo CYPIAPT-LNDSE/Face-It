@@ -1,22 +1,24 @@
 let pages = {
   'landing':`
     <div class="landing-page" id='landing' style='display:none;'>
-      <div class="col-xs-10 col-xs-offset-1">
+      <div class="col-xs-12">
         <div class="landing-page__header">
           <img src="assets/icons/logo.svg" alt="" class="img-responsive landing-page__logo">
           <hr />
-          <h1 class="landing-page__title">Face It</h1>
+          <h1 class="landing-page__title landing-page__title--main">Face It</h1>
           <hr />
         </div>
+        <h2 class="landing-page__title landing-page__title--login">Sign Up / Log In</h2>
         <form>
-          <div class="form-group">
-            <label class="name-form" for="first-name">Enter your credentials. If you dont have some, this will create new ones for you </label>
-            <input type="text" class="form-control" id="username" placeholder="userid">
-            <input type="password" class="form-control" id="password" placeholder="password">
-            <div id="loginReply"></div>
+          <div class=" form-group landing-page__login-form">
+            <h3>Enter your user details</h3>
+            <h4>If this is your first time using <strong style="color: #66938F">Face It</strong>, this will create your username and password</h4>
+            <input type="text" class="form-control" id="username" placeholder="Username">
+            <input type="password" class="form-control" id="password" placeholder="Password">
           </div>
         </form>
         <button type="button" class="btn btn-default btn-lg btn-block" id="start">Login</button>
+        <div id="loginReply" class="landing-page__message"></div>
       </div>
     </div> `,
   'intro':`
