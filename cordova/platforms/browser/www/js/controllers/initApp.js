@@ -1,6 +1,5 @@
 'use strict';
 
-<<<<<<< HEAD
 function logger() {
   //check if local storage contains a token if so sync pouchdb and move to level page
   //if not prompt login
@@ -11,34 +10,21 @@ function logger() {
   $('#start').click(function () {
 
     loginUser($('#username').val(), $('#password').val(), function (reply) {
-      console.log(reply);
 
-      if (reply === 'success') {
-        console.log(JSON.parse(localStorage.getItems('faceit')).api.key);
-        console.log(JSON.parse(localStorage.getItems('faceit')).api.password);
+      if (reply.state === 'success') {
+        localStorage.setItem('faceit', JSON.stringify(reply.data));
 
-        var db = new PouchDB($('#username').val());
+        var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
 
-        db.sync(new PouchDB("https://daymos.cloudant.com/" + $('#username'), { auth: {
+        db.sync(new PouchDB("https://daymos.cloudant.com/" + $('#username').val(), { auth: {
             username: JSON.parse(localStorage.getItem('faceit')).api.key,
             password: JSON.parse(localStorage.getItem('faceit')).api.password
           }
         })).on("complete", function (info) {
           console.log("Sync was successful", info);
+          initLevel();
         }).on('error', function (err) {
           console.log(err);
-        });
-
-        $('#main').append(Handlebars.compile(pages['intro'])({
-          username: $('username').val()
-        }));
-        $('#landing').hide();
-        $('#intro').show("slide", { direction: "left" }, 500);
-
-        $('#startGame').click(function () {
-          initGame();
-          $('#intro').hide();
-          $('#gamePage1').show("slide", { direction: "left" }, 500);
         });
       } else if (reply === 'wrongpassword') $('#loginReply').html('Password is not correct');else {
         $('#loginReply').html('user does not exits, click here to create it');
@@ -54,13 +40,25 @@ function logger() {
     });
   });
 }
+
 function attemptSync() {
   if (localStorage.getItem('faceit') === null) logger();else {
     //call to claudant with api key ini local storage to sync pouch
     //if it fails try to find instance of pouch, use it and prompt dat awas not sync
+
+    var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
+
+    db.sync(new PouchDB("https://daymos.cloudant.com/" + String(JSON.parse(localStorage.getItem('faceit')).name), { auth: {
+        username: JSON.parse(localStorage.getItem('faceit')).api.key,
+        password: JSON.parse(localStorage.getItem('faceit')).api.password
+      }
+    })).on('complete', function (info) {
+      console.log('Sync was successful', info);
+      initLevel();
+    }).on('error', function (err) {
+      console.log(err);
+    });
     console.log('trying to sync');
-    console.log(JSON.parse(localStorage.getItem('faceit')).api.key);
-    console.log(JSON.parse(localStorage.getItem('faceit')).api.password);
   }
 }
 $(document).ready(attemptSync);
@@ -70,7 +68,7 @@ function createNewUser(name, password, refreshPage) {
     "method": "POST",
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost:3000/signup",
+    "url": "https://face-it.herokuapp.com/signup",
     "data": {
       "name": String(name),
       "password": String(password)
@@ -92,7 +90,7 @@ function loginUser(name, password, callback) {
     "method": "POST",
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost:3000/login",
+    "url": "https://face-it.herokuapp.com/login",
     "data": {
       "name": String(name),
       "password": String(password)
@@ -100,33 +98,9 @@ function loginUser(name, password, callback) {
   };
 
   $.ajax(settings).done(function (response) {
-
     console.log(response);
     callback(response);
     //if response positive login
     //else prompt message to create user and attach  createuser to button 
   });
 }
-=======
-function loader() {
-  var db = new PouchDB('localDB');
-
-  $('#main').append(pages['landing']);
-
-  $('#landing').show("slide", { direction: "left" }, 500);
-  $('#start').click(function () {
-    $('#main').append(Handlebars.compile(pages['intro'])({
-      username: $('#first-name').val()
-    }));
-    $('#landing').hide();
-    $('#intro').show("slide", { direction: "left" }, 500);
-
-    $('#startGame').click(function () {
-      initGame();
-      $('#intro').hide();
-      $('#gamePage1').show("slide", { direction: "left" }, 500);
-    });
-  });
-}
-$(document).ready(loader);
->>>>>>> master

@@ -1,4 +1,39 @@
+
 function initRoundResult(results){
+  console.log(db)
+  console.log(userLevel)
+
+  //here update pouch with the results
+
+  db.put({
+    _id: String(userLevel),
+    results: results
+  }).then(function (response) {
+    // handle response
+    console.log('updated pouch with last results')
+  }).catch(function (err) {
+    console.log(err);
+  });
+
+  //here update the user level in pouch
+  //problem here updating
+  db.get('userLevel').then(function(doc) {//error here
+    return db.put({
+      _id: 'userLevel',
+      _rev: doc._rev,
+      userLevel: Number(doc.userLevel) + 0.2
+    });
+  }).then(function(response) {
+    // handle response
+    
+    console.log(response)
+    console.log('moved on  by a bit in this level')
+  }).catch(function (err) {
+    console.log(err);
+  });
+
+
+
   console.log(results)
   const resultsPage = Handlebars.compile(pages['roundResultContainer'])({
     roundAnswers: results.reduce((acc, current, i)=>{
@@ -33,7 +68,8 @@ function roundResultEventListener(){
   })
 
   $('#playAgain1').click(function(){
-    initIntro();
+    updateLevel()
+    initLevel();
     results = [];
   })
 }
