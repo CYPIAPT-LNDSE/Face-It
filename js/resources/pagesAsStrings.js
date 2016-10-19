@@ -245,7 +245,7 @@ let pages = {
       <hr>
       {{{roundAnswers}}}
       <div class="col-xs-12 round-results-page__results-comparison" id='risultatone'>
-        <h2>You agreed with Emotion API {{risultatone}} of the time</h2>
+        <h2>You agreed with Emotion API {{risultatone}}% of the time</h2>
       </div>
       <div class="col-xs-6">
         <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='playAgain1'>Play</button>
