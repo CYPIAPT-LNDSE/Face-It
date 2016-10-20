@@ -25,6 +25,9 @@ function initLevel() {
   })
   $('#logout').click(function(){
     // here logout functin, should clear faceit from local storage and delete pouchdb
+    db.destroy(localStorage.getItem('faceit').username).then((res)=>{console.log(res)})
+    localStorage.removeItem('faceit')
+    location.reload()
   })
   db.get('userLevel').then(function (doc) {
     console.log('this is doc: ', doc)
