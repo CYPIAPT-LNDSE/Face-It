@@ -43,18 +43,16 @@ function attemptSync(){
   if( localStorage.getItem('faceit') === null) {
     logger()
   } else {
-    //call to claudant with api key ini local storage to sync pouch
-    //if it fails try to find instance of pouch, use it and prompt data awas not sync
 
-    var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
-
+    let db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
+    console.log('trying to sync')
     db.sync(new PouchDB("https://daymos.cloudant.com/" + JSON.parse(localStorage.getItem('faceit')).username, {
-        auth: {
-          username: JSON.parse(localStorage.getItem('faceit')).api.key,
-          password: JSON.parse(localStorage.getItem('faceit')).api.password
-        }
-      })
-    )
+      auth: {
+        username: JSON.parse(localStorage.getItem('faceit')).api.key,
+        password: JSON.parse(localStorage.getItem('faceit')).api.password
+      }
+    })
+           )
     .on('complete', function(info) {
       console.log('Sync was successful', info);
       initLevel()
@@ -67,7 +65,6 @@ function attemptSync(){
 
     });
     console.log('trying to sync')
-    initLevel();
   }
 }
 $(document).ready(attemptSync)

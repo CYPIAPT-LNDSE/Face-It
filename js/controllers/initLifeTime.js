@@ -1,3 +1,4 @@
+
 const emotionResults = [
   {
     type: 'happiness',
@@ -96,7 +97,10 @@ function lifeTime(emotionResults){
 
   // add lifetime graph function here
   if (!$('#lifetime-results-page__lifetime-graph').find('svg').length) {  
-    lifeTimeResults(totalRoundResults)
+    db.get('historical').then((doc)=>{
+      console.log(doc)
+      lifeTimeResults(doc.historical)
+    })
   }
 
   if (!$('.emotion').find('svg').length) {
