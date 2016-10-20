@@ -8,7 +8,7 @@ function initRoundResult(results){
     return db.put({
       _id: 'historical',
       _rev: doc._rev,
-      historical: doc.historical.concat({
+      historical:doc.historical.concat({
         date: Date.now(),
         score: risultatone(results)
       })
