@@ -1,30 +1,6 @@
 'use strict';
 
-var _slicedToArray = function () {
-  function sliceIterator(arr, i) {
-    var _arr = [];var _n = true;var _d = false;var _e = undefined;try {
-      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;_e = err;
-    } finally {
-      try {
-        if (!_n && _i["return"]) _i["return"]();
-      } finally {
-        if (_d) throw _e;
-      }
-    }return _arr;
-  }return function (arr, i) {
-    if (Array.isArray(arr)) {
-      return arr;
-    } else if (Symbol.iterator in Object(arr)) {
-      return sliceIterator(arr, i);
-    } else {
-      throw new TypeError("Invalid attempt to destructure non-iterable instance");
-    }
-  };
-}();
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 var emotionResults = [{
   type: 'happiness',
@@ -40,26 +16,6 @@ var emotionResults = [{
   data: [{ "id": "user", "score": 11 }, { "id": "api", "score": 12 }]
 }];
 
-var totalRoundResults = [{
-  "date": "1475766444306",
-  "score": 50
-}, {
-  "date": "1475794800000",
-  "score": 57
-}, {
-  "date": "1475881200000",
-  "score": 62
-}, {
-  "date": "1475967600000",
-  "score": 58
-}, {
-  "date": "1476054000000",
-  "score": 60
-}, {
-  "date": "1476140400000",
-  "score": 62
-}];
-
 function initLifeTime() {
   lifeTime(emotionResults);
   lifeTimeEventListener();
@@ -70,7 +26,7 @@ function lifeTimeEventListener() {
     initRoundResult(results);
   });
   $('#playAgain2').click(function () {
-    initIntro();
+    initLevel();
     results = [];
   });
 }
@@ -108,7 +64,10 @@ function lifeTime(emotionResults) {
 
   // add lifetime graph function here
   if (!$('#lifetime-results-page__lifetime-graph').find('svg').length) {
-    lifeTimeResults(totalRoundResults);
+    db.get('historical').then(function (doc) {
+      console.log(doc);
+      lifeTimeResults(doc.historical);
+    });
   }
 
   if (!$('.emotion').find('svg').length) {

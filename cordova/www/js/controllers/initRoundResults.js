@@ -10,7 +10,7 @@ function initRoundResult(results) {
     return db.put({
       _id: 'historical',
       _rev: doc._rev,
-      historical: JSON.parse(doc).historical.push({
+      historical: doc.historical.concat({
         date: Date.now(),
         score: risultatone(results)
       })
@@ -31,8 +31,6 @@ function initRoundResult(results) {
       userLevel: Number(doc.userLevel) + 0.2
     });
   }).then(function (response) {
-    // handle response
-
     console.log('moved on  by a bit in this level');
   }).catch(function (err) {
     console.log(err);
@@ -41,7 +39,6 @@ function initRoundResult(results) {
   var resultsPage = Handlebars.compile(pages['roundResultContainer'])({
     roundAnswers: results.reduce(function (acc, current, i) {
       return acc + Handlebars.compile(pages['roundAnswer'])({
-        //here populate single answer stuff 
         userResult: current.userGuess,
         apiConfidanceValue: ~~(current.apiGuess[1] * 100),
         apiEmotion: current.apiGuess[0],
@@ -53,7 +50,6 @@ function initRoundResult(results) {
   clearPage('main');
   addPage('roundResult', resultsPage);
   showPage('roundResult');
-
   roundResultEventListener();
 }
 
