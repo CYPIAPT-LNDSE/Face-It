@@ -6,7 +6,7 @@
 ## Browser version of the app ( only compatible with a recent version of Chrome)
 
 Online version of the app is available here `https://cypiapt-lndse.github.io/Face-It/`
-
+Should the app stop working please open an issue in the repo and we will fix it asap
 
 
 ## How to run the app
