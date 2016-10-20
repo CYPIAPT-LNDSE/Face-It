@@ -6,15 +6,6 @@ module.exports = function(grunt){
 
   grunt.initConfig({
 
-    autopolyfiller: {
-      options: {
-        browsers: ['Android']
-      },
-      your_target: {
-        'polyfill.js': ['./js/controllers/initGameFlow.js']
-      }
-    },
-
     sync:{
       copy_resources_to_www: {
         files: [

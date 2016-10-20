@@ -1,7 +1,7 @@
 .full-screen-background {
   height: 100vh;
   width: 100vw;
-  background-color: /616161; }
+  background-color: #616161; }
 
 .full-screen {
   overflow: scroll;
@@ -15,20 +15,35 @@
       margin-top: 5vh; } }
 
 .landing-page button {
-  margin-top: 8vh; }
+  margin-top: 2vh;
+  margin-bottom: 1.5vh; }
 
 .landing-page__header {
-  margin-top: 5vh;
-  margin-bottom: 8vh; }
+  margin-top: 2vh; }
   .landing-page__header hr {
     margin: 1px; }
+  @media (min-height: 600px) {
+    .landing-page__header {
+      margin-bottom: 5vh; } }
 
 .landing-page__title {
-  color: #58bab1;
-  font-weight: 700;
-  font-size: 5em;
   text-align: center;
+  color: #58bab1;
+  font-weight: 700; }
+
+.landing-page__title--main {
+  font-size: 5em;
   margin-top: 0.1em; }
+
+.landing-page__title--login {
+  font-size: 3em;
+  margin: 0.5em 0; }
+  @media (min-width: 340px) {
+    .landing-page__title--login {
+      font-size: 3.2em; } }
+  @media (min-height: 600px) {
+    .landing-page__title--login {
+      margin-bottom: 3vh; } }
 
 .landing-page__logo {
   margin: auto auto; }
@@ -42,10 +57,37 @@
     .landing-page__logo {
       width: 60%; } }
 
-.name-form {
-  font-size: 1.8em;
-  line-height: 1.8em;
-  margin-top: 0.2em; }
+.landing-page__login-form {
+  background-color: #E0F2F1;
+  border: #B2DFDB solid 1.5em;
+  border-radius: 0.2em;
+  padding: 1.5em;
+  text-align: center; }
+  .landing-page__login-form h3 {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0; }
+    @media (min-width: 340px) {
+      .landing-page__login-form h3 {
+        font-size: 2.2em; } }
+  .landing-page__login-form h4 {
+    font-size: 1em;
+    line-height: 1.4; }
+    @media (min-width: 340px) {
+      .landing-page__login-form h4 {
+        font-size: 1.2em; } }
+  .landing-page__login-form input {
+    margin: 0.5em 0; }
+
+.landing-page__message {
+  font-size: 1.2em;
+  line-height: 1.4;
+  width: 80%;
+  margin: auto auto;
+  text-align: center; }
+  @media (min-width: 340px) {
+    .landing-page__message {
+      font-size: 1.4em; } }
 
 .game-page {
   display: flex;
@@ -53,7 +95,9 @@
   justify-content: center;
   height: 100%; }
   .game-page button {
-    font-weight: 400; }
+    font-weight: 400;
+    text-transform: capitalize;
+    padding: 0.5em 0; }
 
 .game-page__image-container {
   margin-bottom: 3em; }
@@ -128,7 +172,8 @@
   margin-bottom: 20%; }
 
 .gear {
-  transform-origin: 50% 50%; }
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%; }
 
 .cs-loader {
   position: absolute;
@@ -197,46 +242,12 @@
   -webkit-animation: lol 3.75s 500ms infinite ease-in-out;
   animation: lol 3.75s 500ms infinite ease-in-out; }
 
-.lifetime-results-page__key {
-  margin-top: 5%; }
-  .lifetime-results-page__key p {
-    font-size: 1.5em;
-    margin-top: 0.5em; }
-  .lifetime-results-page__key img {
-    margin: 0 auto; }
-
-.lifetime-results-page__disclaimer {
-  background-color: #E0F2F1;
-  border: #B2DFDB solid 1em;
-  border-radius: 0.2em;
-  font-size: 1.2em;
-  padding: 1em 2em;
-  margin-top: 6%; }
-
- .lifetime-results-page__emotions-explanation {
-  background-color: #E0F2F1;
-  border: #B2DFDB solid 1em;
-  border-radius: 0.2em;
-  font-size: 1.4em;
-  padding: 1em 2em;
-  margin-top: 5%; }
-
 #lifetime-results-page__lifetime-graph {
   width: 100%;
   height: 250px;
   border: 1em solid #B2DFDB;
   margin-top: 10px; }
-
-#lifetime-results-page__lifetime-graph path {
-    fill: none;
-    stroke: #616161;
-    stroke-width: 3px; }
-
-.emotion {
-  border: 1em solid #B2DFDB;
-}
-
-.emotion path {
+  #lifetime-results-page__lifetime-graph path {
     fill: none;
     stroke: #616161;
     stroke-width: 3px; }
@@ -248,6 +259,55 @@
     display: none; }
   .lifetime-graph__axis text {
     fill: #616161; }
+
+.lifetime-graph__dots {
+  fill: #E0F2F1;
+  stroke: #B2DFDB;
+  stroke-width: 3; }
+
+.lifetime-graph__tooltip {
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  fill: #616161; }
+
+.lifetime-graph__tooltip--bg {
+  stroke: #B2DFDB;
+  stroke-width: 2; }
+
+.lifetime-results-page__emotion-results {
+  margin-bottom: 10%; }
+  .lifetime-results-page__emotion-results h2 {
+    margin-bottom: 0px; }
+  .lifetime-results-page__emotion-results p {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 1.4em; }
+    @media screen and (max-width: 768px) {
+      .lifetime-results-page__emotion-results p {
+        font-size: 1.3em; } }
+
+.lifetime-results-page__feedback li {
+  font-size: 1.8em;
+  line-height: 1.5;
+  text-transform: capitalize; }
+
+.emotion {
+  border: 1em solid #B2DFDB; }
+
+.emotion path {
+  fill: none;
+  stroke: #616161;
+  stroke-width: 3px; }
+
+.lifetime-graph__axis {
+  font-size: 1.4em;
+  font-family: 'Open Sans', sans-serif; }
+
+.lifetime-graph__axis path, .lifetime-graph__axis line {
+  display: none; }
+
+.lifetime-graph__axis text {
+  fill: #616161; }
 
 .lifetime-graph__dots {
   fill: #E0F2F1;
@@ -275,26 +335,12 @@
   font-family: 'Open Sans', sans-serif;
   fill: #616161; }
 
-.lifetime-graph__tooltip--bg {
-  stroke: #B2DFDB;
-  stroke-width: 2; }
-
-.lifetime-results-page__emotion-results {
-  margin-bottom: 10%; }
-  .lifetime-results-page__emotion-results h2 {
-    margin-bottom: 0px; }
-  .lifetime-results-page__emotion-results p {
-    font-size: 1.4em; }
-    @media screen and (max-width: 768px) {
-      .lifetime-results-page__emotion-results p {
-        font-size: 1.3em; } }
-
-.lifetime-results-page__feedback li {
-  font-size: 1.8em;
-  line-height: 1.5; }
-
 .round-results-page__header {
   text-align: center; }
+
+.round-results__hr {
+  border-top: #B2DFDB 3px solid;
+  opacity: 0.5; }
 
 .round-results-page__result {
   background-color: #E0F2F1;
@@ -329,10 +375,7 @@
     margin-bottom: 20px !important; }
 
 .results-page__button {
-  margin-bottom: 10%; }
-  @media screen and (min-width: 768px) {
-    .results-page__button {
-      height: 5em; } }
+  margin-bottom: 5%; }
 
 .navigator-page {
   display: flex;
@@ -352,10 +395,7 @@ hr {
   border-top: #B2DFDB 5px solid; }
 
 .btn {
-  height: 4em;
   white-space: normal !important;
-  word-break: normal;
-  word-wrap: break-word;
   background-color: #B2DFDB;
   border: #E0F2F1 solid 0.5em;
   border-radius: 0.2em;
@@ -364,10 +404,5 @@ hr {
   .btn:hover, .btn:focus, .btn:active {
     background-color: #a0d8d3;
     border: #ceeae9 solid 0.5em; }
-  @media screen and (max-width: 360px) {
-    .btn {
-      font-size: 1.5em;
-    }
-  }
 
 /*# sourceMappingURL=main.css.map */

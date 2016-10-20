@@ -26,9 +26,9 @@ function logger() {
         }).on('error', function (err) {
           console.log(err);
         });
-      } else if (reply === 'wrongpassword') $('#loginReply').html('Password is not correct');else {
-        $('#loginReply').html('user does not exits, click here to create it');
-        $('#start').html('create user');
+      } else if (reply === 'wrongpassword') $('#loginReply').html('Looks like your password isn&#39;t right, please try again');else {
+        $('#loginReply').html('That user doesn&#39;t exist, click again to create an account');
+        $('#start').html('Sign Up');
         $('#start').unbind();
 
         console.log($('#username').val());
