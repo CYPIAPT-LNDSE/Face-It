@@ -88,10 +88,26 @@ function createNewUser(name, password, refreshPage) {
 
     console.log(response);
 
+    loginUser($('#username').val(), $('#password').val(), function (reply) {
+
+      localStorage.setItem('faceit', JSON.stringify(reply.data));
+
+      db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
+
+      db.sync(new PouchDB("https://daymos.cloudant.com/" + $('#username').val(), { auth: {
+          username: JSON.parse(localStorage.getItem('faceit')).api.key,
+          password: JSON.parse(localStorage.getItem('faceit')).api.password
+        }
+      })).on("complete", function (info) {
+        console.log("Sync was successful", info);
+        initLevel();
+      }).on('error', function (err) {
+        console.log(err);
+      });
+    });
     // if positive move to level page
     // else show update message in page to warn about wrong credentials
   });
-  refreshPage();
 }
 function loginUser(name, password, callback) {
   var settings = {

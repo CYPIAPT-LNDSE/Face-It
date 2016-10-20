@@ -1,30 +1,6 @@
 'use strict';
 
-var _slicedToArray = function () {
-  function sliceIterator(arr, i) {
-    var _arr = [];var _n = true;var _d = false;var _e = undefined;try {
-      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;_e = err;
-    } finally {
-      try {
-        if (!_n && _i["return"]) _i["return"]();
-      } finally {
-        if (_d) throw _e;
-      }
-    }return _arr;
-  }return function (arr, i) {
-    if (Array.isArray(arr)) {
-      return arr;
-    } else if (Symbol.iterator in Object(arr)) {
-      return sliceIterator(arr, i);
-    } else {
-      throw new TypeError("Invalid attempt to destructure non-iterable instance");
-    }
-  };
-}();
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 var emotionResults = [{
   type: 'happiness',
@@ -47,7 +23,21 @@ function initLifeTime() {
 
 function lifeTimeEventListener() {
   $('#roundResults2').click(function () {
-    initRoundResult(results);
+    var resultsPage = Handlebars.compile(pages['roundResultContainer'])({
+      roundAnswers: results.reduce(function (acc, current, i) {
+        return acc + Handlebars.compile(pages['roundAnswer'])({
+          userResult: current.userGuess,
+          apiConfidanceValue: ~~(current.apiGuess[1] * 100),
+          apiEmotion: current.apiGuess[0],
+          imagePath: 'assets/imgs/' + Object.keys(results[i])[0] + '.jpg'
+        });
+      }, ''),
+      risultatone: risultatone(results)
+    });
+    clearPage('main');
+    addPage('roundResult', resultsPage);
+    showPage('roundResult');
+    roundResultEventListener();
   });
   $('#playAgain2').click(function () {
     initLevel();
