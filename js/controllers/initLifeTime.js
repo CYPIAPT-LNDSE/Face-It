@@ -37,7 +37,7 @@ function lifeTimeEventListener(){
     initRoundResult(results);
   })
   $('#playAgain2').click(function(){
-    initIntro();
+    initLevel();
     results = []
   })
 }
