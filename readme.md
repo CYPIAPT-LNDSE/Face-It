@@ -3,6 +3,12 @@
 
 ####Developed by *@daymos, @heatherlauren, @emmadeacon* and *@jakubsvihla*
 
+## Browser version of the app ( only compatible with a recent version of Chrome)
+
+Online version of the app is available here `https://cypiapt-lndse.github.io/Face-It/`
+
+
+
 ## How to run the app
 
 from your terminal run the following:
