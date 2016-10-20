@@ -1,5 +1,3 @@
-// Remove when user level is being tracked
-
 function levelDisplay(lastDigit) {
   let levelDisplayText = document.getElementById('level-display-text');
   if (lastDigit === 0) {
