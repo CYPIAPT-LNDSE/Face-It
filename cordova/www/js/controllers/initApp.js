@@ -14,7 +14,7 @@ function logger() {
       if (reply.state === 'success') {
         localStorage.setItem('faceit', JSON.stringify(reply.data));
 
-        var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
+        db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
 
         db.sync(new PouchDB("https://daymos.cloudant.com/" + $('#username').val(), { auth: {
             username: JSON.parse(localStorage.getItem('faceit')).api.key,
@@ -26,9 +26,9 @@ function logger() {
         }).on('error', function (err) {
           console.log(err);
         });
-      } else if (reply === 'wrongpassword') $('#loginReply').html('Password is not correct');else {
-        $('#loginReply').html('user does not exits, click here to create it');
-        $('#start').html('create user');
+      } else if (reply === 'wrongpassword') $('#loginReply').html('Looks like your password isn&#39;t right, please try again');else {
+        $('#loginReply').html('That user doesn&#39;t exist, click again to create an account');
+        $('#start').html('Sign Up');
         $('#start').unbind();
 
         console.log($('#username').val());
@@ -42,23 +42,31 @@ function logger() {
 }
 
 function attemptSync() {
-  if (localStorage.getItem('faceit') === null) logger();else {
-    //call to claudant with api key ini local storage to sync pouch
-    //if it fails try to find instance of pouch, use it and prompt dat awas not sync
+  if (localStorage.getItem('faceit') === null) {
+    logger();
+  } else {
+    (function () {
 
-    var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
-
-    db.sync(new PouchDB("https://daymos.cloudant.com/" + String(JSON.parse(localStorage.getItem('faceit')).name), { auth: {
-        username: JSON.parse(localStorage.getItem('faceit')).api.key,
-        password: JSON.parse(localStorage.getItem('faceit')).api.password
-      }
-    })).on('complete', function (info) {
-      console.log('Sync was successful', info);
-      initLevel();
-    }).on('error', function (err) {
-      console.log(err);
-    });
-    console.log('trying to sync');
+      var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
+      console.log('trying to sync');
+      db.sync(new PouchDB("https://daymos.cloudant.com/" + JSON.parse(localStorage.getItem('faceit')).username, {
+        auth: {
+          username: JSON.parse(localStorage.getItem('faceit')).api.key,
+          password: JSON.parse(localStorage.getItem('faceit')).api.password
+        }
+      })).on('complete', function (info) {
+        console.log('Sync was successful', info);
+        initLevel();
+      }).on('error', function (err) {
+        db.destroy(localStorage.getItem('faceit').username).then(function (res) {
+          console.log(res);
+        });
+        localStorage.removeItem('faceit');
+        location.reload();
+        console.log('there was an error syncying', err);
+      });
+      console.log('trying to sync');
+    })();
   }
 }
 $(document).ready(attemptSync);
@@ -101,6 +109,6 @@ function loginUser(name, password, callback) {
     console.log(response);
     callback(response);
     //if response positive login
-    //else prompt message to create user and attach  createuser to button 
+    //else prompt message to create user and attach  createuser to button
   });
 }

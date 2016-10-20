@@ -1,5 +1,5 @@
 
-function animate() {
+function animate(userLevel) {
   let lastDigit = Number(userLevel).toFixed(1);
   lastDigit = parseInt(lastDigit[lastDigit.length-1]);
   levelDisplay(lastDigit);
@@ -23,11 +23,16 @@ function initLevel() {
   $('#lifeTimeResults').click(function(){
     initLifeTime();
   })
-
+  $('#logout').click(function(){
+    // here logout functin, should clear faceit from local storage and delete pouchdb
+    db.destroy(localStorage.getItem('faceit').username).then((res)=>{console.log(res)})
+    localStorage.removeItem('faceit')
+    location.reload()
+  })
   db.get('userLevel').then(function (doc) {
     console.log('this is doc: ', doc)
     userLevel = doc.userLevel
-    animate()
+    animate(userLevel)
   
   }).catch(function (err) {
     console.log('errore', err);

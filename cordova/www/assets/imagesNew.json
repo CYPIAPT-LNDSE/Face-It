@@ -1,4 +1,4 @@
-{
+const images = {
   "su211505_1280": [
     {
       "faceRectangle": {

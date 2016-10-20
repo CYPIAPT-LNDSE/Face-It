@@ -1,20 +1,10 @@
 module.exports = function(grunt){
-  require("load-grunt-tasks")(grunt); 
+  require("load-grunt-tasks")(grunt);
 
-  grunt.loadNpmTasks('grunt-autopolyfiller');
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks('grunt-sync');
 
   grunt.initConfig({
-
-    autopolyfiller: {
-      options: {
-        browsers: ['Android']
-      },
-      your_target: {
-        'polyfill.js': ['./js/controllers/initGameFlow.js']
-      }
-    },
 
     sync:{
       copy_resources_to_www: {
@@ -43,5 +33,5 @@ module.exports = function(grunt){
     }
   });
 
-  grunt.registerTask('default', ['sync','babel', 'autopolyfiller']);
+  grunt.registerTask('default', ['sync','babel']);
 };

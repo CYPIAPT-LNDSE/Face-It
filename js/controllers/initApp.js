@@ -40,22 +40,29 @@ function logger(){
 }
 
 function attemptSync(){
-  if( localStorage.getItem('faceit') === null) logger()
-  else {
-    //call to claudant with api key ini local storage to sync pouch
-    //if it fails try to find instance of pouch, use it and prompt data awas not sync
+  if( localStorage.getItem('faceit') === null) {
+    logger()
+  } else {
 
-    var db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
-
-    db.sync(new PouchDB("https://daymos.cloudant.com/" + JSON.parse(localStorage.getItem('faceit')).username, { auth: {
-      username: JSON.parse(localStorage.getItem('faceit')).api.key,
-      password: JSON.parse(localStorage.getItem('faceit')).api.password
-    }
-    })).on('complete', function(info) {
+    let db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
+    console.log('trying to sync')
+    db.sync(new PouchDB("https://daymos.cloudant.com/" + JSON.parse(localStorage.getItem('faceit')).username, {
+      auth: {
+        username: JSON.parse(localStorage.getItem('faceit')).api.key,
+        password: JSON.parse(localStorage.getItem('faceit')).api.password
+      }
+    })
+           )
+    .on('complete', function(info) {
       console.log('Sync was successful', info);
       initLevel()
-    }).on('error', (err)=>{
-      console.log(err)
+    })
+    .on('error', (err)=>{
+      db.destroy(localStorage.getItem('faceit').username).then((res)=>{console.log(res)})
+      localStorage.removeItem('faceit')
+      location.reload()
+      console.log('there was an error syncying', err)
+
     });
     console.log('trying to sync')
   }
@@ -81,11 +88,29 @@ function createNewUser(name, password, refreshPage){
 
     console.log(response);
 
+    loginUser($('#username').val(), $('#password').val(), (reply)=>{
+
+      localStorage.setItem('faceit', JSON.stringify(reply.data))
+
+      db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
+
+      db.sync(new PouchDB("https://daymos.cloudant.com/"+ $('#username').val(), { auth: {
+        username: JSON.parse(localStorage.getItem('faceit')).api.key,
+        password: JSON.parse(localStorage.getItem('faceit')).api.password
+      }
+      })).on("complete", function(info) {
+        console.log("Sync was successful", info);
+        initLevel()
+      }).on('error', (err)=>{
+        console.log(err)
+      });
+
+    })
     // if positive move to level page
     // else show update message in page to warn about wrong credentials
 
   });
-  refreshPage()
+
 }
 function loginUser(name, password, callback){
   var settings = {

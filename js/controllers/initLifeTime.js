@@ -1,3 +1,4 @@
+
 const emotionResults = [
   {
     type: 'happiness',
@@ -25,33 +26,6 @@ const emotionResults = [
   },
 ]
 
-const totalRoundResults = [
-  {
-    "date": "1475766444306",
-    "score": 50
-  },
-  {
-    "date": "1475794800000",
-    "score": 57
-  },
-  {
-    "date": "1475881200000",
-    "score": 62
-  },
-  {
-    "date": "1475967600000",
-    "score": 58
-  },
-  {
-    "date": "1476054000000",
-    "score": 60
-  },
-  {
-    "date": "1476140400000",
-    "score": 62
-  }
-];
-
 function initLifeTime(){
   lifeTime(emotionResults)
   lifeTimeEventListener()
@@ -60,10 +34,24 @@ function initLifeTime(){
 
 function lifeTimeEventListener(){
   $('#roundResults2').click(function(){
-    initRoundResult(results);
+    const resultsPage = Handlebars.compile(pages['roundResultContainer'])({
+      roundAnswers: results.reduce((acc, current, i)=>{
+        return acc + Handlebars.compile(pages['roundAnswer'])({
+          userResult: current.userGuess,
+          apiConfidanceValue: ~~(current.apiGuess[1]*100),
+          apiEmotion: current.apiGuess[0],
+          imagePath:'assets/imgs/' + Object.keys(results[i])[0]+ '.jpg'
+        })
+      },''),
+      risultatone:risultatone(results)
+    })
+    clearPage('main')
+    addPage('roundResult', resultsPage)
+    showPage('roundResult');
+    roundResultEventListener()
   })
   $('#playAgain2').click(function(){
-    initIntro();
+    initLevel();
     results = []
   })
 }
@@ -96,7 +84,10 @@ function lifeTime(emotionResults){
 
   // add lifetime graph function here
   if (!$('#lifetime-results-page__lifetime-graph').find('svg').length) {  
-    lifeTimeResults(totalRoundResults)
+    db.get('historical').then((doc)=>{
+      console.log(doc)
+      lifeTimeResults(doc.historical)
+    })
   }
 
   if (!$('.emotion').find('svg').length) {

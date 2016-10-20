@@ -1,11 +1,44 @@
 'use strict';
 
 function initRoundResult(results) {
-  console.log(results);
+
+  //here store round result into pouch 
+  // see data samples in initLifeTime
+
+  db.get('historical').then(function (doc) {
+    console.log(doc.historical);
+    return db.put({
+      _id: 'historical',
+      _rev: doc._rev,
+      historical: doc.historical.concat({
+        date: Date.now(),
+        score: risultatone(results)
+      })
+    });
+  }).then(function (response) {
+    // handle response
+    console.log('pushing historica object', response);
+  }).catch(function (err) {
+    console.log(err);
+  });
+
+  //here update the user level in pouch
+
+  db.get('userLevel').then(function (doc) {
+    return db.put({
+      _id: 'userLevel',
+      _rev: doc._rev,
+      userLevel: Number(doc.userLevel) + 0.2
+    });
+  }).then(function (response) {
+    console.log('moved on  by a bit in this level');
+  }).catch(function (err) {
+    console.log(err);
+  });
+
   var resultsPage = Handlebars.compile(pages['roundResultContainer'])({
     roundAnswers: results.reduce(function (acc, current, i) {
       return acc + Handlebars.compile(pages['roundAnswer'])({
-        //here populate single answer stuff 
         userResult: current.userGuess,
         apiConfidanceValue: ~~(current.apiGuess[1] * 100),
         apiEmotion: current.apiGuess[0],
@@ -17,7 +50,6 @@ function initRoundResult(results) {
   clearPage('main');
   addPage('roundResult', resultsPage);
   showPage('roundResult');
-
   roundResultEventListener();
 }
 
@@ -35,7 +67,8 @@ function roundResultEventListener() {
   });
 
   $('#playAgain1').click(function () {
-    initIntro();
+    updateLevel();
+    initLevel();
     results = [];
   });
 }

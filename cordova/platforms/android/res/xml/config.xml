@@ -13,13 +13,11 @@
   </author>
     <content src="index.html" />
     <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
-    <preference name="android-targetSdkVersion" value="19" />
 </widget>
