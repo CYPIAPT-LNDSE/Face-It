@@ -26,9 +26,9 @@ function logger() {
         }).on('error', function (err) {
           console.log(err);
         });
-      } else if (reply === 'wrongpassword') $('#loginReply').html('Password is not correct');else {
-        $('#loginReply').html('user does not exits, click here to create it');
-        $('#start').html('create user');
+      } else if (reply === 'wrongpassword') $('#loginReply').html('Looks like your password isn&#39;t right, please try again');else {
+        $('#loginReply').html('That user doesn&#39;t exist, click again to create an account');
+        $('#start').html('Sign Up');
         $('#start').unbind();
 
         console.log($('#username').val());
@@ -88,10 +88,26 @@ function createNewUser(name, password, refreshPage) {
 
     console.log(response);
 
+    loginUser($('#username').val(), $('#password').val(), function (reply) {
+
+      localStorage.setItem('faceit', JSON.stringify(reply.data));
+
+      db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
+
+      db.sync(new PouchDB("https://daymos.cloudant.com/" + $('#username').val(), { auth: {
+          username: JSON.parse(localStorage.getItem('faceit')).api.key,
+          password: JSON.parse(localStorage.getItem('faceit')).api.password
+        }
+      })).on("complete", function (info) {
+        console.log("Sync was successful", info);
+        initLevel();
+      }).on('error', function (err) {
+        console.log(err);
+      });
+    });
     // if positive move to level page
     // else show update message in page to warn about wrong credentials
   });
-  refreshPage();
 }
 function loginUser(name, password, callback) {
   var settings = {

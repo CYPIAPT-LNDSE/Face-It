@@ -23,7 +23,21 @@ function initLifeTime() {
 
 function lifeTimeEventListener() {
   $('#roundResults2').click(function () {
-    initRoundResult(results);
+    var resultsPage = Handlebars.compile(pages['roundResultContainer'])({
+      roundAnswers: results.reduce(function (acc, current, i) {
+        return acc + Handlebars.compile(pages['roundAnswer'])({
+          userResult: current.userGuess,
+          apiConfidanceValue: ~~(current.apiGuess[1] * 100),
+          apiEmotion: current.apiGuess[0],
+          imagePath: 'assets/imgs/' + Object.keys(results[i])[0] + '.jpg'
+        });
+      }, ''),
+      risultatone: risultatone(results)
+    });
+    clearPage('main');
+    addPage('roundResult', resultsPage);
+    showPage('roundResult');
+    roundResultEventListener();
   });
   $('#playAgain2').click(function () {
     initLevel();
