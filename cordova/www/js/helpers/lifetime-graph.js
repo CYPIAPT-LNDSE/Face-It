@@ -1,7 +1,7 @@
 "use strict";
 
 function lifeTimeResults(roundResults) {
-
+  console.log(roundResults);
   var dataLength = roundResults.length;
 
   var margin = { top: 35, right: 5, bottom: 35, left: 60 };
@@ -46,7 +46,7 @@ function lifeTimeResults(roundResults) {
 
   // Append chart to SVG
 
-  chart = svg.append("g").attr("class", "lifetime-graph__chart");
+  var chart = svg.append("g").attr("class", "lifetime-graph__chart");
 
   // Append axis
 
