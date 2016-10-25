@@ -6,13 +6,20 @@
 
 .intro-page__speech-bubble {
   opacity: 0;
+  display: none;
   background-color: $teal;
   border: solid 1em $teal-darken-1;
   position: absolute;
   margin-top: 10vh;
-  padding: 1em;
+  height: 12em;
+  line-height: 10em;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.6em;
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.5;
+  }
   &:before {
     content: '';
     position: absolute;

@@ -118,13 +118,19 @@
 
 .intro-page__speech-bubble {
   opacity: 0;
+  display: none;
   background-color: #E0F2F1;
   border: solid 1em #B2DFDB;
   position: absolute;
   margin-top: 10vh;
-  padding: 1em;
+  height: 12em;
+  line-height: 10em;
   text-align: center;
-  font-size: 2em; }
+  font-size: 1.6em; }
+  .intro-page__speech-bubble span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.5; }
   .intro-page__speech-bubble:before {
     content: '';
     position: absolute;
