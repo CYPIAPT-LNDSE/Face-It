@@ -1,13 +1,30 @@
 function lifeTimeResults (roundResults) {
- console.log(roundResults) 
   var dataLength = roundResults.length;
-
   var margin = {top: 35, right: 5, bottom: 35, left: 60};
   var height = 250 - margin.top - margin.bottom;
   var width = dataLength * 100 - margin.left - margin.right;
-  var dates = roundResults.map(function(a) {return a.date});
+  var roundResultsDateRound = roundResults.map(function(el){
+    return Object.assign(el, {
+      date: el.date - (el.date % (3600 * 24000)) + 1
+    })
+  });
+  var dates = roundResultsDateRound.map(function(a) {
+    return a.date
+  });
+  var roundResultsDailyAverage = roundResultsDateRound.reduce(function(acc, el) {
+    const x = acc.map(function(element) {
+      return element.date === el.date
+    }).indexOf(true) 
+    if (x > -1) {
+      acc[x].score = (parseInt(acc[x].score) + parseInt(el.score)).toString();
+      acc[x].count += 1;
+      acc[x].dayScore = acc[x].score / acc[x].count;
+      return acc;
+    }
+    return acc.concat(Object.assign(el, {count: 1, dayScore: el.score}))
+  }, [])
   var formatTime = d3.timeFormat("%d/%m");
-
+  
   // Create scales
 
   var xScale = d3.scaleTime()
@@ -31,7 +48,7 @@ function lifeTimeResults (roundResults) {
       return xScale(d.date);
     })
     .y(function (d) {
-      return yScale(d.score);
+      return yScale(d.dayScore);
     })
 
   // Create zoom event
@@ -72,29 +89,29 @@ function lifeTimeResults (roundResults) {
   // Create path and append to chart
 
   chart.append("path")
-    .datum(roundResults)
+    .datum(roundResultsDailyAverage)
     .attr("d", line)
 
   // Create data points and append to chart
 
   var datapoint = chart.selectAll("g")
-    .data(roundResults)
+    .data(roundResultsDailyAverage)
 
   var datapointEnter = datapoint.enter()
     .append("g")
     .attr("x", function(d) { return xScale(d.date); })
-    .attr("y", function(d) { return yScale(d.score); })
+    .attr("y", function(d) { return yScale(d.dayScore); })
 
   var circle = datapointEnter.append("circle")
     .attr("class", "lifetime-graph__dots")
     .attr("r", 12)
     .attr("cx", function(d) { return xScale(d.date); })
-    .attr("cy", function(d) { return yScale(d.score); })
+    .attr("cy", function(d) { return yScale(d.dayScore); })
 
   datapointEnter.append("rect")
     .attr("class", "lifetime-graph__tooltip--bg")
     .attr("x", function(d) { return (xScale(d.date) - 15); })
-    .attr("y", function(d) { return (yScale(d.score) - 31); })
+    .attr("y", function(d) { return (yScale(d.dayScore) - 31); })
     .attr("fill", "#F5F5F5")
     .attr("width", 32)
     .attr("height", 17);
@@ -102,7 +119,7 @@ function lifeTimeResults (roundResults) {
   datapointEnter.append("text")
     .attr("class", "lifetime-graph__tooltip")
     .attr("x", function(d) { return (xScale(d.date) - 12); })
-    .attr("y", function(d) { return (yScale(d.score) - 18); })
+    .attr("y", function(d) { return (yScale(d.dayScore) - 18); })
     .text(function(d){ return formatTime(d.date) })
 
 }
