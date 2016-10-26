@@ -27,9 +27,12 @@ const emotionResults = [
 ]
 
 function initLifeTime(){
-  lifeTime(emotionResults)
+  db.get('partials').then((doc)=>{
+    console.log(doc)
+    //lifeTime(doc.partials)
+    lifeTime(emotionResults)
+  })
   lifeTimeEventListener()
-
 }
 
 function lifeTimeEventListener(){
