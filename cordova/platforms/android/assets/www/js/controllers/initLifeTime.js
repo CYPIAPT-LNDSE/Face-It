@@ -52,10 +52,9 @@ function totalQuestions(results) {
 }
 
 function significantDifference(_ref, bound) {
-  var _ref2 = _slicedToArray(_ref, 2);
-
-  var user = _ref2[0];
-  var api = _ref2[1];
+  var _ref2 = _slicedToArray(_ref, 2),
+      user = _ref2[0],
+      api = _ref2[1];
 
   return Math.abs(user.score - api.score) / api.score >= bound;
 }
