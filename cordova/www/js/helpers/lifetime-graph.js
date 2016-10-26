@@ -41,8 +41,6 @@ function lifeTimeResults(roundResults) {
 
   // Create path
 
-
-  console.log(roundResultsDailyAverage);
   var line = d3.line().x(function (d) {
     return xScale(d.date);
   }).y(function (d) {
