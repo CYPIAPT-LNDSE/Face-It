@@ -5,14 +5,12 @@
 }
 
 .intro-page__speech-bubble {
-  opacity: 0;
-  display: none;
   background-color: $teal;
   border: solid 1em $teal-darken-1;
   position: absolute;
   margin-top: 10vh;
-  height: 12em;
-  line-height: 10em;
+  height: 10em;
+  line-height: 8em;
   text-align: center;
   font-size: 1.6em;
   span {
@@ -43,5 +41,66 @@
     z-index: 0;
     bottom: -51px;
     left: 27px;
+  }
+}
+
+.intro-page__modal {
+  opacity: 0;
+  background-color: $teal;
+  border: solid 0.4em $teal-darken-1;
+  text-align: center;
+  line-height: 4.5em;
+  font-size: 1.6em;
+  padding: 0.2em 1em;
+  margin-bottom: 2em;
+  height: 6em;
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.5;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-color: $teal-darken-1 transparent;
+    display: block;
+    width: 0;
+    z-index: 0;
+    left: 50%;
+    margin-left: -19px;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-color: $teal transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    left: 50%;
+    margin-left: -15px;
+  }
+}
+
+.intro-page__modal--top-triangle {
+  &:before {
+    border-width: 0 19px 19px;
+    top: -24px;
+  }
+  &:after {
+    border-width: 0 15px 15px;
+    top: -15px;
+  }
+}
+
+.intro-page__modal--bottom-triangle {
+  &:before {
+    border-width: 19px 19px 0;
+    bottom: -24px;
+  }
+  &:after {
+    border-width: 15px 15px 0;
+    bottom: -15px;
   }
 }

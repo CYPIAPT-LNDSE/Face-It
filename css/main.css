@@ -94,10 +94,11 @@
   flex-direction: column;
   justify-content: center;
   height: 100%; }
-  .game-page button {
-    font-weight: 400;
-    text-transform: capitalize;
-    padding: 0.5em 0; }
+
+.game-page__button {
+  font-weight: 400;
+  text-transform: capitalize;
+  padding: 0.5em 0; }
 
 .game-page__image-container {
   margin-bottom: 3em; }
@@ -111,20 +112,24 @@
   margin-left: 25%;
   margin-bottom: 5%; }
 
+.game-page__image--intro {
+  padding: 2em; }
+
+.game-page__image-container--intro {
+  margin-top: 5vh; }
+
 .intro-page {
   width: 100%;
   height: 100%;
   position: relative; }
 
 .intro-page__speech-bubble {
-  opacity: 0;
-  display: none;
   background-color: #E0F2F1;
   border: solid 1em #B2DFDB;
   position: absolute;
   margin-top: 10vh;
-  height: 12em;
-  line-height: 10em;
+  height: 10em;
+  line-height: 8em;
   text-align: center;
   font-size: 1.6em; }
   .intro-page__speech-bubble span {
@@ -153,6 +158,55 @@
     z-index: 0;
     bottom: -51px;
     left: 27px; }
+
+.intro-page__modal {
+  opacity: 0;
+  background-color: #E0F2F1;
+  border: solid 0.4em #B2DFDB;
+  text-align: center;
+  line-height: 4.5em;
+  font-size: 1.6em;
+  padding: 0.2em 1em;
+  margin-bottom: 2em;
+  height: 6em; }
+  .intro-page__modal span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.5; }
+  .intro-page__modal:before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-color: #B2DFDB transparent;
+    display: block;
+    width: 0;
+    z-index: 0;
+    left: 50%;
+    margin-left: -19px; }
+  .intro-page__modal:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-color: #E0F2F1 transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    left: 50%;
+    margin-left: -15px; }
+
+.intro-page__modal--top-triangle:before {
+  border-width: 0 19px 19px;
+  top: -24px; }
+.intro-page__modal--top-triangle:after {
+  border-width: 0 15px 15px;
+  top: -15px; }
+
+.intro-page__modal--bottom-triangle:before {
+  border-width: 19px 19px 0;
+  bottom: -24px; }
+.intro-page__modal--bottom-triangle:after {
+  border-width: 15px 15px 0;
+  bottom: -15px; }
 
 .level-page {
   width: 100%;
@@ -378,5 +432,9 @@ hr {
   .btn:hover, .btn:focus, .btn:active {
     background-color: #a0d8d3;
     border: #ceeae9 solid 0.5em; }
+
+.default-hidden {
+  opacity: 0;
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */

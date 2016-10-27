@@ -3,11 +3,12 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  button {
-    font-weight: 400;
-    text-transform: capitalize;
-    padding: 0.5em 0;
-  }
+}
+
+.game-page__button {
+  font-weight: 400;
+  text-transform: capitalize;
+  padding: 0.5em 0;
 }
 
 .game-page__image-container {
@@ -23,4 +24,12 @@
   width: 50%;
   margin-left: 25%;
   margin-bottom: 5%;
+}
+
+.game-page__image--intro {
+  padding: 2em;
+}
+
+.game-page__image-container--intro {
+  margin-top: 5vh;
 }
