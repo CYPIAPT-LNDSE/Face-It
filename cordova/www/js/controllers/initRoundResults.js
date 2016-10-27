@@ -1,5 +1,7 @@
 'use strict';
 
+var roundComplete = 0;
+
 function initRoundResult(results) {
 
   //here store round result into pouch 
@@ -35,7 +37,7 @@ function initRoundResult(results) {
   }).catch(function (err) {
     console.log(err);
   });
-
+  roundComplete = 1;
   var resultsPage = Handlebars.compile(pages['roundResultContainer'])({
     roundAnswers: results.reduce(function (acc, current, i) {
       return acc + Handlebars.compile(pages['roundAnswer'])({

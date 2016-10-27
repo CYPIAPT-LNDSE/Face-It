@@ -27,9 +27,12 @@ const emotionResults = [
 ]
 
 function initLifeTime(){
-  lifeTime(emotionResults)
-  lifeTimeEventListener()
-
+  db.get('partials').then((doc)=>{
+    console.log(doc)
+    //lifeTime(doc.partials)
+    lifeTime(emotionResults)
+    lifeTimeEventListener()
+  })
 }
 
 function lifeTimeEventListener(){
@@ -76,7 +79,8 @@ function lifeTime(emotionResults){
   const workOn = emotionsToWorkOn(emotionResults, 0.2)
   const lifeTimePage = Handlebars.compile(pages['lifeTimePage'])({
     emotions: emotionResults,
-    workOn: workOn
+    workOn: workOn,
+    roundResults: roundComplete === 1 ? true : false 
   })
   clearPage('main')
   addPage('lifeTimePage', lifeTimePage)
@@ -85,7 +89,15 @@ function lifeTime(emotionResults){
   // add lifetime graph function here
   if (!$('#lifetime-results-page__lifetime-graph').find('svg').length) {  
     db.get('historical').then((doc)=>{
-      console.log(doc)
+      console.log('hi im doc' ,doc)
+      //for (var x = 1; x < 10; x++) {
+      //doc.historical.push({
+      //  count: 1,
+      //  date: Date.now() + (1000 * 60 * 60 * 24 * x),
+      //  dayScore: '80',
+      //  score: '80',
+      //})
+      //}
       lifeTimeResults(doc.historical)
     })
   }
