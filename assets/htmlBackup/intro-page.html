@@ -16,13 +16,15 @@
       <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 full-screen" id='view1'>
         <div class="intro-page">
           <div class="col-xs-12">
-            <div class="col-xs-10 intro-page__speech-bubble intro-page__speech-bubble--1">
-              <span>
+
+            <div class="col-xs-10 default-hidden intro-page__speech-bubble intro-page__speech-bubble--1">
+              <span class="speech-bubble__text">
                 Hello {{username}}!
                 <br>
                 I'm Emotion API
               </span>
             </div>
+
             <svg viewBox="0 0 321 617" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <defs>
                     <rect id="path-1" x="236" y="0" width="80" height="120"></rect>
@@ -334,7 +336,24 @@
                     </g>
                 </g>
             </svg>
-            <!-- <button type="button" class="btn btn-default btn-lg btn-block">Start</button> -->
+
+            <div class="intro-page__tutorial">
+              <div class="col-xs-12 game-page__image-container game-page__image-container--intro default-hidden">
+                <img src="../icons/happy-emoji.svg" class="img-responsive game-page__image--intro" alt="Face">
+              </div>
+              <div class="col-xs-10 col-xs-offset-1 intro-page__modal intro-page__modal--top-triangle">
+                <span class="modal__text">You'll be shown a face</span>
+              </div>
+              <div class="col-xs-6 game-page__button intro-page__tutorial-button default-hidden">
+                <img src="../icons/happy-emoji.svg" class="game-page__button-emoji" alt="Happy">
+                <button type="button" class="btn btn-default btn-lg btn-block">Happy</button>
+              </div>
+              <div class="col-xs-6 game-page__button intro-page__tutorial-button default-hidden">
+                <img src="../icons/sad-emoji.svg" class="game-page__button-emoji" alt="Sad">
+                <button type="button" class="btn btn-default btn-lg btn-block">Sad</button>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
