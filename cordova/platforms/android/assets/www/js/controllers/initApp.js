@@ -78,7 +78,7 @@ function createNewUser(name, password, refreshPage) {
     "crossDomain": true,
     "url": "https://face-it.herokuapp.com/signup",
     "data": {
-      "name": String(name),
+      "name": String(name).toLowerCase(),
       "password": String(password)
     }
   };
@@ -88,7 +88,7 @@ function createNewUser(name, password, refreshPage) {
 
     console.log(response);
 
-    loginUser($('#username').val(), $('#password').val(), function (reply) {
+    loginUser($('#username').val().toLowerCase(), $('#password').val(), function (reply) {
 
       localStorage.setItem('faceit', JSON.stringify(reply.data));
 
@@ -116,7 +116,7 @@ function loginUser(name, password, callback) {
     "crossDomain": true,
     "url": "https://face-it.herokuapp.com/login",
     "data": {
-      "name": String(name),
+      "name": String(name).toLowerCase(),
       "password": String(password)
     }
   };
