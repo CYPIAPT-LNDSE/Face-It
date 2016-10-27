@@ -280,7 +280,9 @@ let pages = {
         </ul>
       </div>
       <hr>
-        <button type="button" class="btn btn-default btn-lg btn-block results-page__button"id='playAgain2'>Play Again</button>
+        <button type="button" class="btn btn-default btn-lg btn-block results-page__button"id='playAgain2'>Play</button>
+        {{#if roundResults}}
         <button type="button" class="btn btn-default btn-lg btn-block results-page__button" id='roundResults2'>Round Results</button>
+        {{/if}}
     </div>`
 }

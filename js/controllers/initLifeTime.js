@@ -31,8 +31,8 @@ function initLifeTime(){
     console.log(doc)
     //lifeTime(doc.partials)
     lifeTime(emotionResults)
+    lifeTimeEventListener()
   })
-  lifeTimeEventListener()
 }
 
 function lifeTimeEventListener(){
@@ -79,7 +79,8 @@ function lifeTime(emotionResults){
   const workOn = emotionsToWorkOn(emotionResults, 0.2)
   const lifeTimePage = Handlebars.compile(pages['lifeTimePage'])({
     emotions: emotionResults,
-    workOn: workOn
+    workOn: workOn,
+    roundResults: roundComplete === 1 ? true : false 
   })
   clearPage('main')
   addPage('lifeTimePage', lifeTimePage)
