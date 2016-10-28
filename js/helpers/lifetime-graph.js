@@ -31,11 +31,11 @@ function lifeTimeResults (roundResults) {
 
   // Create scales
 
-  var xScale = d3.scaleTime()
+  const xScale = d3.scaleTime()
     .domain(d3.extent(dates))
     .range([0, width]);
 
-  var yScale = d3.scaleLinear()
+  const yScale = d3.scaleLinear()
     .domain([0, 100])
     .range([height, 0]);
 
@@ -65,7 +65,8 @@ function lifeTimeResults (roundResults) {
   function zoomed() {
     chart.attr(
       "transform", `translate(${d3.event.transform.x}, 0)`
-    )}
+    )
+  }
 
   // Append SVG to div
 
