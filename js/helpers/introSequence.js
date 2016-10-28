@@ -1,3 +1,8 @@
+function gearSpin() {
+  $('.gear').velocity({rotateZ: '180deg'}, {duration: 7000})
+  $('.gear-reverse').velocity({rotateZ: '-180deg'}, {duration: 7000})
+}
+
 function surpriseIconAnimation() {
   $("#surprise-icon")
     // Fall down
@@ -169,6 +174,7 @@ function introToLevelPage() {
   })
 }
 
+gearSpin()
 surpriseIconAnimation()
 setTimeout(sadIconAnimation, 2500)
 setTimeout(userIconAnimation, 5000)
