@@ -1,10 +1,9 @@
 "use strict";
 
 function lifeTimeResults(roundResults) {
-  var dataLength = roundResults.length;
+
   var margin = { top: 35, right: 5, bottom: 35, left: 60 };
   var height = 250 - margin.top - margin.bottom;
-  var width = dataLength * 100 - margin.left - margin.right;
   var roundResultsDateRound = roundResults.map(function (el) {
     return Object.assign(el, {
       date: el.date - el.date % (3600 * 24000) + 1
@@ -13,6 +12,9 @@ function lifeTimeResults(roundResults) {
   var dates = roundResultsDateRound.map(function (a) {
     return a.date;
   });
+
+  //Combine individual round scores to form daily average
+
   var roundResultsDailyAverage = roundResultsDateRound.reduce(function (acc, el) {
     var x = acc.map(function (element) {
       return element.date === el.date;
@@ -25,6 +27,9 @@ function lifeTimeResults(roundResults) {
     }
     return acc.concat(Object.assign(el, { count: 1, dayScore: el.score }));
   }, []);
+
+  var dataLength = roundResultsDailyAverage.length;
+  var width = dataLength > 6 ? dataLength * 50 - margin.left - margin.right : $("#lifetime-results-page__lifetime-graph").width() - margin.left - margin.right;
   var formatTime = d3.timeFormat("%d/%m");
 
   // Create scales
@@ -41,8 +46,6 @@ function lifeTimeResults(roundResults) {
 
   // Create path
 
-
-  console.log(roundResultsDailyAverage);
   var line = d3.line().x(function (d) {
     return xScale(d.date);
   }).y(function (d) {

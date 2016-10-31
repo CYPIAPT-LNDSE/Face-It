@@ -41,8 +41,12 @@ var emotionResults = [{
 }];
 
 function initLifeTime() {
-  lifeTime(emotionResults);
-  lifeTimeEventListener();
+  db.get('partials').then(function (doc) {
+    console.log(doc);
+    //lifeTime(doc.partials)
+    lifeTime(emotionResults);
+    lifeTimeEventListener();
+  });
 }
 
 function lifeTimeEventListener() {
@@ -93,7 +97,8 @@ function lifeTime(emotionResults) {
   var workOn = emotionsToWorkOn(emotionResults, 0.2);
   var lifeTimePage = Handlebars.compile(pages['lifeTimePage'])({
     emotions: emotionResults,
-    workOn: workOn
+    workOn: workOn,
+    roundResults: roundComplete === 1 ? true : false
   });
   clearPage('main');
   addPage('lifeTimePage', lifeTimePage);
@@ -102,7 +107,15 @@ function lifeTime(emotionResults) {
   // add lifetime graph function here
   if (!$('#lifetime-results-page__lifetime-graph').find('svg').length) {
     db.get('historical').then(function (doc) {
-      console.log(doc);
+      console.log('hi im doc', doc);
+      //for (var x = 1; x < 10; x++) {
+      //doc.historical.push({
+      //  count: 1,
+      //  date: Date.now() + (1000 * 60 * 60 * 24 * x),
+      //  dayScore: '80',
+      //  score: '80',
+      //})
+      //}
       lifeTimeResults(doc.historical);
     });
   }

@@ -39,8 +39,8 @@ function levelAnimation(lastDigit) {
 
   if (lastDigit !== 0) {
     setTimeout(function () {
-      $('.gear').velocity({
-        rotateZ: '180deg'
+      $('#gear').velocity({
+        rotateZ: 180
       }, {
         duration: animationDuration - 100
       });

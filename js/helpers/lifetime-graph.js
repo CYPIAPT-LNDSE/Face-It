@@ -22,7 +22,7 @@ function lifeTimeResults (roundResults) {
       acc[x].count += 1;
       acc[x].dayScore = acc[x].score / acc[x].count;
       return acc; }
-    return acc.concat(Object.assign(el, {count: 1, dayScore: el.score}))
+    return acc.concat(Object.assign(el, {count: 1, dayScore: el.score, index: acc.length}))
   }, [])
 
   var dataLength = roundResultsDailyAverage.length;
@@ -32,7 +32,7 @@ function lifeTimeResults (roundResults) {
   // Create scales
 
   const xScale = d3.scaleTime()
-    .domain(d3.extent(dates))
+    .domain([0, dataLength])
     .range([0, width]);
 
   const yScale = d3.scaleLinear()
@@ -49,7 +49,7 @@ function lifeTimeResults (roundResults) {
 
   var line = d3.line()
     .x(function (d) {
-      return xScale(d.date);
+      return xScale(d.index);
     })
     .y(function (d) {
       return yScale(d.dayScore);
@@ -104,18 +104,18 @@ function lifeTimeResults (roundResults) {
 
   var datapointEnter = datapoint.enter()
     .append("g")
-    .attr("x", function(d) { return xScale(d.date); })
+    .attr("x", function(d) { return xScale(d.index); })
     .attr("y", function(d) { return yScale(d.dayScore); })
 
   var circle = datapointEnter.append("circle")
     .attr("class", "lifetime-graph__dots")
     .attr("r", 12)
-    .attr("cx", function(d) { return xScale(d.date); })
+    .attr("cx", function(d) { return xScale(d.index); })
     .attr("cy", function(d) { return yScale(d.dayScore); })
 
   datapointEnter.append("rect")
     .attr("class", "lifetime-graph__tooltip--bg")
-    .attr("x", function(d) { return (xScale(d.date) - 15); })
+    .attr("x", function(d) { return (xScale(d.index) - 15); })
     .attr("y", function(d) { return (yScale(d.dayScore) - 31); })
     .attr("fill", "#F5F5F5")
     .attr("width", 32)
@@ -123,7 +123,7 @@ function lifeTimeResults (roundResults) {
 
   datapointEnter.append("text")
     .attr("class", "lifetime-graph__tooltip")
-    .attr("x", function(d) { return (xScale(d.date) - 12); })
+    .attr("x", function(d) { return (xScale(d.index) - 12); })
     .attr("y", function(d) { return (yScale(d.dayScore) - 18); })
     .text(function(d){ return formatTime(d.date) })
 
