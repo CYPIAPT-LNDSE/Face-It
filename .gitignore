@@ -9,4 +9,4 @@ session.vim
 *.swp
 node_modules
 .swp
-cordova
+cordova/
