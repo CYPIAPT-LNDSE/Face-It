@@ -1,3 +1,5 @@
+let roundComplete = 0;
+
 function initRoundResult(results){
   //here store round result into pouch 
   // see data samples in initLifeTime
@@ -34,7 +36,7 @@ function initRoundResult(results){
   }).catch(function (err) {
     console.log(err);
   });
-
+  roundComplete = 1;
   const resultsPage = Handlebars.compile(pages['roundResultContainer'])({
     roundAnswers: results.reduce((acc, current, i)=>{
       return acc + Handlebars.compile(pages['roundAnswer'])({
