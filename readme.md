@@ -24,7 +24,12 @@ if `open index.html` doesnt work just double click on index.html
 
 ## compiling the cordova app
 
-In the terminal in the root folder:
+In the terminal in the root folder: (you must have all cordova dependancies installed globally)
+```
+cordova create cordova test.test.test
+```
+navigate to cordova/www and remove index.html
+then from project's root directory:
 ```
 grunt
 
@@ -36,6 +41,17 @@ cordova emulate android -target=android-19
 //with a device attached (need debug mode on)
 cordova run android -device
 
+
+```
+To create different cordova platform, that allows you to run the app on the browser or different emulated version of android do:
+```
+cd cordova
+
+cordova add platform (here teh platform example:) browser
+```
+now you can run 
+```
+cordova run browser
 ```
 
 ##About
