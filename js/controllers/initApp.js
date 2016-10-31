@@ -6,7 +6,7 @@ function logger(){
   $('#landing').show("slide", { direction: "left" }, 500)
 
   $('#start').click(function(){
-
+    $('#start').html('<img src="assets/ring.gif" id="loading-gif">')
     loginUser($('#username').val(), $('#password').val(), (reply)=>{
 
       if(reply.state === 'success') {

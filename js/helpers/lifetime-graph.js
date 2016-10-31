@@ -1,4 +1,5 @@
 function lifeTimeResults (roundResults) {
+
   var margin = {top: 35, right: 5, bottom: 35, left: 60};
   var height = 250 - margin.top - margin.bottom;
   var roundResultsDateRound = roundResults.map(function(el){
@@ -9,10 +10,13 @@ function lifeTimeResults (roundResults) {
   var dates = roundResultsDateRound.map(function(a) {
     return a.date
   });
+
+  //Combine individual round scores to form daily average
+
   var roundResultsDailyAverage = roundResultsDateRound.reduce(function(acc, el) {
     const x = acc.map(function(element) {
       return element.date === el.date
-    }).indexOf(true) 
+    }).indexOf(true)
     if (x > -1) {
       acc[x].score = (parseInt(acc[x].score) + parseInt(el.score)).toString();
       acc[x].count += 1;
@@ -22,16 +26,16 @@ function lifeTimeResults (roundResults) {
   }, [])
 
   var dataLength = roundResultsDailyAverage.length;
-  var width = dataLength * 50 - margin.left - margin.right;
+  var width = dataLength > 6 ? dataLength * 50 - margin.left - margin.right : $("#lifetime-results-page__lifetime-graph").width() - margin.left - margin.right;
   var formatTime = d3.timeFormat("%d/%m");
-  
+
   // Create scales
 
-  var xScale = d3.scaleTime()
+  const xScale = d3.scaleTime()
     .domain(d3.extent(dates))
     .range([0, width]);
 
-  var yScale = d3.scaleLinear()
+  const yScale = d3.scaleLinear()
     .domain([0, 100])
     .range([height, 0]);
 
@@ -61,7 +65,8 @@ function lifeTimeResults (roundResults) {
   function zoomed() {
     chart.attr(
       "transform", `translate(${d3.event.transform.x}, 0)`
-    )}
+    )
+  }
 
   // Append SVG to div
 
