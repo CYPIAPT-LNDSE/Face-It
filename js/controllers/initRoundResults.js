@@ -1,10 +1,8 @@
 function initRoundResult(results){
-
   //here store round result into pouch 
   // see data samples in initLifeTime
 
   db.get('historical').then(function(doc) {
-    console.log(doc.historical)
     return db.put({
       _id: 'historical',
       _rev: doc._rev,
@@ -19,8 +17,11 @@ function initRoundResult(results){
   }).catch(function (err) {
     console.log(err);
   });
+  // here update partials 
 
-  //here update the user level in pouch
+  updatePartials(results) 
+
+  // here update the user level in pouch
 
   db.get('userLevel').then(function(doc) {
     return db.put({

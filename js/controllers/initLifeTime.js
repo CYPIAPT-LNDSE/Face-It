@@ -26,6 +26,7 @@ const emotionResults = [
   },
 ]
 
+
 function initLifeTime(){
   lifeTime(emotionResults)
   lifeTimeEventListener()
