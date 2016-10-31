@@ -36,3 +36,8 @@ hr {
     border: darken($teal, 5%) solid 0.5em;
   }
 }
+
+.default-hidden {
+  opacity: 0;
+  display: none;
+}
