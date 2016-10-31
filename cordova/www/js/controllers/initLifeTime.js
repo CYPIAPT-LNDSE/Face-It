@@ -1,30 +1,6 @@
 'use strict';
 
-var _slicedToArray = function () {
-  function sliceIterator(arr, i) {
-    var _arr = [];var _n = true;var _d = false;var _e = undefined;try {
-      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;_e = err;
-    } finally {
-      try {
-        if (!_n && _i["return"]) _i["return"]();
-      } finally {
-        if (_d) throw _e;
-      }
-    }return _arr;
-  }return function (arr, i) {
-    if (Array.isArray(arr)) {
-      return arr;
-    } else if (Symbol.iterator in Object(arr)) {
-      return sliceIterator(arr, i);
-    } else {
-      throw new TypeError("Invalid attempt to destructure non-iterable instance");
-    }
-  };
-}();
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 var emotionResults = [{
   type: 'happiness',
@@ -41,8 +17,12 @@ var emotionResults = [{
 }];
 
 function initLifeTime() {
-  lifeTime(emotionResults);
-  lifeTimeEventListener();
+  db.get('partials').then(function (doc) {
+    console.log(doc);
+    //lifeTime(doc.partials)
+    lifeTime(emotionResults);
+    lifeTimeEventListener();
+  });
 }
 
 function lifeTimeEventListener() {
@@ -93,7 +73,8 @@ function lifeTime(emotionResults) {
   var workOn = emotionsToWorkOn(emotionResults, 0.2);
   var lifeTimePage = Handlebars.compile(pages['lifeTimePage'])({
     emotions: emotionResults,
-    workOn: workOn
+    workOn: workOn,
+    roundResults: roundComplete === 1 ? true : false
   });
   clearPage('main');
   addPage('lifeTimePage', lifeTimePage);
@@ -102,7 +83,15 @@ function lifeTime(emotionResults) {
   // add lifetime graph function here
   if (!$('#lifetime-results-page__lifetime-graph').find('svg').length) {
     db.get('historical').then(function (doc) {
-      console.log(doc);
+      console.log('hi im doc', doc);
+      //for (var x = 1; x < 10; x++) {
+      //doc.historical.push({
+      //  count: 1,
+      //  date: Date.now() + (1000 * 60 * 60 * 24 * x),
+      //  dayScore: '80',
+      //  score: '80',
+      //})
+      //}
       lifeTimeResults(doc.historical);
     });
   }
