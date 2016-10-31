@@ -1,4 +1,3 @@
-
 function animate(userLevel) {
   let lastDigit = Number(userLevel).toFixed(1);
   lastDigit = parseInt(lastDigit[lastDigit.length-1]);
@@ -7,12 +6,12 @@ function animate(userLevel) {
 };
 
 function initLevel() {
- 
-  db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
 
+  db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
   const levelPage = Handlebars.compile(pages['levelPage'])({
     path: path
   })
+
   clearPage('main');
   addPage('level', levelPage);
   showPage('level');
@@ -20,9 +19,11 @@ function initLevel() {
   $('#play').click(function(){
     initGame();
   });
+
   $('#lifeTimeResults').click(function(){
     initLifeTime();
   })
+
   $('#logout').click(function(){
     // here logout functin, should clear faceit from local storage and delete pouchdb
     db.destroy(localStorage.getItem('faceit').username).then((res)=>{console.log(res)})
@@ -33,7 +34,7 @@ function initLevel() {
     console.log('this is doc: ', doc)
     userLevel = doc.userLevel
     animate(userLevel)
-  
+
   }).catch(function (err) {
     console.log('errore', err);
   });

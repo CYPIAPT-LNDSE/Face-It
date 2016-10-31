@@ -43,8 +43,8 @@ var emotionResults = [{
 function initLifeTime() {
   db.get('partials').then(function (doc) {
     console.log(doc);
-    //lifeTime(doc.partials)
-    lifeTime(emotionResults);
+    lifeTime(doc.partials);
+    //lifeTime(emotionResults)
     lifeTimeEventListener();
   });
 }
