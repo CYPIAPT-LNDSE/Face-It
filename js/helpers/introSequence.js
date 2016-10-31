@@ -133,6 +133,7 @@ function speechBubbleText() {
 function tutorialFace() {
   $(".intro-page__speech-bubble").velocity({opacity: 0}, {display: "none"})
   $("svg").velocity({opacity: 0}, {display: "none"})
+  $(".intro-page__tutorial").show();
   setTimeout(function() {
     $(".intro-page__tutorial-button").velocity({opacity: 0.3}, {display: "block", duration: 800})
     $(".game-page__image-container--intro").velocity({opacity: 1}, {display:"block", duration: 800, queue: false, complete: function() {
