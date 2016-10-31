@@ -123,6 +123,9 @@
   height: 100%;
   position: relative; }
 
+.intro-page__tutorial {
+  display: none; }
+
 .intro-page__speech-bubble {
   background-color: #E0F2F1;
   border: solid 1em #B2DFDB;

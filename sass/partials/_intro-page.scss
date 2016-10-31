@@ -4,6 +4,10 @@
   position: relative;
 }
 
+.intro-page__tutorial {
+  display: none;
+}
+
 .intro-page__speech-bubble {
   background-color: $teal;
   border: solid 1em $teal-darken-1;
