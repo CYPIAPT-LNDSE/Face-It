@@ -41,11 +41,11 @@ break;
     .velocity({translateY:218}, 100, [0.33, 0, 0.66, 1])
     .velocity({translateY:219}, 80, [0.33, 0, 0.66, 1])
     .velocity({translateX:userPosition}, {duration: (animationDuration - 10), delay: 50});
-  
+
   if (lastDigit !== 0) {
     setTimeout(function() {
-      $('#gear').velocity({
-        rotateZ: 180
+      $('.gear').velocity({
+        rotateZ: '180deg'
       }, {
         duration: (animationDuration - 100)
       });

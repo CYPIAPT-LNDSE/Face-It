@@ -6,40 +6,36 @@ function logger(){
   $('#landing').show("slide", { direction: "left" }, 500)
 
   $('#start').click(function(){
-    if (validateUsername($('#username').val())) {
-      $('#start').html('<img src="assets/ring.gif" id="loading-gif">')
-      loginUser($('#username').val(), $('#password').val(), (reply)=>{
+    $('#start').html('<img src="assets/ring.gif" id="loading-gif">')
+    loginUser($('#username').val(), $('#password').val(), (reply)=>{
 
-        if(reply.state === 'success') {
-          localStorage.setItem('faceit', JSON.stringify(reply.data))
+      if(reply.state === 'success') {
+        localStorage.setItem('faceit', JSON.stringify(reply.data))
 
-          db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
+        db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
 
-          db.sync(new PouchDB("https://daymos.cloudant.com/"+ $('#username').val(), { auth: {
-            username: JSON.parse(localStorage.getItem('faceit')).api.key,
-            password: JSON.parse(localStorage.getItem('faceit')).api.password
-          }
-          })).on("complete", function(info) {
-            console.log("Sync was successful", info);
-            initLevel()
-          }).on('error', (err)=>{
-            console.log(err)
-          });
-
-        } else if (reply === 'wrongpassword') $('#loginReply').html('Looks like your password isn&#39;t right, please try again')
-        else {
-          $('#loginReply').html('That user doesn&#39;t exist, click again to create an account')
-          $('#start').html('Sign Up')
-          $('#start').unbind()
-
-          console.log($('#username').val())
-          console.log($('#password').val())
-          $('#start').click(createNewUser.bind(null,$('#username').val(), $('#password').val(), ()=>{location.reload()}))
+        db.sync(new PouchDB("https://daymos.cloudant.com/"+ $('#username').val(), { auth: {
+          username: JSON.parse(localStorage.getItem('faceit')).api.key,
+          password: JSON.parse(localStorage.getItem('faceit')).api.password
         }
-      })
-    } else {
-      alert('username must contain only lowercase letters or numbers')
-    }
+        })).on("complete", function(info) {
+          console.log("Sync was successful", info);
+          initLevel()
+        }).on('error', (err)=>{
+          console.log(err)
+        });
+
+      } else if (reply === 'wrongpassword') $('#loginReply').html('Looks like your password isn&#39;t right, please try again')
+      else {
+        $('#loginReply').html('That user doesn&#39;t exist, click again to create an account')
+        $('#start').html('Sign Up')
+        $('#start').unbind()
+
+        console.log($('#username').val())
+        console.log($('#password').val())
+        $('#start').click(createNewUser.bind(null,$('#username').val(), $('#password').val(), ()=>{location.reload()}))
+      }
+    })
   })
 }
 
@@ -56,18 +52,18 @@ function attemptSync(){
         password: JSON.parse(localStorage.getItem('faceit')).api.password
       }
     })
-    )
-      .on('complete', function(info) {
-        console.log('Sync was successful', info);
-        initLevel()
-      })
-      .on('error', (err)=>{
-        db.destroy(localStorage.getItem('faceit').username).then((res)=>{console.log(res)})
-        localStorage.removeItem('faceit')
-        location.reload()
-        console.log('there was an error syncying', err)
+           )
+    .on('complete', function(info) {
+      console.log('Sync was successful', info);
+      initLevel()
+    })
+    .on('error', (err)=>{
+      db.destroy(localStorage.getItem('faceit').username).then((res)=>{console.log(res)})
+      localStorage.removeItem('faceit')
+      location.reload()
+      console.log('there was an error syncying', err)
 
-      });
+    });
     console.log('trying to sync')
   }
 }
@@ -135,20 +131,3 @@ function loginUser(name, password, callback){
     //else prompt message to create user and attach  createuser to button
   });
 }
-
-function validateUsername(username) {
-  return lowerCase(username) && shortEnough(username) && onlyLetters(username)
-}
-
-function lowerCase(username) {
-  return username === username.toLowerCase();
-}
-
-function shortEnough(username) {
-  return username.length < 15;
-}
-
-function onlyLetters(username) {
-  return /^[a-zA-Z0-9]+$/.test(username)
-}
-
