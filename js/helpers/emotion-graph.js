@@ -58,7 +58,7 @@ function emotionResultGraphPercent(total, result, element) {
   const height = 200 - margin.top - margin.bottom;
   const width = $(element).width() - margin.left - margin.right;  
 
-  const lineData = [{y: 50, x: 0}, {y: 50, x: result[1].score / 2}, {y: 50, x: result[1].score}]
+  const lineData = [{y: 50, x: 0}, {y: 50, x: result[1].score === 0 ? 0.5 : result[1].score / 2}, {y: 50, x: result[1].score === 0 ? 1 : result[1].score}]
   const xScale = d3.scaleLinear()
     .domain([0, result[1].score])
     .range([0, width]);
@@ -105,7 +105,7 @@ function emotionResultGraphPercent(total, result, element) {
     .attr("class", "lifetime-graph__emotion-scale")
     .attr("x", function(d) { return (xScale(result[0].score) - 10); })
     .attr("y", function(d) { return (yScale(60)) })
-    .text(function(d){ return Math.round((result[0].score / result[1].score) * 100) + '%'})
+    .text(function(d){ return result[1].score === 0 ? '0%' : Math.round((result[0].score / result[1].score) * 100) + '%'})
 
 }
 

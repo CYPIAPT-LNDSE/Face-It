@@ -6,6 +6,7 @@ function logger(){
   $('#landing').show("slide", { direction: "left" }, 500)
 
   $('#start').click(function(){
+    if (validateUsername($('#username').val())) {
     $('#start').html('<img src="assets/ring.gif" id="loading-gif">')
     loginUser($('#username').val(), $('#password').val(), (reply)=>{
 
@@ -36,6 +37,9 @@ function logger(){
         $('#start').click(createNewUser.bind(null,$('#username').val(), $('#password').val(), ()=>{location.reload()}))
       }
     })
+  } else {
+   alert('username must contain only lowercase letters or numbers')
+ }
   })
 }
 
@@ -131,4 +135,20 @@ function loginUser(name, password, callback){
     //if response positive login
     //else prompt message to create user and attach  createuser to button
   });
+}
+
+function validateUsername(username) {
+  return lowerCase(username) && shortEnough(username) && onlyLetters(username)
+}
+
+function lowerCase(username) {
+  return username === username.toLowerCase();
+}
+
+function shortEnough(username) {
+  return username.length < 15;
+}
+
+function onlyLetters(username) {
+  return /^[a-zA-Z0-9]+$/.test(username)
 }
