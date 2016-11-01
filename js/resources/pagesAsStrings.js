@@ -286,7 +286,7 @@ let pages = {
               <path d="M0,68.4 L0,114 L80,114 L80,0 L0,0 L0,19 L60,19 L60,68.4 L-2.66453526e-15,68.4 Z" id="Combined-Shape" stroke="#B2DFDB" stroke-width="5" fill="#E0F2F1"></path>
               <g id="level-display" transform="translate(12.000000, 78.000000)">
               <rect id="Rectangle-4" stroke="#B2DFDB" stroke-width="5" fill="#F5F5F5" x="0" y="0" width="46" height="27.3999996"></rect>
-              <text id="level" font-family="OpenSans-Bold, Open Sans" font-size="18" font-weight="bold" fill="#616161">
+              <text id="level" font-size="18" font-weight="bold" fill="#616161">
               <tspan x="17.2998047" y="21">1</tspan>
               </text>
               </g>
@@ -303,7 +303,7 @@ let pages = {
               <path d="M0,68.4 L0,114 L80,114 L80,0 L0,0 L0,19 L60,19 L60,68.4 L-2.66453526e-15,68.4 Z" stroke="#B2DFDB" stroke-width="5" fill="#E0F2F1"></path>
               <g id="level-display" transform="translate(35.000000, 92.000000) scale(-1, 1) translate(-35.000000, -92.000000) translate(12.000000, 78.000000)">
               <rect id="Rectangle-4" stroke="#B2DFDB" stroke-width="5" fill="#F5F5F5" x="0" y="0" width="46" height="27.3999996"></rect>
-              <text id="level" font-family="OpenSans-Bold, Open Sans" font-size="18" font-weight="bold" fill="#616161">
+              <text id="level" font-size="18" font-weight="bold" fill="#616161">
               <tspan x="17.2998047" y="21">2</tspan>
               </text>
               </g>
@@ -320,7 +320,7 @@ let pages = {
               <path d="M0,68.4 L0,114 L80,114 L80,0 L0,0 L0,19 L60,19 L60,68.4 L-2.66453526e-15,68.4 Z" id="Combined-Shape" stroke="#B2DFDB" stroke-width="5" fill="#E0F2F1"></path>
               <g id="level-display" transform="translate(12.000000, 78.000000)">
               <rect id="Rectangle-4" stroke="#B2DFDB" stroke-width="5" fill="#F5F5F5" x="0" y="0" width="46" height="27.3999996"></rect>
-              <text id="level" font-family="OpenSans-Bold, Open Sans" font-size="18" font-weight="bold" fill="#616161">
+              <text id="level" font-size="18" font-weight="bold" fill="#616161">
               <tspan x="17.2998047" y="21">3</tspan>
               </text>
               </g>
@@ -417,7 +417,7 @@ let pages = {
       {{ path }}
       <g transform="translate(248.000000, 81.000000)">
       <rect id="Rectangle-4" stroke="#B2DFDB" stroke-width="5" fill="#F5F5F5" x="0" y="0" width="46" height="27.3999996"></rect>
-      <text x="23" y="21" text-anchor="middle" id="level-display-text" font-family="OpenSans-Bold, Open Sans" font-size="18" font-weight="bold" fill="#616161"></text>
+      <text x="23" y="21" text-anchor="middle" id="level-display-text" font-size="18" font-weight="bold" fill="#616161"></text>
       </g>
       </g>
       <g id="user-icon" transform="translate(10.000000, 60.000000)">
