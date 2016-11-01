@@ -89,6 +89,10 @@
     .landing-page__message {
       font-size: 1.4em; } }
 
+#loading-gif {
+  height: 20px;
+  width: 20px; }
+
 .game-page {
   display: flex;
   flex-direction: column;
