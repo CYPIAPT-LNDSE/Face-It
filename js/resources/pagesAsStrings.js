@@ -354,11 +354,11 @@ let pages = {
               </div>
               <div class="col-xs-6 game-page__button intro-page__tutorial-button default-hidden">
                 <img src="./assets/icons/happy-emoji.svg" class="game-page__button-emoji" alt="Happy">
-                <button type="button" class="btn btn-default btn-lg btn-block">Happy</button>
+                <button type="button" class="btn btn-default btn-lg btn-block game-page__button">Happy</button>
               </div>
               <div class="col-xs-6 game-page__button intro-page__tutorial-button default-hidden">
                 <img src="./assets/icons/sad-emoji.svg" class="game-page__button-emoji" alt="Sad">
-                <button type="button" class="btn btn-default btn-lg btn-block">Sad</button>
+                <button type="button" class="btn btn-default btn-lg btn-block game-page__button">Sad</button>
               </div>
             </div>
 
@@ -547,7 +547,7 @@ let pages = {
           <img src="{{choiceL}}" class="game-page__button-emoji" alt="Happy" id='choiceL'>
           <button type="button" class="btn btn-default btn-lg btn-block" id='buttonL'>{{buttonL}}</button>
         </div>
-        <div class="col-xs-6 game-button">
+        <div class="col-xs-6 game-page__button">
           <img src="{{choiceR}}" class="game-page__button-emoji" alt="Sad" id='choiceR'>
           <button type="button" class="btn btn-default btn-lg btn-block" id="buttonR">{{buttonR}}</button>
         </div>
