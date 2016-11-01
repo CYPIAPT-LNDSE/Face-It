@@ -9,15 +9,18 @@
   button {
     text-transform: capitalize;
     padding: 0.5em 0;
+    font-weight: 400;
   }
 }
 
 .game-page__image-container {
-  margin-bottom: 3em;
+  margin-bottom: 5vh;
+  margin-top: 1vh;
   img {
-    border: $teal-darken-1 solid 2.5em;
+    border: $teal-darken-1 solid 5vw;
     border-radius: 0.2em;
     margin: auto auto;
+    max-height: 40em;
   }
 }
 
