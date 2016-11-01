@@ -49,7 +49,7 @@ cd cordova
 
 cordova add platform (here teh platform example:) browser
 ```
-now you can run 
+now you can run
 ```
 cordova run browser
 ```
@@ -61,32 +61,6 @@ This project is a game designed for young people with ASD to practice recognisin
 * Data tracking would allow users to track their personal results, as well as the overall effectiveness of the game to be measured.
 * By comparing the user's results to an API rather than that of an authority figure like a teacher, we hope to instill more respect for the user's choices.
 
-
-##Four Day Sprint
-During the four day sprint we were able to create a semi-functioning prototype of Face It. The prototype successfully simulated a typical user journey we envisioned for the full app, taking the user from entering user data, through gameplay, and to their results.
-
-##Two Week Sprint
-In a two week sprint, our priorities would be:
-
-* Implementing a user account system, allowing users' results to be stored between game rounds.
-* Using D3 to display those results as dynamic graphs.
-* Creating characterisation for the logo character and integrating it throughout the app.
-* Releasing the game as a mobile app.
-
-##Four Week Sprint
-In a four week sprint, we would go on to:
-
-* Significantly widen the image set.
-* Create a true leveling system, with the game increasing in difficulty as the user improves.
-* Include other users' choices alongside the API's in the results comparison graphs.
-
-##Test Plan
-
-We would advise that the prototype is made available to as large a variety of test users as is feasible, as our aim is for the app to be appealing and appropriate for a wide user group – young people aged 10-15, across the autistic spectrum. In particular, we'll be looking for user's feedback on:
-* The app's colour scheme and animation
-* The balance between text and images in the app (could we make more use of icons and emojis?)
-* Photos used
-
-##App stack
+##Tech Stack
 
 This is an Hybrid no-backend cordova app.  Our stack includes: handlebars, bootstrap, pouchDB, couchDB, JQuery.  
