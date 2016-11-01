@@ -417,7 +417,7 @@ let pages = {
       {{ path }}
       <g transform="translate(248.000000, 81.000000)">
       <rect id="Rectangle-4" stroke="#B2DFDB" stroke-width="5" fill="#F5F5F5" x="0" y="0" width="46" height="27.3999996"></rect>
-      <text x="23" y="21" text-anchor="middle" id="level-display-text" font-size="18" font-weight="bold" fill="#616161"></text>
+      <text x="23" y="21" text-anchor="middle" id="level-display-text" font-family="OpenSans-Bold, Open Sans" font-size="18" font-weight="bold" fill="#616161"></text>
       </g>
       </g>
       <g id="user-icon" transform="translate(10.000000, 60.000000)">
