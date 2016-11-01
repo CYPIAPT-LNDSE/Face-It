@@ -104,7 +104,7 @@ function createNewUser(name, password, refreshPage){
       }
       })).on("complete", function(info) {
         console.log("Sync was successful", info);
-        initIntro()
+        setTimeout(initIntro(),2000);       
         //initLevel()
       }).on('error', (err)=>{
         console.log(err)
