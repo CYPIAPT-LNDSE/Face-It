@@ -1,17 +1,15 @@
-let username = ''
 
 function initIntro() {
-  if (username === '') {
-    username = $('#first-name').val()
-  }
-  const introPage =  Handlebars.compile(pages['intro'])({
-    username: username  })
+  const introPage =  Handlebars.compile(pages['introSequence'])({
+    username: 'matt'  }) //get name from pouch
   clearPage('main')
-  addPage('intro', introPage);
-  showPage('intro');
+  addPage('introSequence', introPage);
+  showPage('introSequence');
 
-  $('#startGame').click(function(){
-    clearPage('main')
-    initLevel();
-  })
+  initIntroSequence()
+
+  /*$('#startGame').click(function(){*/
+    //clearPage('main')
+    //initLevel();
+  /*})*/
 }
