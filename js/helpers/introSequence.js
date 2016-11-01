@@ -1,7 +1,7 @@
 function initIntroSequence(){
   function gearSpin() {
-    $('.gear').velocity({rotateZ: '180deg'}, {duration: 7000})
-    $('.gear-reverse').velocity({rotateZ: '-180deg'}, {duration: 7000})
+    $('.gear').velocity({rotate: '180deg'}, {duration: 7000})
+    $('.gear-reverse').velocity({rotate: '-180deg'}, {duration: 7000})
   }
 
   function surpriseIconAnimation() {
