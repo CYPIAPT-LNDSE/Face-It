@@ -354,11 +354,11 @@ let pages = {
               </div>
               <div class="col-xs-6 game-page__button intro-page__tutorial-button default-hidden">
                 <img src="./assets/icons/happy-emoji.svg" class="game-page__button-emoji" alt="Happy">
-                <button type="button" class="btn btn-default btn-lg btn-block">Happy</button>
+                <button type="button" class="btn btn-default btn-lg btn-block game-page__button">Happy</button>
               </div>
               <div class="col-xs-6 game-page__button intro-page__tutorial-button default-hidden">
                 <img src="./assets/icons/sad-emoji.svg" class="game-page__button-emoji" alt="Sad">
-                <button type="button" class="btn btn-default btn-lg btn-block">Sad</button>
+                <button type="button" class="btn btn-default btn-lg btn-block game-page__button">Sad</button>
               </div>
             </div>
 
@@ -417,7 +417,7 @@ let pages = {
       {{ path }}
       <g transform="translate(248.000000, 81.000000)">
       <rect id="Rectangle-4" stroke="#B2DFDB" stroke-width="5" fill="#F5F5F5" x="0" y="0" width="46" height="27.3999996"></rect>
-      <text x="23" y="21" text-anchor="middle" id="level-display-text" font-size="18" font-weight="bold" fill="#616161"></text>
+      <text x="23" y="21" text-anchor="middle" id="level-display-text" font-family="OpenSans-Bold, Open Sans" font-size="18" font-weight="bold" fill="#616161"></text>
       </g>
       </g>
       <g id="user-icon" transform="translate(10.000000, 60.000000)">
@@ -547,7 +547,7 @@ let pages = {
           <img src="{{choiceL}}" class="game-page__button-emoji" alt="Happy" id='choiceL'>
           <button type="button" class="btn btn-default btn-lg btn-block" id='buttonL'>{{buttonL}}</button>
         </div>
-        <div class="col-xs-6 game-button">
+        <div class="col-xs-6 game-page__button">
           <img src="{{choiceR}}" class="game-page__button-emoji" alt="Sad" id='choiceR'>
           <button type="button" class="btn btn-default btn-lg btn-block" id="buttonR">{{buttonR}}</button>
         </div>

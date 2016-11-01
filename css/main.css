@@ -91,8 +91,7 @@
 
 #loading-gif {
   height: 20px;
-  width: 20px;
-}
+  width: 20px; }
 
 .game-page {
   display: flex;
@@ -100,17 +99,19 @@
   justify-content: center;
   height: 100%; }
 
-.game-page__button {
-  font-weight: 400;
+.game-page__button button {
   text-transform: capitalize;
-  padding: 0.5em 0; }
+  padding: 0.5em 0;
+  font-weight: 400; }
 
 .game-page__image-container {
-  margin-bottom: 3em; }
+  margin-bottom: 5vh;
+  margin-top: 1vh; }
   .game-page__image-container img {
-    border: #B2DFDB solid 2.5em;
+    border: #B2DFDB solid 5vw;
     border-radius: 0.2em;
-    margin: auto auto; }
+    margin: auto auto;
+    max-height: 40em; }
 
 .game-page__button-emoji {
   width: 50%;
