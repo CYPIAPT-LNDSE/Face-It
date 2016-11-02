@@ -1,21 +1,18 @@
 .intro-page {
   width: 100%;
   height: 100%;
-  text-align: center;
+  svg {
+    display: block;
+    margin: auto auto;
+  }
   @media (min-width: 768px) {
     svg {
       height: 87vh;
-      display: inline-block;
     }
   }
   @media (max-width: 768px) {
     svg {
       height: 98vh;
-    }
-  }
-  @media (max-width: 500px) {
-    svg {
-      height: auto;
       width: 98%;
     }
   }
