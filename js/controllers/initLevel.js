@@ -89,13 +89,6 @@ function levelAnimation(lastDigit) {
     .velocity({translateX:userPosition}, {duration: (animationDuration - 10), delay: 50});
 
   if (lastDigit !== 0) {
-    /*$('.gear').velocity({*/
-      //rotate: '180deg'
-    //}, {
-      //duration: (animationDuration - 100)
-        /*});*/
-        console.log(animationDuration)
-
     var angle = 0;
 
     var rotate = setInterval(function(){
