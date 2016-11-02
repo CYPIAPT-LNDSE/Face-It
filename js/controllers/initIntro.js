@@ -1,7 +1,7 @@
 
 function initIntro() {
   const introPage =  Handlebars.compile(pages['introSequence'])({
-    username: 'matt'  }) //get name from pouch
+    username: localStorage.getItem('faceit').username  }) //get name from pouch
   clearPage('main')
   addPage('introSequence', introPage);
   showPage('introSequence');

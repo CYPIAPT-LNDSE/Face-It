@@ -1,9 +1,9 @@
 function initIntroSequence(){
   function gearSpin() {
-    $('.gear').rotate({duration: 5000, angle: 0, animateTo: 180})
+    $('.gear').rotate({duration: 11000, angle: 0, animateTo: 180})
 
-    $('.gear-reverse').velocity({rotate: '180deg'}, {duration: 7000})  }
-
+    $('.gear-reverse').rotate({duration: 11000, angle: 0, animateTo: -180})
+  }
   function surpriseIconAnimation() {
     $("#surprise-icon")
     // Fall down
