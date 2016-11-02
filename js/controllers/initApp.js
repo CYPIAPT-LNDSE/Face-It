@@ -7,39 +7,39 @@ function logger(){
 
   $('#start').click(function(){
     if (validateUsername($('#username').val())) {
-    $('#start').html('<img src="assets/ring.gif" id="loading-gif">')
-    loginUser($('#username').val(), $('#password').val(), (reply)=>{
+      $('#start').html('<img src="assets/ring.gif" id="loading-gif">')
+      loginUser($('#username').val(), $('#password').val(), (reply)=>{
 
-      if(reply.state === 'success') {
-        localStorage.setItem('faceit', JSON.stringify(reply.data))
+        if(reply.state === 'success') {
+          localStorage.setItem('faceit', JSON.stringify(reply.data))
 
-        db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
+          db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
 
-        db.sync(new PouchDB("https://daymos.cloudant.com/"+ $('#username').val(), { auth: {
-          username: JSON.parse(localStorage.getItem('faceit')).api.key,
-          password: JSON.parse(localStorage.getItem('faceit')).api.password
+          db.sync(new PouchDB("https://daymos.cloudant.com/"+ $('#username').val(), { auth: {
+            username: JSON.parse(localStorage.getItem('faceit')).api.key,
+            password: JSON.parse(localStorage.getItem('faceit')).api.password
+          }
+          })).on("complete", function(info) {
+            console.log("Sync was successful", info);
+            initLevel()
+          }).on('error', (err)=>{
+            console.log(err)
+          });
+
+        } else if (reply === 'wrongpassword') $('#loginReply').html('Looks like your password isn&#39;t right, please try again')
+        else {
+          $('#loginReply').html('That user doesn&#39;t exist, click again to create an account')
+          $('#start').html('Sign Up')
+          $('#start').unbind()
+
+          console.log($('#username').val())
+          console.log($('#password').val())
+          $('#start').click(createNewUser.bind(null,$('#username').val(), $('#password').val(), ()=>{location.reload()}))
         }
-        })).on("complete", function(info) {
-          console.log("Sync was successful", info);
-          initLevel()
-        }).on('error', (err)=>{
-          console.log(err)
-        });
-
-      } else if (reply === 'wrongpassword') $('#loginReply').html('Looks like your password isn&#39;t right, please try again')
-      else {
-        $('#loginReply').html('That user doesn&#39;t exist, click again to create an account')
-        $('#start').html('Sign Up')
-        $('#start').unbind()
-
-        console.log($('#username').val())
-        console.log($('#password').val())
-        $('#start').click(createNewUser.bind(null,$('#username').val(), $('#password').val(), ()=>{location.reload()}))
-      }
-    })
-  } else {
-   alert('username must contain only lowercase letters or numbers')
- }
+      })
+    } else {
+      alert('username must contain only lowercase letters or numbers')
+    }
   })
 }
 
@@ -89,36 +89,29 @@ function createNewUser(name, password, refreshPage){
 
   $.ajax(settings).done(function (response) {
     localStorage.setItem('faceit', response)
-
     console.log(response);
 
-    setTimeout(2000);       
+    setTimeout(()=>{
+      loginUser($('#username').val(), $('#password').val(), (reply)=>{
+        localStorage.setItem('faceit', JSON.stringify(reply.data))
+        db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
 
-    loginUser($('#username').val(), $('#password').val(), (reply)=>{
+        db.sync(new PouchDB("https://daymos.cloudant.com/"+ $('#username').val(), { auth: {
+          username: JSON.parse(localStorage.getItem('faceit')).api.key,
+          password: JSON.parse(localStorage.getItem('faceit')).api.password
+        }
+        })).on("complete", function(info) {
+          console.log("Sync was successful", info);
+          initIntro()
+        }).on('error', (err)=>{
+          console.log(err)
+        });
+      })
+    },2000);       
 
-      localStorage.setItem('faceit', JSON.stringify(reply.data))
-
-      db = new PouchDB(JSON.parse(localStorage.getItem('faceit')).username);
-
-      db.sync(new PouchDB("https://daymos.cloudant.com/"+ $('#username').val(), { auth: {
-        username: JSON.parse(localStorage.getItem('faceit')).api.key,
-        password: JSON.parse(localStorage.getItem('faceit')).api.password
-      }
-      })).on("complete", function(info) {
-        console.log("Sync was successful", info);
-        initIntro()
-        //initLevel()
-      }).on('error', (err)=>{
-        console.log(err)
-      });
-
-    })
-    // if positive move to level page
-    // else show update message in page to warn about wrong credentials
-
-  });
-
+  })
 }
+
 function loginUser(name, password, callback){
   var settings = {
     "method":"POST",
