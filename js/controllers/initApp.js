@@ -92,9 +92,9 @@ function createNewUser(name, password, refreshPage){
 
     console.log(response);
 
-    setTimeout(initIntro(),2000);       
+    setTimeout(2000);       
 
-    loginUser($('#username').val().toLowerCase(), $('#password').val(), (reply)=>{
+    loginUser($('#username').val(), $('#password').val(), (reply)=>{
 
       localStorage.setItem('faceit', JSON.stringify(reply.data))
 
@@ -106,6 +106,7 @@ function createNewUser(name, password, refreshPage){
       }
       })).on("complete", function(info) {
         console.log("Sync was successful", info);
+        initIntro()
         //initLevel()
       }).on('error', (err)=>{
         console.log(err)
