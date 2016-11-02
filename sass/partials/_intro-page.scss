@@ -63,6 +63,24 @@
     bottom: -51px;
     left: 27px;
   }
+
+  @media (min-width: 581px) and (max-width: 768px) {
+    &:before {
+      left: 182px;
+    }
+    &:after {
+      left: 167px;
+    }
+  }
+
+  @media (min-width: 500px) and (max-width: 580px) {
+    &:before {
+      left: 122px;
+    }
+    &:after {
+      left: 107px;
+    }
+  }
 }
 
 .intro-page__modal {

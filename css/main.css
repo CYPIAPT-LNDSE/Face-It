@@ -178,6 +178,16 @@
     z-index: 0;
     bottom: -51px;
     left: 27px; }
+  @media (min-width: 581px) and (max-width: 768px) {
+    .intro-page__speech-bubble:before {
+      left: 182px; }
+    .intro-page__speech-bubble:after {
+      left: 167px; } }
+  @media (min-width: 500px) and (max-width: 580px) {
+    .intro-page__speech-bubble:before {
+      left: 122px; }
+    .intro-page__speech-bubble:after {
+      left: 107px; } }
 
 .intro-page__modal {
   opacity: 0;
