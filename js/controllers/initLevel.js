@@ -88,20 +88,22 @@ function levelAnimation(lastDigit) {
     .velocity({translateY:219}, 80, [0.33, 0, 0.66, 1])
     .velocity({translateX:userPosition}, {duration: (animationDuration - 10), delay: 50});
 
-  if (lastDigit !== 0) {
-    var angle = 0;
+  var isFF = !!window.sidebar;
 
+  if (lastDigit !== 0 && isFF == false) {
+
+    var angle = 0;
     var rotate = setInterval(function(){
       angle+=3;
       $('.gear').rotate({
-        angle: angle,
+        angle: angle
         })
     }, 50)
 
     setTimeout(function(){
       clearInterval(rotate)
-      console.log("stopped")
     }, (animationDuration * 1.4))
+
   }
 }
 

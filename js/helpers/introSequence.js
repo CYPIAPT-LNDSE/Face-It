@@ -1,9 +1,26 @@
 function initIntroSequence(){
-  function gearSpin() {
-    $('.gear').rotate({duration: 11000, angle: 0, animateTo: 180})
 
-    $('.gear-reverse').rotate({duration: 11000, angle: 0, animateTo: -180})
+  function gearSpin() {
+
+    var angle = 0;
+    var angleReverse = 0;
+
+    var rotate = setInterval(function(){
+      angle+=3;
+      angleReverse-=3;
+      $('.gear').rotate({
+        angle: angle
+      })
+      $('.gear-reverse').rotate({
+        angle: angleReverse
+      })
+    }, 50)
+
+    setTimeout(function(){
+      clearInterval(rotate)
+    }, (10000))
   }
+
   function surpriseIconAnimation() {
     $("#surprise-icon")
     // Fall down
@@ -172,12 +189,16 @@ break
   function introToLevelPage() {
     $(document).on("click", function() {
       console.log("level page")
-      initLevel()     
+      initLevel()
       $(document).off();
     })
   }
 
-  gearSpin()
+  var isFF = !!window.sidebar;
+
+  if (isFF == false) {
+    gearSpin()
+  }
   surpriseIconAnimation()
   setTimeout(sadIconAnimation, 2500)
   setTimeout(userIconAnimation, 5000)
