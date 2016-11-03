@@ -261,7 +261,8 @@
 
 .gear, .gear-reverse {
   transform-origin: 50% 50%;
-  -webkit-transform-origin: 50% 50%; }
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 100% 100%; }
 
 .cs-loader {
   position: absolute;
