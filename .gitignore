@@ -11,3 +11,4 @@ node_modules
 .swp
 cordova
 !cordova/config.xml
+!cordova/platforms/android/build/outputs/apk
