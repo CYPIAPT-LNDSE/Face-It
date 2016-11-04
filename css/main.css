@@ -112,6 +112,9 @@
     border-radius: 0.2em;
     margin: auto auto;
     max-height: 40em; }
+  @media (min-width: 768px) {
+    .game-page__image-container img {
+      border: #B2DFDB solid 2vw; } }
 
 .game-page__button-emoji {
   width: 50%;
@@ -126,18 +129,16 @@
 
 .intro-page {
   width: 100%;
-  height: 100%;
-  text-align: center; }
+  height: 100%; }
+  .intro-page svg {
+    display: block;
+    margin: auto auto; }
   @media (min-width: 768px) {
     .intro-page svg {
-      height: 87vh;
-      display: inline-block; } }
+      height: 87vh; } }
   @media (max-width: 768px) {
     .intro-page svg {
-      height: 98vh; } }
-  @media (max-width: 500px) {
-    .intro-page svg {
-      height: auto;
+      height: 98vh;
       width: 98%; } }
 
 .intro-page__tutorial {
@@ -178,6 +179,16 @@
     z-index: 0;
     bottom: -51px;
     left: 27px; }
+  @media (min-width: 581px) and (max-width: 768px) {
+    .intro-page__speech-bubble:before {
+      left: 182px; }
+    .intro-page__speech-bubble:after {
+      left: 167px; } }
+  @media (min-width: 500px) and (max-width: 580px) {
+    .intro-page__speech-bubble:before {
+      left: 122px; }
+    .intro-page__speech-bubble:after {
+      left: 107px; } }
 
 .intro-page__modal {
   opacity: 0;
@@ -234,13 +245,24 @@
   position: relative; }
   .level-page button {
     margin-bottom: 1em; }
+  .level-page svg {
+    width: 95%;
+    display: block;
+    margin: auto auto; }
+  @media (max-width: 768px) {
+    .level-page svg {
+      width: 85%; } }
+  @media (max-width: 600px) {
+    .level-page svg {
+      width: 95%; } }
 
 .level-page__conveyer-belts {
-  margin-bottom: 20%; }
+  margin-bottom: 5vh; }
 
 .gear, .gear-reverse {
   transform-origin: 50% 50%;
-  -webkit-transform-origin: 50% 50%; }
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 100% 100%; }
 
 .cs-loader {
   position: absolute;

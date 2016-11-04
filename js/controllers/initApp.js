@@ -31,14 +31,13 @@ function logger(){
           $('#loginReply').html('That user doesn&#39;t exist, click again to create an account')
           $('#start').html('Sign Up')
           $('#start').unbind()
-
           console.log($('#username').val())
           console.log($('#password').val())
           $('#start').click(createNewUser.bind(null,$('#username').val(), $('#password').val(), ()=>{location.reload()}))
         }
       })
     } else {
-      alert('username must contain only lowercase letters or numbers')
+      alert('Username must contain only lowercase letters or numbers')
     }
   })
 }
@@ -65,7 +64,7 @@ function attemptSync(){
       db.destroy(localStorage.getItem('faceit').username).then((res)=>{console.log(res)})
       localStorage.removeItem('faceit')
       location.reload()
-      console.log('there was an error syncying', err)
+      console.log('there was an error syncing', err)
 
     });
     console.log('trying to sync')
@@ -90,7 +89,6 @@ function createNewUser(name, password, refreshPage){
   $.ajax(settings).done(function (response) {
     localStorage.setItem('faceit', response)
     console.log(response);
-
     setTimeout(()=>{
       loginUser($('#username').val(), $('#password').val(), (reply)=>{
         localStorage.setItem('faceit', JSON.stringify(reply.data))
@@ -107,7 +105,7 @@ function createNewUser(name, password, refreshPage){
           console.log(err)
         });
       })
-    },2000);       
+    },2000);
 
   })
 }

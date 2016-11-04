@@ -1,21 +1,18 @@
 .intro-page {
   width: 100%;
   height: 100%;
-  text-align: center;
+  svg {
+    display: block;
+    margin: auto auto;
+  }
   @media (min-width: 768px) {
     svg {
       height: 87vh;
-      display: inline-block;
     }
   }
   @media (max-width: 768px) {
     svg {
       height: 98vh;
-    }
-  }
-  @media (max-width: 500px) {
-    svg {
-      height: auto;
       width: 98%;
     }
   }
@@ -62,6 +59,24 @@
     z-index: 0;
     bottom: -51px;
     left: 27px;
+  }
+
+  @media (min-width: 581px) and (max-width: 768px) {
+    &:before {
+      left: 182px;
+    }
+    &:after {
+      left: 167px;
+    }
+  }
+
+  @media (min-width: 500px) and (max-width: 580px) {
+    &:before {
+      left: 122px;
+    }
+    &:after {
+      left: 107px;
+    }
   }
 }
 

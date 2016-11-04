@@ -22,6 +22,11 @@
     margin: auto auto;
     max-height: 40em;
   }
+  @media (min-width: 768px) {
+    img {
+      border: $teal-darken-1 solid 2vw;
+    }
+  }
 }
 
 .game-page__button-emoji {
