@@ -247,6 +247,7 @@
     margin-bottom: 1em; }
   .level-page svg {
     width: 95%;
+    height: 0%;
     display: block;
     margin: auto auto; }
   @media (max-width: 768px) {
@@ -261,8 +262,7 @@
 
 .gear, .gear-reverse {
   transform-origin: 50% 50%;
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 100% 100%; }
+  -webkit-transform-origin: 50% 50%; }
 
 .cs-loader {
   position: absolute;
