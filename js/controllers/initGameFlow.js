@@ -1,6 +1,6 @@
 function initGame(){
 
-  let gameSet = R.compose( generateWrongAnswerData, generateGameSet)(images)
+  let gameSet = R.compose( generateWrongAnswerData, generateGameSet )(images)
   renderGamePages(gameSet)
   eventListenerGamePage(gameSet)
   showPage('gamePage1')
@@ -14,9 +14,21 @@ function eventListenerGamePage(gameSet){
         gameSet[i].userGuess = $(this)[0].innerHTML
         results.push(gameSet[i])
       })
+      
+      $('#gamePage'+ el).find('.game-page__button-emoji').click(function(event){  //same for icon
+        showPage('gamePage' + (Number(el) + 1))
+        gameSet[i].userGuess = $(this).parent().find('button')[0].innerHTML
+        results.push(gameSet[i])
+      })
+
     } else{
       $('#gamePage'+ el).find('button').click(function(event){
         gameSet[i].userGuess = $(this)[0].innerHTML
+        results.push(gameSet[i])
+        initRoundResult(results)
+      })
+      $('#gamePage'+ el).find('.game-page__button-emoji').click(function(event){  //same for icon
+        gameSet[i].userGuess = $(this).parent().find('button')[0].innerHTML
         results.push(gameSet[i])
         initRoundResult(results)
       })
