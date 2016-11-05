@@ -6,7 +6,12 @@
 
 ## Downloading the android app
 
+### Compatibility
+
+- Android 4.4 "KitKat" and above.
+
 navigate to this page with your mobile phone and click [here](https://github.com/CYPIAPT-LNDSE/Face-It/blob/e7675c6e15dbd90286047c369ae21c73b9de511e/binary/android-debug.apk?raw=true)
+
 ## Running the app in the browser (currently working in recent versions of Firefox and Chrome)
 
 The online version of the app is available [here](https://cypiapt-lndse.github.io/Face-It/). Should you experience any bugs, please [open an issue in the repo](https://github.com/CYPIAPT-LNDSE/Face-It/issues).
