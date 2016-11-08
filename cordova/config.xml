@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.example.example" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Face It</name>
+    <description>
+        An app for young people with ASD and their families to practice recognising emotions
+    </description>
+    <author email="hello@foundersandcoders.com" href="http://www.foundersandcoders.com">
+        Founders and Coders
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon src="assets/icons/android/ldpi.png" density="ldpi" />
+        <icon src="assets/icons/android/mdpi.png" density="mdpi" />
+        <icon src="assets/icons/android/hdpi.png" density="hdpi" />
+        <icon src="assets/icons/android/xhdpi.png" density="xhdpi" />
+        <icon src="assets/icons/android/xxhdpi.png" density="xxhdpi" />
+        <icon src="assets/icons/android/xxxhdpi.png" density="xxxhdpi" />
+    </platform>
+</widget>
